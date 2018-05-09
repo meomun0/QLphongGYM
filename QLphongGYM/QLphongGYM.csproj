@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA95C689-0A1B-41C9-8AE2-A3713A57E088}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLphongGYM</RootNamespace>
+    <AssemblyName>QLphongGYM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.18, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.18, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DungCu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DungCu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_Chi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_GoiCuaKhach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_GoiTap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_Khach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_NhanVien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_PhanCong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_Thu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GYMDataSet_Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Chi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\Chi.Designer.cs">
+      <DependentUpon>Chi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\DungCu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\DungCu.Designer.cs">
+      <DependentUpon>DungCu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\EditAccess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\EditAccess.Designer.cs">
+      <DependentUpon>EditAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\GoiCuaKhach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\GoiCuaKhach.Designer.cs">
+      <DependentUpon>GoiCuaKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\GoiTap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\GoiTap.Designer.cs">
+      <DependentUpon>GoiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Khach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\Khach.Designer.cs">
+      <DependentUpon>Khach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\PhanCongHLV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\PhanCongHLV.Designer.cs">
+      <DependentUpon>PhanCongHLV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SubClasses\GetData.cs" />
+    <Compile Include="Layout\SubForms\ThemGoiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\SubForms\ThemGoiTap.Designer.cs">
+      <DependentUpon>ThemGoiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SubForms\ThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\SubForms\ThemKhachHang.Designer.cs">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\TBiCuaGoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\TBiCuaGoi.Designer.cs">
+      <DependentUpon>TBiCuaGoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Thu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\Thu.Designer.cs">
+      <DependentUpon>Thu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TBicuaGoiTap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TBicuaGoiTap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\Chi.resx">
+      <DependentUpon>Chi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DungCu.resx">
+      <DependentUpon>DungCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\EditAccess.resx">
+      <DependentUpon>EditAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\GoiCuaKhach.resx">
+      <DependentUpon>GoiCuaKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\GoiTap.resx">
+      <DependentUpon>GoiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\Khach.resx">
+      <DependentUpon>Khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\PhanCongHLV.resx">
+      <DependentUpon>PhanCongHLV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\SubForms\ThemGoiTap.resx">
+      <DependentUpon>ThemGoiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\SubForms\ThemKhachHang.resx">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\TBiCuaGoi.resx">
+      <DependentUpon>TBiCuaGoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\Thu.resx">
+      <DependentUpon>Thu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DungCu.xsc">
+      <DependentUpon>DungCu.xsd</DependentUpon>
+    </None>
+    <None Include="DungCu.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DungCu.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DungCu.xss">
+      <DependentUpon>DungCu.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Chi.xsc">
+      <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Chi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_Chi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_Chi.xss">
+      <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_GoiCuaKhach.xsc">
+      <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_GoiCuaKhach.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_GoiCuaKhach.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_GoiCuaKhach.xss">
+      <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_GoiTap.xsc">
+      <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_GoiTap.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_GoiTap.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_GoiTap.xss">
+      <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Khach.xsc">
+      <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Khach.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_Khach.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_Khach.xss">
+      <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_NhanVien.xsc">
+      <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_NhanVien.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_NhanVien.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_NhanVien.xss">
+      <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_PhanCong.xsc">
+      <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_PhanCong.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_PhanCong.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_PhanCong.xss">
+      <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Thu.xsc">
+      <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Thu.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_Thu.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_Thu.xss">
+      <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Users.xsc">
+      <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_Users.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_Users.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_Users.xss">
+      <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TBicuaGoiTap.xsc">
+      <DependentUpon>TBicuaGoiTap.xsd</DependentUpon>
+    </None>
+    <None Include="TBicuaGoiTap.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TBicuaGoiTap.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TBicuaGoiTap.xss">
+      <DependentUpon>TBicuaGoiTap.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DATA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
