@@ -20,5 +20,6 @@ namespace QLphongGYM.Layout.SubClasses
         public static string data9 = string.Empty;
         public static DateTime dt = DateTime.Now;
         public static DateTime dt2 = DateTime.Now;
+        public static DateTime dt3 = DateTime.Now;
     }
 }

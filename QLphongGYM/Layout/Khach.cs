@@ -47,7 +47,7 @@ namespace QLphongGYM.Layout
 
         private void dataGVKh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGVKh.CurrentCell.ColumnIndex.Equals(11) && e.RowIndex != -1)
+            if (dataGVKh.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
             {
                 con.Open();
                 if (dataGVKh.CurrentCell != null && dataGVKh.CurrentCell.Value != null)
@@ -73,46 +73,49 @@ namespace QLphongGYM.Layout
                 con.Close();
                 DisplayData();
             }
-            if (dataGVKh.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
+            if (dataGVKh.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
             {
                 con.Open();
                 if (dataGVKh.CurrentCell != null && dataGVKh.CurrentCell.Value != null)
                 {
-                    if ((MessageBox.Show("Bạn chỉ có thể chỉnh sửa các nội dung như: Ngày bắt đầu/kết thúc, Giá, Ca tập, Buổi tập, Khu vực tập. Bạn có muốn tiếp tục", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    if ((MessageBox.Show("Bạn có thể cập nhật các thông tin, ngoại trừ Hạn Thẻ. Để cập nhật Hạn thẻ: Khách hàng -> Gia hạn thẻ.", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                     {
                         SubClasses.GetData.UpdateModeOn = true;
                         SubClasses.GetData.data1 = dataGVKh.Rows[e.RowIndex].Cells[0].Value.ToString();
                         SubClasses.GetData.data2 = dataGVKh.Rows[e.RowIndex].Cells[1].Value.ToString();
                         SubClasses.GetData.data3 = dataGVKh.Rows[e.RowIndex].Cells[2].Value.ToString();
                         SubClasses.GetData.dt = Convert.ToDateTime(dataGVKh.Rows[e.RowIndex].Cells[3].Value.ToString());
-                        SubClasses.GetData.dt2 = Convert.ToDateTime(dataGVKh.Rows[e.RowIndex].Cells[4].Value.ToString());
-                        SubClasses.GetData.data4 = dataGVKh.Rows[e.RowIndex].Cells[5].Value.ToString();
-                        SubClasses.GetData.data5 = dataGVKh.Rows[e.RowIndex].Cells[6].Value.ToString();
-                        SubClasses.GetData.data6 = dataGVKh.Rows[e.RowIndex].Cells[7].Value.ToString();
-                        SubClasses.GetData.data7 = dataGVKh.Rows[e.RowIndex].Cells[8].Value.ToString();
+                        SubClasses.GetData.data4 = dataGVKh.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        SubClasses.GetData.data5 = dataGVKh.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        SubClasses.GetData.dt2 = Convert.ToDateTime(dataGVKh.Rows[e.RowIndex].Cells[6].Value.ToString());
+                        SubClasses.GetData.dt3 = Convert.ToDateTime(dataGVKh.Rows[e.RowIndex].Cells[7].Value.ToString());
 
-                        SubForms.ThemGoiTap themGOI = new SubForms.ThemGoiTap();
-                        themGOI.Show();
+                        SubForms.ThemKhachHang themKHACH = new SubForms.ThemKhachHang();
+                        themKHACH.ShowDialog();
+                        con.Close();
+                        if (SubClasses.GetData.UpdateModeOn == false) DisplayData();
                     }
                 }
                 con.Close();
             }
-            if (dataGVKh.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
+            if (dataGVKh.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
             {
-                con.Open();
+                
                 if (dataGVKh.CurrentCell != null && dataGVKh.CurrentCell.Value != null)
                 {
-                    if (dataGVKh.Rows[e.RowIndex].Cells[9].Value.ToString() == "true" && UserInfo.privilege == "high")
+                    if (dataGVKh.Rows[e.RowIndex].Cells[8].Value.ToString() == "True" && UserInfo.privilege == "high")
                     {
+                        con.Open();
                         if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
                             string magoitap = dataGVKh.Rows[e.RowIndex].Cells[0].Value.ToString();
-                            KHCmd = new SqlCommand("EXECUTE dbo.IUD_GOITAP '" + magoitap + "',N'','','','',N'',N'',N'','',N'Show'", con);
+                            KHCmd = new SqlCommand("EXECUTE dbo.IUD_KHACH '" + magoitap + "',N'',N'','','',N'','','',N'Show'", con);
                             KHCmd.ExecuteNonQuery();
+                            con.Close();
+                            DisplayData();
                         }
                     }
                 }
-                con.Close();
             }
         }
 
@@ -126,12 +129,14 @@ namespace QLphongGYM.Layout
             }
             else
             {
+                this.dataGVKh.Columns[8].Visible = false;
                 adapt = new SqlDataAdapter("select * from dbo.[KHÁCH] where IsDel = 0 ", con);
             }
             adapt.Fill(dt);
             dataGVKh.DataSource = dt;
             con.Close();
         }
+
         private void txtInp_Leave(object sender, EventArgs e)
         {
             if (txtInp.Text.Length == 0)
@@ -163,7 +168,8 @@ namespace QLphongGYM.Layout
         private void btnInsert_Click(object sender, EventArgs e)
         {
             SubForms.ThemKhachHang themKHACH = new SubForms.ThemKhachHang();
-            themKHACH.Show();
+            themKHACH.ShowDialog();
+            DisplayData();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

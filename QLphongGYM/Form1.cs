@@ -159,6 +159,10 @@ namespace QLphongGYM
                 btKhachGoi.Enabled = false;
                 btThietBi.Enabled = false;
                 btNhanVien.Enabled = false;
+                UserInfo.fullName = "";
+                UserInfo.ID = "";
+                UserInfo.privilege = "";
+                UserInfo.userName = "";
             }
         }
 

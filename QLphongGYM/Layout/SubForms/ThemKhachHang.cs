@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,9 +15,8 @@ namespace QLphongGYM.Layout.SubForms
     public partial class ThemKhachHang : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
-        SqlDataAdapter adapt;
         SqlCommand cmdKH;
-        string genID;
+        string SugID;
         private const int CS_DROPSHADOW = 0x00020000;
         protected override CreateParams CreateParams
         {
@@ -41,7 +41,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void Close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HideF();
         }
 
         private void HideF()
@@ -50,9 +50,91 @@ namespace QLphongGYM.Layout.SubForms
             SubClasses.GetData.UpdateModeOn = false;
         }
 
+        private void SuggestID()
+        {
+            int len, j, num;
+            string MaKM = string.Empty, str;
+            con.Close();
+            con.Open();
+            cmdKH = new SqlCommand("SELECT MAX([Mã khách]) as max FROM dbo.KHÁCH", con);
+            SqlDataReader dta = cmdKH.ExecuteReader();
+            if (dta.Read() == true)
+            {
+                MaKM = dta["max"].ToString();
+                len = MaKM.Length;
+                for (j = 0; j < len; j++)
+                {
+                    MaKM = (dta["max"].ToString()).Substring(j);
+                    if (Regex.IsMatch(MaKM, @"^\d+$"))
+                    {
+                        break;
+                    }
+                }
+                str = (dta["max"].ToString()).Substring(0, j);
+                num = Convert.ToInt32(MaKM);
+                num++;
+                SugID = str + num;
+            }
+            else
+            {
+                SugID = "KH_150000";
+            }
+            con.Close();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtHoTen.Text != "" && txtSDT.Text != "" && txtSDT.Text!="")
+            {
+                con.Open();
+                cmdKH = new SqlCommand("EXECUTE dbo.IUD_KHACH '" + txtMaKhach.Text + "',N'" + txtHoTen.Text + "',N'" + cmbGT.selectedValue + "','" + DPNS.Value.ToShortDateString() +
+                    "','" + txtSDT.Text + "',N'" + txtDiaChi.Text + "','"+DateTime.Now.ToShortDateString()+"','"+ DateTime.Now.ToShortDateString() + "',N'Insert'", con);
+                cmdKH.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Thêm thành công");
+                HideF();
+            }
+            else
+                MessageBox.Show("Nhập thiếu");
+        }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtHoTen.Text != "" && txtSDT.Text != "" && txtSDT.Text != "")
+            {
+                con.Open();
+                cmdKH = new SqlCommand("EXECUTE dbo.IUD_KHACH '" + txtMaKhach.Text + "',N'" + txtHoTen.Text + "',N'" + cmbGT.selectedValue + "','" + DPNS.Value.ToShortDateString() +
+                    "','" + txtSDT.Text + "',N'" + txtDiaChi.Text + "','" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "',N'Update'", con);
+                cmdKH.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Cập nhật thành công");
+                HideF();
+            }
+            else
+                MessageBox.Show("Nhập thiếu");
+        }
+
+        private void ThemKhachHang_Load(object sender, EventArgs e)
+        {
+            SuggestID();
+            if (SubClasses.GetData.UpdateModeOn == false)
+            {
+                txtMaKhach.Text = SugID;
+                btnUpdate.Visible = false;
+            }
+            else
+            {
+                btnSave.Visible = false;
+                txtMaKhach.Text = SubClasses.GetData.data1;
+                txtHoTen.Text = SubClasses.GetData.data2;
+                DPNS.Value = SubClasses.GetData.dt;
+                txtSDT.Text = SubClasses.GetData.data4;
+                txtDiaChi.Text = SubClasses.GetData.data5;
+                if (SubClasses.GetData.data3 == "Nam")
+                    cmbGT.selectedIndex = 0;
+                else
+                    cmbGT.selectedIndex = 1;
+            }
         }
     }
 }

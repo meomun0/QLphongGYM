@@ -299,6 +299,8 @@ namespace QLphongGYM {
             
             private global::System.Data.DataColumn columnQuê_quán;
             
+            private global::System.Data.DataColumn columnIsDel;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NHANVIENDataTable() {
@@ -414,6 +416,14 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IsDelColumn {
+                get {
+                    return this.columnIsDel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NHANVIENRow AddNHANVIENRow(string Mã_NV, string Tên, System.DateTime NS, string GT, string Số_điện_thoại, string Chức_vụ, string Ca_làm, System.DateTime Ngày_BĐ, decimal Lương, string Quê_quán) {
+            public NHANVIENRow AddNHANVIENRow(string Mã_NV, string Tên, System.DateTime NS, string GT, string Số_điện_thoại, string Chức_vụ, string Ca_làm, System.DateTime Ngày_BĐ, decimal Lương, string Quê_quán, bool IsDel) {
                 NHANVIENRow rowNHANVIENRow = ((NHANVIENRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Mã_NV,
@@ -461,7 +471,8 @@ namespace QLphongGYM {
                         Ca_làm,
                         Ngày_BĐ,
                         Lương,
-                        Quê_quán};
+                        Quê_quán,
+                        IsDel};
                 rowNHANVIENRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNHANVIENRow);
                 return rowNHANVIENRow;
@@ -501,6 +512,7 @@ namespace QLphongGYM {
                 this.columnNgày_BĐ = base.Columns["Ngày BĐ"];
                 this.columnLương = base.Columns["Lương"];
                 this.columnQuê_quán = base.Columns["Quê quán"];
+                this.columnIsDel = base.Columns["IsDel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,12 +538,14 @@ namespace QLphongGYM {
                 base.Columns.Add(this.columnLương);
                 this.columnQuê_quán = new global::System.Data.DataColumn("Quê quán", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuê_quán);
+                this.columnIsDel = new global::System.Data.DataColumn("IsDel", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsDel);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMã_NV}, true));
                 this.columnMã_NV.AllowDBNull = false;
                 this.columnMã_NV.Unique = true;
-                this.columnMã_NV.MaxLength = 13;
-                this.columnTên.MaxLength = 30;
+                this.columnMã_NV.MaxLength = 12;
+                this.columnTên.MaxLength = 50;
                 this.columnGT.MaxLength = 3;
                 this.columnSố_điện_thoại.MaxLength = 11;
                 this.columnChức_vụ.MaxLength = 30;
@@ -834,6 +848,22 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDel {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNHANVIEN.IsDelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsDel\' in table \'NHANVIEN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNHANVIEN.IsDelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTênNull() {
                 return this.IsNull(this.tableNHANVIEN.TênColumn);
             }
@@ -938,6 +968,18 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetQuê_quánNull() {
                 this[this.tableNHANVIEN.Quê_quánColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIsDelNull() {
+                return this.IsNull(this.tableNHANVIEN.IsDelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIsDelNull() {
+                this[this.tableNHANVIEN.IsDelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1110,10 +1152,11 @@ namespace QLphongGYM.GYMDataSet_NhanVienTableAdapters {
             tableMapping.ColumnMappings.Add("Ngày BĐ", "Ngày BĐ");
             tableMapping.ColumnMappings.Add("Lương", "Lương");
             tableMapping.ColumnMappings.Add("Quê quán", "Quê quán");
+            tableMapping.ColumnMappings.Add("IsDel", "IsDel");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[NHANVIEN] WHERE (([Mã NV] = @Original_Mã_NV) AND ((@IsNull_Tên = 1 AND [Tên] IS NULL) OR ([Tên] = @Original_Tên)) AND ((@IsNull_NS = 1 AND [NS] IS NULL) OR ([NS] = @Original_NS)) AND ((@IsNull_GT = 1 AND [GT] IS NULL) OR ([GT] = @Original_GT)) AND ((@IsNull_Số_điện_thoại = 1 AND [Số điện thoại] IS NULL) OR ([Số điện thoại] = @Original_Số_điện_thoại)) AND ((@IsNull_Chức_vụ = 1 AND [Chức vụ] IS NULL) OR ([Chức vụ] = @Original_Chức_vụ)) AND ((@IsNull_Ca_làm = 1 AND [Ca làm] IS NULL) OR ([Ca làm] = @Original_Ca_làm)) AND ((@IsNull_Ngày_BĐ = 1 AND [Ngày BĐ] IS NULL) OR ([Ngày BĐ] = @Original_Ngày_BĐ)) AND ((@IsNull_Lương = 1 AND [Lương] IS NULL) OR ([Lương] = @Original_Lương)) AND ((@IsNull_Quê_quán = 1 AND [Quê quán] IS NULL) OR ([Quê quán] = @Original_Quê_quán)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[NHANVIEN] WHERE (([Mã NV] = @Original_Mã_NV) AND ((@IsNull_Tên = 1 AND [Tên] IS NULL) OR ([Tên] = @Original_Tên)) AND ((@IsNull_NS = 1 AND [NS] IS NULL) OR ([NS] = @Original_NS)) AND ((@IsNull_GT = 1 AND [GT] IS NULL) OR ([GT] = @Original_GT)) AND ((@IsNull_Số_điện_thoại = 1 AND [Số điện thoại] IS NULL) OR ([Số điện thoại] = @Original_Số_điện_thoại)) AND ((@IsNull_Chức_vụ = 1 AND [Chức vụ] IS NULL) OR ([Chức vụ] = @Original_Chức_vụ)) AND ((@IsNull_Ca_làm = 1 AND [Ca làm] IS NULL) OR ([Ca làm] = @Original_Ca_làm)) AND ((@IsNull_Ngày_BĐ = 1 AND [Ngày BĐ] IS NULL) OR ([Ngày BĐ] = @Original_Ngày_BĐ)) AND ((@IsNull_Lương = 1 AND [Lương] IS NULL) OR ([Lương] = @Original_Lương)) AND ((@IsNull_Quê_quán = 1 AND [Quê quán] IS NULL) OR ([Quê quán] = @Original_Quê_quán)) AND ((@IsNull_IsDel = 1 AND [IsDel] IS NULL) OR ([IsDel] = @Original_IsDel)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_NV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã NV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1123,7 +1166,7 @@ namespace QLphongGYM.GYMDataSet_NhanVienTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Số_điện_thoại", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_điện_thoại", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_điện_thoại", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Chức_vụ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Chức_vụ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ca_làm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca làm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1134,36 +1177,40 @@ namespace QLphongGYM.GYMDataSet_NhanVienTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lương", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lương", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quê_quán", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quê_quán", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsDel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[NHANVIEN] ([Mã NV], [Tên], [NS], [GT], [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], [Lương], [Quê quán]) VALUES (@Mã_NV, @Tên, @NS, @GT, @Số_điện_thoại, @Chức_vụ, @Ca_làm, @Ngày_BĐ, @Lương, @Quê_quán);
-SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], Lương, [Quê quán] FROM NHANVIEN WHERE ([Mã NV] = @Mã_NV)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[NHANVIEN] ([Mã NV], [Tên], [NS], [GT], [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], [Lương], [Quê quán], [IsDel]) VALUES (@Mã_NV, @Tên, @NS, @GT, @Số_điện_thoại, @Chức_vụ, @Ca_làm, @Ngày_BĐ, @Lương, @Quê_quán, @IsDel);
+SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], Lương, [Quê quán], IsDel FROM NHANVIEN WHERE ([Mã NV] = @Mã_NV)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_NV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã NV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NS", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_điện_thoại", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_điện_thoại", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Chức_vụ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ca_làm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca làm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_BĐ", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày BĐ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lương", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lương", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quê_quán", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[NHANVIEN] SET [Mã NV] = @Mã_NV, [Tên] = @Tên, [NS] = @NS, [GT] = @GT, [Số điện thoại] = @Số_điện_thoại, [Chức vụ] = @Chức_vụ, [Ca làm] = @Ca_làm, [Ngày BĐ] = @Ngày_BĐ, [Lương] = @Lương, [Quê quán] = @Quê_quán WHERE (([Mã NV] = @Original_Mã_NV) AND ((@IsNull_Tên = 1 AND [Tên] IS NULL) OR ([Tên] = @Original_Tên)) AND ((@IsNull_NS = 1 AND [NS] IS NULL) OR ([NS] = @Original_NS)) AND ((@IsNull_GT = 1 AND [GT] IS NULL) OR ([GT] = @Original_GT)) AND ((@IsNull_Số_điện_thoại = 1 AND [Số điện thoại] IS NULL) OR ([Số điện thoại] = @Original_Số_điện_thoại)) AND ((@IsNull_Chức_vụ = 1 AND [Chức vụ] IS NULL) OR ([Chức vụ] = @Original_Chức_vụ)) AND ((@IsNull_Ca_làm = 1 AND [Ca làm] IS NULL) OR ([Ca làm] = @Original_Ca_làm)) AND ((@IsNull_Ngày_BĐ = 1 AND [Ngày BĐ] IS NULL) OR ([Ngày BĐ] = @Original_Ngày_BĐ)) AND ((@IsNull_Lương = 1 AND [Lương] IS NULL) OR ([Lương] = @Original_Lương)) AND ((@IsNull_Quê_quán = 1 AND [Quê quán] IS NULL) OR ([Quê quán] = @Original_Quê_quán)));
-SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], Lương, [Quê quán] FROM NHANVIEN WHERE ([Mã NV] = @Mã_NV)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[NHANVIEN] SET [Mã NV] = @Mã_NV, [Tên] = @Tên, [NS] = @NS, [GT] = @GT, [Số điện thoại] = @Số_điện_thoại, [Chức vụ] = @Chức_vụ, [Ca làm] = @Ca_làm, [Ngày BĐ] = @Ngày_BĐ, [Lương] = @Lương, [Quê quán] = @Quê_quán, [IsDel] = @IsDel WHERE (([Mã NV] = @Original_Mã_NV) AND ((@IsNull_Tên = 1 AND [Tên] IS NULL) OR ([Tên] = @Original_Tên)) AND ((@IsNull_NS = 1 AND [NS] IS NULL) OR ([NS] = @Original_NS)) AND ((@IsNull_GT = 1 AND [GT] IS NULL) OR ([GT] = @Original_GT)) AND ((@IsNull_Số_điện_thoại = 1 AND [Số điện thoại] IS NULL) OR ([Số điện thoại] = @Original_Số_điện_thoại)) AND ((@IsNull_Chức_vụ = 1 AND [Chức vụ] IS NULL) OR ([Chức vụ] = @Original_Chức_vụ)) AND ((@IsNull_Ca_làm = 1 AND [Ca làm] IS NULL) OR ([Ca làm] = @Original_Ca_làm)) AND ((@IsNull_Ngày_BĐ = 1 AND [Ngày BĐ] IS NULL) OR ([Ngày BĐ] = @Original_Ngày_BĐ)) AND ((@IsNull_Lương = 1 AND [Lương] IS NULL) OR ([Lương] = @Original_Lương)) AND ((@IsNull_Quê_quán = 1 AND [Quê quán] IS NULL) OR ([Quê quán] = @Original_Quê_quán)) AND ((@IsNull_IsDel = 1 AND [IsDel] IS NULL) OR ([IsDel] = @Original_IsDel)));
+SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], Lương, [Quê quán], IsDel FROM NHANVIEN WHERE ([Mã NV] = @Mã_NV)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_NV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã NV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NS", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_điện_thoại", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_điện_thoại", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Chức_vụ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ca_làm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca làm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_BĐ", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày BĐ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lương", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lương", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quê_quán", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_NV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã NV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tên", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1172,7 +1219,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Số_điện_thoại", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_điện_thoại", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_điện_thoại", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số điện thoại", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Chức_vụ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Chức_vụ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Chức vụ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ca_làm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca làm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1183,6 +1230,8 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lương", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lương", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quê_quán", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quê_quán", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quê quán", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsDel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1199,7 +1248,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm], [Ngày BĐ], Lươ" +
-                "ng, [Quê quán] FROM dbo.NHANVIEN";
+                "ng, [Quê quán], IsDel FROM dbo.NHANVIEN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1260,7 +1309,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Mã_NV, string Original_Tên, global::System.Nullable<global::System.DateTime> Original_NS, string Original_GT, string Original_Số_điện_thoại, string Original_Chức_vụ, string Original_Ca_làm, global::System.Nullable<global::System.DateTime> Original_Ngày_BĐ, global::System.Nullable<decimal> Original_Lương, string Original_Quê_quán) {
+        public virtual int Delete(string Original_Mã_NV, string Original_Tên, global::System.Nullable<global::System.DateTime> Original_NS, string Original_GT, string Original_Số_điện_thoại, string Original_Chức_vụ, string Original_Ca_làm, global::System.Nullable<global::System.DateTime> Original_Ngày_BĐ, global::System.Nullable<decimal> Original_Lương, string Original_Quê_quán, global::System.Nullable<bool> Original_IsDel) {
             if ((Original_Mã_NV == null)) {
                 throw new global::System.ArgumentNullException("Original_Mã_NV");
             }
@@ -1339,6 +1388,14 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Quê_quán));
             }
+            if ((Original_IsDel.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_IsDel.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1359,7 +1416,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Mã_NV, string Tên, global::System.Nullable<global::System.DateTime> NS, string GT, string Số_điện_thoại, string Chức_vụ, string Ca_làm, global::System.Nullable<global::System.DateTime> Ngày_BĐ, global::System.Nullable<decimal> Lương, string Quê_quán) {
+        public virtual int Insert(string Mã_NV, string Tên, global::System.Nullable<global::System.DateTime> NS, string GT, string Số_điện_thoại, string Chức_vụ, string Ca_làm, global::System.Nullable<global::System.DateTime> Ngày_BĐ, global::System.Nullable<decimal> Lương, string Quê_quán, global::System.Nullable<bool> IsDel) {
             if ((Mã_NV == null)) {
                 throw new global::System.ArgumentNullException("Mã_NV");
             }
@@ -1420,6 +1477,12 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Quê_quán));
             }
+            if ((IsDel.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(IsDel.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1451,6 +1514,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
                     global::System.Nullable<global::System.DateTime> Ngày_BĐ, 
                     global::System.Nullable<decimal> Lương, 
                     string Quê_quán, 
+                    global::System.Nullable<bool> IsDel, 
                     string Original_Mã_NV, 
                     string Original_Tên, 
                     global::System.Nullable<global::System.DateTime> Original_NS, 
@@ -1460,7 +1524,8 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
                     string Original_Ca_làm, 
                     global::System.Nullable<global::System.DateTime> Original_Ngày_BĐ, 
                     global::System.Nullable<decimal> Original_Lương, 
-                    string Original_Quê_quán) {
+                    string Original_Quê_quán, 
+                    global::System.Nullable<bool> Original_IsDel) {
             if ((Mã_NV == null)) {
                 throw new global::System.ArgumentNullException("Mã_NV");
             }
@@ -1521,83 +1586,97 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Quê_quán));
             }
+            if ((IsDel.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(IsDel.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             if ((Original_Mã_NV == null)) {
                 throw new global::System.ArgumentNullException("Original_Mã_NV");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Mã_NV));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Mã_NV));
             }
             if ((Original_Tên == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Tên));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Tên));
             }
             if ((Original_NS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_NS.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_NS.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_GT == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_GT));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_GT));
             }
             if ((Original_Số_điện_thoại == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Số_điện_thoại));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Số_điện_thoại));
             }
             if ((Original_Chức_vụ == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Chức_vụ));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Chức_vụ));
             }
             if ((Original_Ca_làm == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Ca_làm));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Ca_làm));
             }
             if ((Original_Ngày_BĐ.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Ngày_BĐ.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_Ngày_BĐ.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_Lương.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(Original_Lương.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_Lương.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_Quê_quán == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Quê_quán));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Quê_quán));
+            }
+            if ((Original_IsDel.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_IsDel.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1629,6 +1708,7 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
                     global::System.Nullable<global::System.DateTime> Ngày_BĐ, 
                     global::System.Nullable<decimal> Lương, 
                     string Quê_quán, 
+                    global::System.Nullable<bool> IsDel, 
                     string Original_Mã_NV, 
                     string Original_Tên, 
                     global::System.Nullable<global::System.DateTime> Original_NS, 
@@ -1638,8 +1718,9 @@ SELECT [Mã NV], Tên, NS, GT, [Số điện thoại], [Chức vụ], [Ca làm],
                     string Original_Ca_làm, 
                     global::System.Nullable<global::System.DateTime> Original_Ngày_BĐ, 
                     global::System.Nullable<decimal> Original_Lương, 
-                    string Original_Quê_quán) {
-            return this.Update(Original_Mã_NV, Tên, NS, GT, Số_điện_thoại, Chức_vụ, Ca_làm, Ngày_BĐ, Lương, Quê_quán, Original_Mã_NV, Original_Tên, Original_NS, Original_GT, Original_Số_điện_thoại, Original_Chức_vụ, Original_Ca_làm, Original_Ngày_BĐ, Original_Lương, Original_Quê_quán);
+                    string Original_Quê_quán, 
+                    global::System.Nullable<bool> Original_IsDel) {
+            return this.Update(Original_Mã_NV, Tên, NS, GT, Số_điện_thoại, Chức_vụ, Ca_làm, Ngày_BĐ, Lương, Quê_quán, IsDel, Original_Mã_NV, Original_Tên, Original_NS, Original_GT, Original_Số_điện_thoại, Original_Chức_vụ, Original_Ca_làm, Original_Ngày_BĐ, Original_Lương, Original_Quê_quán, Original_IsDel);
         }
     }
     

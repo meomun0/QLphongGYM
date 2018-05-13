@@ -158,6 +158,7 @@
       <DependentUpon>PhanCongHLV.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\SubClasses\GetData.cs" />
+    <Compile Include="Layout\SubClasses\GetNVData.cs" />
     <Compile Include="Layout\SubForms\ThemGoiTap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +170,12 @@
     </Compile>
     <Compile Include="Layout\SubForms\ThemKhachHang.Designer.cs">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SubForms\ThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\SubForms\ThemNV.Designer.cs">
+      <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\TBiCuaGoi.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\SubForms\ThemKhachHang.resx">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\SubForms\ThemNV.resx">
+      <DependentUpon>ThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\TBiCuaGoi.resx">
       <DependentUpon>TBiCuaGoi.cs</DependentUpon>

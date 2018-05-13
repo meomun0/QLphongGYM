@@ -15,7 +15,6 @@ namespace QLphongGYM.Layout.SubForms
     public partial class ThemGoiTap : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
-        SqlDataAdapter adapt;
         SqlCommand cmdGT;
         string genID;
         public ThemGoiTap()
@@ -36,7 +35,7 @@ namespace QLphongGYM.Layout.SubForms
         }
         private void close_Click(object sender, EventArgs e)
         {
-            SubClasses.GoiTapInfo.UpdateModeOn = false;
+            SubClasses.GetData.UpdateModeOn = false;
             this.Close();
         }
 
@@ -49,29 +48,29 @@ namespace QLphongGYM.Layout.SubForms
         {
             txtMaGoi.Enabled = false;
             btnUpdate.Visible = false;
-            if (SubClasses.GoiTapInfo.UpdateModeOn == true)
+            if (SubClasses.GetData.UpdateModeOn == true)
             {
                 btnSave.Visible = false;
                 btnUpdate.Visible = true;
                 cmbTenGoi.Enabled = false;
 
-                cmbTenGoi.Text = SubClasses.GoiTapInfo.data2;
-                DPngayBD.Value = SubClasses.GoiTapInfo.dt;
-                DPngayKT.Value = SubClasses.GoiTapInfo.dt2;
-                txtGia.Text = SubClasses.GoiTapInfo.data3;
-                txtMaGoi.Text = SubClasses.GoiTapInfo.data1;
+                cmbTenGoi.Text = SubClasses.GetData.data2;
+                DPngayBD.Value = SubClasses.GetData.dt;
+                DPngayKT.Value = SubClasses.GetData.dt2;
+                txtGia.Text = SubClasses.GetData.data3;
+                txtMaGoi.Text = SubClasses.GetData.data1;
 
-                if (SubClasses.GoiTapInfo.data5 == "Sáng") cmbCaTap.selectedIndex = 0;
-                else if (SubClasses.GoiTapInfo.data5 == "Chiều") cmbCaTap.selectedIndex = 1;
-                else if (SubClasses.GoiTapInfo.data5 == "Tối") cmbCaTap.selectedIndex = 2;
+                if (SubClasses.GetData.data5 == "Sáng") cmbCaTap.selectedIndex = 0;
+                else if (SubClasses.GetData.data5 == "Chiều") cmbCaTap.selectedIndex = 1;
+                else if (SubClasses.GetData.data5 == "Tối") cmbCaTap.selectedIndex = 2;
                 else cmbCaTap.selectedIndex = 3;
 
-                if (SubClasses.GoiTapInfo.data6 == "Public studio") cmbKhuVuc.selectedIndex = 0;
-                else if (SubClasses.GoiTapInfo.data6 == "Body and Mind studio") cmbKhuVuc.selectedIndex = 2;
+                if (SubClasses.GetData.data6 == "Public studio") cmbKhuVuc.selectedIndex = 0;
+                else if (SubClasses.GetData.data6 == "Body and Mind studio") cmbKhuVuc.selectedIndex = 2;
                 else cmbKhuVuc.selectedIndex = 1;
 
                 CK2.Checked = false; CK3.Checked = false; CK4.Checked = false; CK5.Checked = false; CK6.Checked = false; CK7.Checked = false; CKCN.Checked = false;
-                string buoitap = SubClasses.GoiTapInfo.data4;
+                string buoitap = SubClasses.GetData.data4;
                 int len = buoitap.Length;
                 for (int i = 0; i < len; i += 3)
                 {
@@ -300,7 +299,7 @@ namespace QLphongGYM.Layout.SubForms
         private void HideF()
         {
             this.Hide();
-            SubClasses.GoiTapInfo.UpdateModeOn = false;
+            SubClasses.GetData.UpdateModeOn = false;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

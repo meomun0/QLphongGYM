@@ -20,6 +20,7 @@ namespace QLphongGYM.Layout
         public NhanVien()
         {
             InitializeComponent();
+            DisplayData();
             txtInp.ForeColor = SystemColors.GrayText;
             txtInp.Text = "Nhập N.dung tìm";
             this.txtInp.Leave += new System.EventHandler(this.txtInp_Leave);
@@ -28,87 +29,38 @@ namespace QLphongGYM.Layout
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            this.nHANVIENTableAdapter.Fill(this.gYMDataSet_NhanVien.NHANVIEN);
             cmbFilter.SelectedIndex=1;
-        }
-        
-        private void dataGVKh_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            con.Open();
-            if (dataNhanVien.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
-            {
-                if (dataNhanVien.CurrentCell != null && dataNhanVien.CurrentCell.Value != null)
-                {
-                    txtMaNV.Text = dataNhanVien.CurrentCell.Value.ToString();
-                    KHCmd = new SqlCommand("select * from dbo.NHANVIEN where [Mã NV]='" + txtMaNV.Text + "'", con);
-                    SqlDataReader dtaKh = KHCmd.ExecuteReader();
-                    if (dtaKh.Read() == true)
-                    {
-                        txtHoTen.Text = dtaKh["Tên"].ToString();
-                        txtNS.Text = dtaKh["NS"].ToString();
-                        txtGT.Text = dtaKh["GT"].ToString();
-                        txtSDT.Text = dtaKh["Số điện thoại"].ToString();
-                        txtChucVu.Text = dtaKh["Chức vụ"].ToString();
-                        txtCaLam.Text = dtaKh["Ca Làm"].ToString();
-                        txtNBD.Text = dtaKh["Ngày BĐ"].ToString();
-                        txtLuong.Text = dtaKh["Lương"].ToString();
-                        txtQueQuan.Text = dtaKh["Quê quán"].ToString();
-                    }
-                }
-            }
-            con.Close();
+            DisplayData();
+            cmbFilter.SelectedIndex = 1;
+            DataGridViewImageColumn delbut = new DataGridViewImageColumn();
+            delbut.Image = Image.FromFile(Environment.CurrentDirectory + @"\icons\modified.png");
+            delbut.Width = 35;
+            delbut.HeaderText = "Sửa";
+            delbut.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataNhanVien.Columns.Add(delbut);
+
+            DataGridViewImageColumn delbut2 = new DataGridViewImageColumn();
+            delbut2.Image = Image.FromFile(Environment.CurrentDirectory + @"\icons\delicon.png");
+            delbut2.Width = 35;
+            delbut2.HeaderText = "Xoá";
+            delbut2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataNhanVien.Columns.Add(delbut2);
         }
 
         private void DisplayData()
         {
             con.Open();
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from dbo.[NHANVIEN]", con);
+            if(UserInfo.privilege=="high")
+                adapt = new SqlDataAdapter("select * from dbo.[NHANVIEN]", con);
+            else
+            {
+                this.dataNhanVien.Columns[10].Visible = false;
+                adapt = new SqlDataAdapter("select * from dbo.[NHANVIEN] WHERE IsDel=0", con);
+            }
             adapt.Fill(dt);
             dataNhanVien.DataSource = dt;
             con.Close();
-        }
-
-        private void BtnNVUpdate_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            KHCmd = new SqlCommand("update dbo.[NHANVIEN] set " +
-                "[Tên] =N'" + txtHoTen.Text + "', NS='" + txtNS.Text + "', GT ='" + txtGT.Text + "', [Số điện thoại] ='" + txtSDT.Text + "', [Chức vụ] =N'" + txtChucVu.Text + "', [Ca làm]=N'" + txtCaLam.Text + "', [Ngày BĐ]='" + txtNBD.Text + "'" + "', [Lương]='" + txtLuong.Text + "', [Quê quán]='" + txtQueQuan.Text + "'" +
-                " where [Mã NV] = '" + txtMaNV.Text + "'", con);
-            KHCmd.ExecuteNonQuery();
-            MessageBox.Show("Cập nhật thành công ");
-            con.Close();
-            DisplayData();
-        }
-
-        private void btnKhDelete_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void btnKhInsert_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            KHCmd = new SqlCommand("select * from dbo.[NHANVIEN] where [Mã NV]='" + txtMaNV.Text + "'", con);
-            SqlDataReader dtaKh = KHCmd.ExecuteReader();
-            if (dtaKh.Read() == true)
-            {
-                MessageBox.Show("Đã tồn tại mã nhân viên:" + txtMaNV);
-                con.Close();
-            }
-            else
-            {
-                con.Close();
-                con.Open();
-                KHCmd = new SqlCommand("INSERT INTO dbo.[NHANVIEN] VALUES  ( '" + txtMaNV.Text + "' ,N'" + txtHoTen.Text +
-                    "' ,'" + txtNS.Text + "' ,N'" + txtGT.Text + "' ,'" + txtSDT.Text + "' ,N'" + txtChucVu.Text + 
-                    "' ,'" + txtCaLam.Text + "' ,'" + txtNBD.Text + "','" + txtLuong.Text + "','" + txtQueQuan.Text + "')", con);
-                KHCmd.ExecuteNonQuery();
-                MessageBox.Show("Cập nhật thành công ");
-                con.Close();
-                DisplayData();
-            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -137,6 +89,95 @@ namespace QLphongGYM.Layout
                 txtInp.Text = "";
                 txtInp.ForeColor = SystemColors.WindowText;
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            DisplayData();
+        }
+
+        private void dataNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataNhanVien.CurrentCell.ColumnIndex.Equals(12) && e.RowIndex != -1)
+            {
+                con.Open();
+                if (dataNhanVien.CurrentCell != null && dataNhanVien.CurrentCell.Value != null)
+                {
+                    string del = dataNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    if (UserInfo.userName == "admin")
+                    {
+                        if ((MessageBox.Show("Xác nhận XOÁ toàn bộ thông tin của khách hàng: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            KHCmd = new SqlCommand("EXECUTE dbo.IUD_NHANVIEN '" + del + "',N'','',N'','',N'',N'','','',N'',N'Delete'", con);
+                            KHCmd.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        if ((MessageBox.Show("Xác nhận XOÁ khách hàng: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            KHCmd = new SqlCommand("EXECUTE dbo.IUD_NHANVIEN '" + del + "',N'','',N'','',N'',N'','','',N'',N'Hide'", con);
+                            KHCmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+                con.Close();
+                DisplayData();
+            }
+            if (dataNhanVien.CurrentCell.ColumnIndex.Equals(11) && e.RowIndex != -1)
+            {
+                con.Open();
+                if (dataNhanVien.CurrentCell != null && dataNhanVien.CurrentCell.Value != null)
+                {
+                    if ((MessageBox.Show("Bạn có thể cập nhật các thông tin, ngoại trừ Hạn Thẻ. Để cập nhật Hạn thẻ: Khách hàng -> Gia hạn thẻ.", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    {
+                        SubClasses.GetNVData.UpdateModeOn = true;
+                        SubClasses.GetNVData.maNV = dataNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        SubClasses.GetNVData.tenNV = dataNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        SubClasses.GetNVData.NS = Convert.ToDateTime(dataNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString());
+                        SubClasses.GetNVData.GT = dataNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        SubClasses.GetNVData.SDT = dataNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        SubClasses.GetNVData.chucVu = dataNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        SubClasses.GetNVData.caLam = dataNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        SubClasses.GetNVData.ngayBD = Convert.ToDateTime(dataNhanVien.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        SubClasses.GetNVData.luong = dataNhanVien.Rows[e.RowIndex].Cells[8].Value.ToString();
+                        SubClasses.GetNVData.que = dataNhanVien.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+                        SubForms.ThemNV themNV = new SubForms.ThemNV();
+                        themNV.ShowDialog();
+                        con.Close();
+                        if (SubClasses.GetNVData.UpdateModeOn == false) DisplayData();
+                    }
+                }
+                con.Close();
+            }
+            if (dataNhanVien.CurrentCell.ColumnIndex.Equals(10) && e.RowIndex != -1)
+            {
+                if (dataNhanVien.CurrentCell != null && dataNhanVien.CurrentCell.Value != null)
+                {
+                    if (dataNhanVien.Rows[e.RowIndex].Cells[10].Value.ToString() == "True" && UserInfo.privilege == "high")
+                    {
+                        con.Open();
+                        if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            string maNV = dataNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            KHCmd = new SqlCommand("EXECUTE dbo.IUD_NHANVIEN '" + maNV + "',N'','',N'','',N'',N'','','',N'',N'Show'", con);
+                            KHCmd.ExecuteNonQuery();
+                            con.Close();
+                            DisplayData();
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            SubForms.ThemNV themNV = new SubForms.ThemNV();
+            themNV.ShowDialog();
+            con.Close();
+            if (SubClasses.GetNVData.UpdateModeOn == false) DisplayData();
         }
     }
 }
