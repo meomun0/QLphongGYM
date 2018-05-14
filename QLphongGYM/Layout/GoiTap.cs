@@ -118,7 +118,7 @@ namespace QLphongGYM.Layout
                 con.Open();
                 if (dataGoiTap.CurrentCell != null && dataGoiTap.CurrentCell.Value != null)
                 {
-                    if ( SubClasses.GetData.UpdateModeOn==true)
+                    if ( SubClasses.GetDataGoiTap.UpdateModeOn==true)
                     {
                         MessageBox.Show("Bạn không thể thực hiện thao tác này");
                     }
@@ -153,20 +153,20 @@ namespace QLphongGYM.Layout
                 {
                     if ((MessageBox.Show("Bạn chỉ có thể chỉnh sửa các nội dung như: Ngày bắt đầu/kết thúc, Giá, Ca tập, Buổi tập, Khu vực tập. Bạn có muốn tiếp tục", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                     {
-                        SubClasses.GetData.UpdateModeOn = true;
-                        SubClasses.GetData.data1 = dataGoiTap.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        SubClasses.GetData.data2 = dataGoiTap.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        SubClasses.GetData.data3 = dataGoiTap.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        SubClasses.GetData.dt = Convert.ToDateTime(dataGoiTap.Rows[e.RowIndex].Cells[3].Value.ToString());
-                        SubClasses.GetData.dt2 = Convert.ToDateTime(dataGoiTap.Rows[e.RowIndex].Cells[4].Value.ToString());
-                        SubClasses.GetData.data4 = dataGoiTap.Rows[e.RowIndex].Cells[5].Value.ToString();
-                        SubClasses.GetData.data5 = dataGoiTap.Rows[e.RowIndex].Cells[6].Value.ToString();
-                        SubClasses.GetData.data6 = dataGoiTap.Rows[e.RowIndex].Cells[7].Value.ToString();
-                        SubClasses.GetData.data7 = dataGoiTap.Rows[e.RowIndex].Cells[8].Value.ToString();
+                        SubClasses.GetDataGoiTap.UpdateModeOn = true;
+                        SubClasses.GetDataGoiTap.maGoi = dataGoiTap.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        SubClasses.GetDataGoiTap.tenGoi = dataGoiTap.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        SubClasses.GetDataGoiTap.gia = dataGoiTap.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        SubClasses.GetDataGoiTap.ngayBD = Convert.ToDateTime(dataGoiTap.Rows[e.RowIndex].Cells[3].Value.ToString());
+                        SubClasses.GetDataGoiTap.ngayKT = Convert.ToDateTime(dataGoiTap.Rows[e.RowIndex].Cells[4].Value.ToString());
+                        SubClasses.GetDataGoiTap.buoi = dataGoiTap.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        SubClasses.GetDataGoiTap.ca = dataGoiTap.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        SubClasses.GetDataGoiTap.khuVuc = dataGoiTap.Rows[e.RowIndex].Cells[7].Value.ToString();
+                        SubClasses.GetDataGoiTap.nguoiDK = dataGoiTap.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                         SubForms.ThemGoiTap themGOI = new SubForms.ThemGoiTap();
                         themGOI.ShowDialog();
-                        if (SubClasses.GetData.UpdateModeOn == false) DisplayData();
+                        if (SubClasses.GetDataGoiTap.UpdateModeOn == false) DisplayData();
                     }
                 }
                 con.Close();

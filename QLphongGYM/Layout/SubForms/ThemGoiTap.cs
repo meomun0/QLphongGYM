@@ -35,7 +35,7 @@ namespace QLphongGYM.Layout.SubForms
         }
         private void close_Click(object sender, EventArgs e)
         {
-            SubClasses.GetData.UpdateModeOn = false;
+            SubClasses.GetDataGoiTap.UpdateModeOn = false;
             this.Close();
         }
 
@@ -48,29 +48,29 @@ namespace QLphongGYM.Layout.SubForms
         {
             txtMaGoi.Enabled = false;
             btnUpdate.Visible = false;
-            if (SubClasses.GetData.UpdateModeOn == true)
+            if (SubClasses.GetDataGoiTap.UpdateModeOn == true)
             {
                 btnSave.Visible = false;
                 btnUpdate.Visible = true;
                 cmbTenGoi.Enabled = false;
 
-                cmbTenGoi.Text = SubClasses.GetData.data2;
-                DPngayBD.Value = SubClasses.GetData.dt;
-                DPngayKT.Value = SubClasses.GetData.dt2;
-                txtGia.Text = SubClasses.GetData.data3;
-                txtMaGoi.Text = SubClasses.GetData.data1;
+                cmbTenGoi.Text = SubClasses.GetDataGoiTap.tenGoi;
+                DPngayBD.Value = SubClasses.GetDataGoiTap.ngayBD;
+                DPngayKT.Value = SubClasses.GetDataGoiTap.ngayKT;
+                txtGia.Text = SubClasses.GetDataGoiTap.gia;
+                txtMaGoi.Text = SubClasses.GetDataGoiTap.maGoi;
 
-                if (SubClasses.GetData.data5 == "Sáng") cmbCaTap.selectedIndex = 0;
-                else if (SubClasses.GetData.data5 == "Chiều") cmbCaTap.selectedIndex = 1;
-                else if (SubClasses.GetData.data5 == "Tối") cmbCaTap.selectedIndex = 2;
+                if (SubClasses.GetDataGoiTap.ca == "Sáng") cmbCaTap.selectedIndex = 0;
+                else if (SubClasses.GetDataGoiTap.ca == "Chiều") cmbCaTap.selectedIndex = 1;
+                else if (SubClasses.GetDataGoiTap.ca == "Tối") cmbCaTap.selectedIndex = 2;
                 else cmbCaTap.selectedIndex = 3;
 
-                if (SubClasses.GetData.data6 == "Public studio") cmbKhuVuc.selectedIndex = 0;
-                else if (SubClasses.GetData.data6 == "Body and Mind studio") cmbKhuVuc.selectedIndex = 2;
+                if (SubClasses.GetDataGoiTap.khuVuc == "Public studio") cmbKhuVuc.selectedIndex = 0;
+                else if (SubClasses.GetDataGoiTap.khuVuc == "Body and Mind studio") cmbKhuVuc.selectedIndex = 2;
                 else cmbKhuVuc.selectedIndex = 1;
 
                 CK2.Checked = false; CK3.Checked = false; CK4.Checked = false; CK5.Checked = false; CK6.Checked = false; CK7.Checked = false; CKCN.Checked = false;
-                string buoitap = SubClasses.GetData.data4;
+                string buoitap = SubClasses.GetDataGoiTap.buoi;
                 int len = buoitap.Length;
                 for (int i = 0; i < len; i += 3)
                 {
@@ -299,7 +299,7 @@ namespace QLphongGYM.Layout.SubForms
         private void HideF()
         {
             this.Hide();
-            SubClasses.GetData.UpdateModeOn = false;
+            SubClasses.GetDataGoiTap.UpdateModeOn = false;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

@@ -28,7 +28,7 @@ namespace QLphongGYM.Layout
 
         private void TBiCuaGoi_Load(object sender, EventArgs e)
         {
-            this.tBi_GoiTapTableAdapter.Fill(this.tBicuaGoiTap.TBi_GoiTap);
+            
             cmbFilter.SelectedIndex = 2;
         }
         private void txtInp_Leave(object sender, EventArgs e)

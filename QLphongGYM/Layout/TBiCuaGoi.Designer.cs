@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataTBicuaGoi = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenGoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenThietBiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tBiGoiTapBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tBicuaGoiTap = new QLphongGYM.TBicuaGoiTap();
-            this.tBiGoiTapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -48,40 +40,29 @@
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomTextbox4 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.tBi_GoiTapTableAdapter = new QLphongGYM.TBicuaGoiTapTableAdapters.TBi_GoiTapTableAdapter();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.dataTBicuaGoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBicuaGoiTap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTBicuaGoi
             // 
             this.dataTBicuaGoi.AllowUserToAddRows = false;
             this.dataTBicuaGoi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataTBicuaGoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataTBicuaGoi.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataTBicuaGoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataTBicuaGoi.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataTBicuaGoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataTBicuaGoi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataTBicuaGoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataTBicuaGoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataTBicuaGoi.ColumnHeadersHeight = 25;
-            this.dataTBicuaGoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.tenGoiDataGridViewTextBoxColumn,
-            this.tenThietBiDataGridViewTextBoxColumn});
-            this.dataTBicuaGoi.DataSource = this.tBiGoiTapBindingSource1;
             this.dataTBicuaGoi.DoubleBuffered = true;
             this.dataTBicuaGoi.EnableHeadersVisualStyles = false;
             this.dataTBicuaGoi.HeaderBgColor = System.Drawing.Color.SeaGreen;
@@ -92,48 +73,6 @@
             this.dataTBicuaGoi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataTBicuaGoi.Size = new System.Drawing.Size(556, 444);
             this.dataTBicuaGoi.TabIndex = 41;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Mã gói";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã gói";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Mã thiết bị";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã thiết bị";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // tenGoiDataGridViewTextBoxColumn
-            // 
-            this.tenGoiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenGoiDataGridViewTextBoxColumn.DataPropertyName = "TenGoi";
-            this.tenGoiDataGridViewTextBoxColumn.HeaderText = "TenGoi";
-            this.tenGoiDataGridViewTextBoxColumn.Name = "tenGoiDataGridViewTextBoxColumn";
-            this.tenGoiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenThietBiDataGridViewTextBoxColumn
-            // 
-            this.tenThietBiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenThietBiDataGridViewTextBoxColumn.DataPropertyName = "TenThietBi";
-            this.tenThietBiDataGridViewTextBoxColumn.HeaderText = "TenThietBi";
-            this.tenThietBiDataGridViewTextBoxColumn.Name = "tenThietBiDataGridViewTextBoxColumn";
-            this.tenThietBiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tBiGoiTapBindingSource1
-            // 
-            this.tBiGoiTapBindingSource1.DataMember = "TBi_GoiTap";
-            this.tBiGoiTapBindingSource1.DataSource = this.tBicuaGoiTap;
-            // 
-            // tBicuaGoiTap
-            // 
-            this.tBicuaGoiTap.DataSetName = "TBicuaGoiTap";
-            this.tBicuaGoiTap.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -290,10 +229,6 @@
             this.bunifuCustomTextbox4.Size = new System.Drawing.Size(120, 20);
             this.bunifuCustomTextbox4.TabIndex = 67;
             // 
-            // tBi_GoiTapTableAdapter
-            // 
-            this.tBi_GoiTapTableAdapter.ClearBeforeFill = true;
-            // 
             // cmbFilter
             // 
             this.cmbFilter.FormattingEnabled = true;
@@ -339,9 +274,6 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.TBiCuaGoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTBicuaGoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBicuaGoiTap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +283,6 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataTBicuaGoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãThiếtBịDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tBiGoiTapBindingSource;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -361,13 +292,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenGoiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenThietBiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tBiGoiTapBindingSource1;
-        private TBicuaGoiTap tBicuaGoiTap;
-        private TBicuaGoiTapTableAdapters.TBi_GoiTapTableAdapter tBi_GoiTapTableAdapter;
         private System.Windows.Forms.ComboBox cmbFilter;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
     }

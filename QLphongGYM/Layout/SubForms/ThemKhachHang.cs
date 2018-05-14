@@ -47,7 +47,7 @@ namespace QLphongGYM.Layout.SubForms
         private void HideF()
         {
             this.Hide();
-            SubClasses.GetData.UpdateModeOn = false;
+            SubClasses.GetDataKhach.UpdateModeOn = false;
         }
 
         private void SuggestID()
@@ -117,7 +117,7 @@ namespace QLphongGYM.Layout.SubForms
         private void ThemKhachHang_Load(object sender, EventArgs e)
         {
             SuggestID();
-            if (SubClasses.GetData.UpdateModeOn == false)
+            if (SubClasses.GetDataKhach.UpdateModeOn == false)
             {
                 txtMaKhach.Text = SugID;
                 btnUpdate.Visible = false;
@@ -125,12 +125,12 @@ namespace QLphongGYM.Layout.SubForms
             else
             {
                 btnSave.Visible = false;
-                txtMaKhach.Text = SubClasses.GetData.data1;
-                txtHoTen.Text = SubClasses.GetData.data2;
-                DPNS.Value = SubClasses.GetData.dt;
-                txtSDT.Text = SubClasses.GetData.data4;
-                txtDiaChi.Text = SubClasses.GetData.data5;
-                if (SubClasses.GetData.data3 == "Nam")
+                txtMaKhach.Text = SubClasses.GetDataKhach.maKhach;
+                txtHoTen.Text = SubClasses.GetDataKhach.tenKhach;
+                DPNS.Value = SubClasses.GetDataKhach.NS;
+                txtSDT.Text = SubClasses.GetDataKhach.SDT;
+                txtDiaChi.Text = SubClasses.GetDataKhach.diaChi;
+                if (SubClasses.GetDataKhach.GT == "Nam")
                     cmbGT.selectedIndex = 0;
                 else
                     cmbGT.selectedIndex = 1;
