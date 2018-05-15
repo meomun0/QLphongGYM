@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QLphongGYM.Layout
 {
@@ -16,6 +17,7 @@ namespace QLphongGYM.Layout
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
         SqlCommand cmdChi;
         SqlDataAdapter adapt;
+        string SugID;
         public Chi()
         {
             InitializeComponent();
@@ -29,7 +31,12 @@ namespace QLphongGYM.Layout
         {
             DisplayData();
             cmbFilter.SelectedIndex = 1;
-            txtNgThucHien.Text = UserInfo.ID;
+            txtMaChi.Enabled = false;
+            btnCancel.Enabled = false;
+            con.Open();
+            cmdChi = new SqlCommand("EXECUTE  [dbo].[insertEquipmentsPrice] 'NV_144706'", con);
+            cmdChi.ExecuteNonQuery();
+            con.Close();
 
             DataGridViewImageColumn delbut2 = new DataGridViewImageColumn();
             delbut2.Image = Image.FromFile(Environment.CurrentDirectory + @"\icons\delicon.png");
@@ -52,6 +59,7 @@ namespace QLphongGYM.Layout
             }
             else
             {
+                this.dataChi.Columns[5].Visible = false;
                 adapt = new SqlDataAdapter("select * from dbo.[CHI] where IsDel = 0 ", con);
             }
             adapt.Fill(dt);
@@ -76,6 +84,40 @@ namespace QLphongGYM.Layout
                 txtInp.ForeColor = SystemColors.WindowText;
             }
         }
+
+        private void SuggestID()
+        {
+            int len, j, num;
+            string MaKM = string.Empty, str;
+            con.Close();
+            con.Open();
+            cmdChi = new SqlCommand("SELECT MAX([Mã chi]) as max FROM dbo.CHI where [Mã chi] like 'M_17%'", con);
+            SqlDataReader dta = cmdChi.ExecuteReader();
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+            {
+                MaKM = dta["max"].ToString();
+                len = MaKM.Length;
+                for (j = 0; j < len; j++)
+                {
+                    MaKM = (dta["max"].ToString()).Substring(j);
+                    if (Regex.IsMatch(MaKM, @"^\d+$"))
+                    {
+                        break;
+                    }
+                }
+                str = (dta["max"].ToString()).Substring(0, j);
+                num = Convert.ToInt32(MaKM);
+                num++;
+                SugID = str + num;
+            }
+            else
+            {
+                SugID = "M_170000";
+            }
+            txtMaChi.Text = SugID;
+            con.Close();
+        }
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -93,19 +135,59 @@ namespace QLphongGYM.Layout
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             panel1.Visible = false;
             btnSave.Enabled = false;
+            if (txtSLTien.Text != "" && txtNoiDung.Text!="")
+            {
+                if(Regex.IsMatch(txtSLTien.Text, @"^\d+$"))
+                {
+                    if (MessageBox.Show("Xác nhận thêm bản ghi", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        txtSLTien.Text = "-" + txtSLTien.Text;
+                        con.Open();
+                        cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + txtMaChi.Text + "','"+txtSLTien.Text+"',N'"+txtNoiDung.Text+"','"+UserInfo.ID+"','Insert'", con);
+                        cmdChi.ExecuteNonQuery();
+                        con.Close();
+                        DisplayData();
+                        SuggestID();
+                        txtNoiDung.ResetText();
+                        txtSLTien.ResetText();
+                        if (MessageBox.Show("Thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        {
+                            panel1.Visible = false;
+                            btnSave.Enabled = false;
+                            btnInsert.Visible = true;
+                            btnCancel.Visible = false;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng tiền phải là 1 số");
+                }
+            }
+            else
+                MessageBox.Show("Vui lòng điền các thông tin còn trống");
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            btnInsert.Enabled = false;
             panel1.Visible = true;
             btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            txtNgThucHien.Text = UserInfo.ID;
+            SuggestID();
+            txtThoiGian.Value = DateTime.Now;
+            txtSLTien.ResetText();
+            txtNoiDung.ResetText();
         }
+
         private void dataThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             con.Open();
-            if ((dataChi.CurrentCell.ColumnIndex.Equals(5) || dataChi.CurrentCell.ColumnIndex.Equals(6)) && e.RowIndex != -1)
+            if (dataChi.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
             {
                 if (dataChi.CurrentCell != null && dataChi.CurrentCell.Value != null)
                 {
@@ -114,7 +196,7 @@ namespace QLphongGYM.Layout
                     {
                         if ((MessageBox.Show("Xác nhận XOÁ thu chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
-                            cmdChi = new SqlCommand("DELETE FROM dbo.CHI WHERE [Mã chi]='" + del + "'", con);
+                            cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '"+del+"','','','','Delete'", con);
                             cmdChi.ExecuteNonQuery();
                         }
                     }
@@ -122,14 +204,41 @@ namespace QLphongGYM.Layout
                     {
                         if ((MessageBox.Show("Xác nhận XOÁ thu chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
-                            cmdChi = new SqlCommand("UPDATE dbo.CHI SET IsDel = 1 WHERE [Mã chi] ='" + del + "'", con);
+                            cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + del + "','','','','Hide'", con);
                             cmdChi.ExecuteNonQuery();
+                        }
+                    }
+                }
+                if (dataChi.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+                {
+                    if (dataChi.CurrentCell != null && dataChi.CurrentCell.Value != null)
+                    {
+                        if (dataChi.Rows[e.RowIndex].Cells[10].Value.ToString() == "True" && UserInfo.privilege == "high")
+                        {
+                            con.Open();
+                            if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                            {
+                                string maChi = dataChi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                                cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + maChi + "','','','','Show'", con);
+                                cmdChi.ExecuteNonQuery();
+                                con.Close();
+                                DisplayData();
+                            }
                         }
                     }
                 }
             }
             con.Close();
             DisplayData();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            btnSave.Enabled = false;
+            btnInsert.Enabled = true;
+            btnCancel.Enabled = false;
+            SuggestID();
         }
     }
 }

@@ -15,6 +15,6 @@ namespace QLphongGYM.Layout.SubClasses
         public static string tinhTrang = string.Empty;
         public static string KVSD = string.Empty;
         public static DateTime ngayMua = DateTime.Now;
-        public static DateTime ngaySD = DateTime.Now;
+        public static string ngaySD = string.Empty;
     }
 }

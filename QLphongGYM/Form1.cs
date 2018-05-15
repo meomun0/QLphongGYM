@@ -140,6 +140,8 @@ namespace QLphongGYM
                 btThietBi.Enabled = true;
                 btNhanVien.Enabled = true;
             }
+            panelTongquan.Controls.Clear();
+            panelTongquan.Controls.Add(new Layout.GoiTap());
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -163,6 +165,8 @@ namespace QLphongGYM
                 UserInfo.ID = "";
                 UserInfo.privilege = "";
                 UserInfo.userName = "";
+                panelTongquan.Controls.Clear();
+                panelTongquan.Controls.Add(new Layout.GoiTap());
             }
         }
 

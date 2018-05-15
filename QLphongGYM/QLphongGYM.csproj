@@ -99,6 +99,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GYMDataSet_TBGT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GYMDataSet_Thu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -342,6 +347,17 @@
     </None>
     <None Include="GYMDataSet_PhanCong.xss">
       <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_TBGT.xsc">
+      <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_TBGT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_TBGT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_TBGT.xss">
+      <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
     </None>
     <None Include="GYMDataSet_Thu.xsc">
       <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>

@@ -38,17 +38,15 @@
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cmbKhuVuc = new Bunifu.Framework.UI.BunifuDropdown();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CK2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.cmbCaTap = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cmbTinhTrang = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGia = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMaGoi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenDC = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaDC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +89,7 @@
             this.Close.Location = new System.Drawing.Point(658, 10);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(30, 30);
-            this.Close.TabIndex = 4;
+            this.Close.TabIndex = 0;
             this.Close.Click += new System.EventHandler(this.close_Click);
             // 
             // minimize
@@ -127,14 +125,14 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 90D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(270, 453);
+            this.btnUpdate.Location = new System.Drawing.Point(270, 451);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
             this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUpdate.selected = false;
             this.btnUpdate.Size = new System.Drawing.Size(160, 35);
-            this.btnUpdate.TabIndex = 102;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "CẬP NHẬT";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnUpdate.Textcolor = System.Drawing.Color.White;
@@ -150,14 +148,15 @@
             this.cmbKhuVuc.Items = new string[] {
         "Public studio",
         "Private studio",
-        "Body and Mind studio"};
-            this.cmbKhuVuc.Location = new System.Drawing.Point(290, 386);
+        "Body and Mind studio",
+        "Trong kho"};
+            this.cmbKhuVuc.Location = new System.Drawing.Point(290, 375);
             this.cmbKhuVuc.Name = "cmbKhuVuc";
             this.cmbKhuVuc.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
             this.cmbKhuVuc.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(217)))), ((int)(((byte)(222)))));
-            this.cmbKhuVuc.selectedIndex = 0;
+            this.cmbKhuVuc.selectedIndex = 3;
             this.cmbKhuVuc.Size = new System.Drawing.Size(272, 35);
-            this.cmbKhuVuc.TabIndex = 100;
+            this.cmbKhuVuc.TabIndex = 5;
             // 
             // btnSave
             // 
@@ -180,7 +179,7 @@
             this.btnSave.IconVisible = true;
             this.btnSave.IconZoom = 90D;
             this.btnSave.IsTab = false;
-            this.btnSave.Location = new System.Drawing.Point(270, 453);
+            this.btnSave.Location = new System.Drawing.Point(270, 451);
             this.btnSave.Name = "btnSave";
             this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(144)))), ((int)(((byte)(82)))));
             this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(113)))), ((int)(((byte)(65)))));
@@ -194,52 +193,30 @@
             this.btnSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label7
+            // cmbTinhTrang
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(138, 267);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 22);
-            this.label7.TabIndex = 92;
-            this.label7.Text = "Đưa vào sử dụng";
-            // 
-            // CK2
-            // 
-            this.CK2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.CK2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.CK2.Checked = true;
-            this.CK2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.CK2.ForeColor = System.Drawing.Color.White;
-            this.CK2.Location = new System.Drawing.Point(290, 269);
-            this.CK2.Name = "CK2";
-            this.CK2.Size = new System.Drawing.Size(20, 20);
-            this.CK2.TabIndex = 78;
-            // 
-            // cmbCaTap
-            // 
-            this.cmbCaTap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
-            this.cmbCaTap.BorderRadius = 3;
-            this.cmbCaTap.DisabledColor = System.Drawing.Color.Gray;
-            this.cmbCaTap.ForeColor = System.Drawing.Color.White;
-            this.cmbCaTap.Items = new string[] {
+            this.cmbTinhTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
+            this.cmbTinhTrang.BorderRadius = 3;
+            this.cmbTinhTrang.DisabledColor = System.Drawing.Color.Gray;
+            this.cmbTinhTrang.ForeColor = System.Drawing.Color.White;
+            this.cmbTinhTrang.Items = new string[] {
         "Đang sử dụng",
         "Sửa chữa",
         "Hỏng hóc",
         "Dự trữ"};
-            this.cmbCaTap.Location = new System.Drawing.Point(290, 320);
-            this.cmbCaTap.Name = "cmbCaTap";
-            this.cmbCaTap.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
-            this.cmbCaTap.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(217)))), ((int)(((byte)(222)))));
-            this.cmbCaTap.selectedIndex = 0;
-            this.cmbCaTap.Size = new System.Drawing.Size(272, 35);
-            this.cmbCaTap.TabIndex = 76;
+            this.cmbTinhTrang.Location = new System.Drawing.Point(290, 299);
+            this.cmbTinhTrang.Name = "cmbTinhTrang";
+            this.cmbTinhTrang.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
+            this.cmbTinhTrang.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(217)))), ((int)(((byte)(222)))));
+            this.cmbTinhTrang.selectedIndex = 3;
+            this.cmbTinhTrang.Size = new System.Drawing.Size(272, 35);
+            this.cmbTinhTrang.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(138, 388);
+            this.label6.Location = new System.Drawing.Point(138, 381);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 22);
             this.label6.TabIndex = 91;
@@ -249,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(138, 211);
+            this.label5.Location = new System.Drawing.Point(138, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 22);
             this.label5.TabIndex = 90;
@@ -259,7 +236,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(138, 153);
+            this.label4.Location = new System.Drawing.Point(138, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 22);
             this.label4.TabIndex = 89;
@@ -269,7 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 322);
+            this.label2.Location = new System.Drawing.Point(140, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 22);
             this.label2.TabIndex = 87;
@@ -294,64 +271,63 @@
             this.txtGia.Border.Class = "TextBoxBorder";
             this.txtGia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.Location = new System.Drawing.Point(290, 211);
+            this.txtGia.Location = new System.Drawing.Point(290, 231);
             this.txtGia.Name = "txtGia";
             this.txtGia.PreventEnterBeep = true;
             this.txtGia.Size = new System.Drawing.Size(272, 27);
-            this.txtGia.TabIndex = 75;
+            this.txtGia.TabIndex = 2;
             // 
-            // txtMaGoi
-            // 
-            // 
-            // 
-            // 
-            this.txtMaGoi.Border.Class = "TextBoxBorder";
-            this.txtMaGoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMaGoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaGoi.Location = new System.Drawing.Point(290, 153);
-            this.txtMaGoi.Name = "txtMaGoi";
-            this.txtMaGoi.PreventEnterBeep = true;
-            this.txtMaGoi.Size = new System.Drawing.Size(272, 27);
-            this.txtMaGoi.TabIndex = 77;
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            // txtTenDC
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.Location = new System.Drawing.Point(290, 95);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(272, 27);
-            this.textBoxX1.TabIndex = 103;
+            // 
+            this.txtTenDC.Border.Class = "TextBoxBorder";
+            this.txtTenDC.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTenDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDC.Location = new System.Drawing.Point(290, 163);
+            this.txtTenDC.Name = "txtTenDC";
+            this.txtTenDC.PreventEnterBeep = true;
+            this.txtTenDC.Size = new System.Drawing.Size(272, 27);
+            this.txtTenDC.TabIndex = 1;
+            // 
+            // txtMaDC
+            // 
+            this.txtMaDC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            // 
+            // 
+            // 
+            this.txtMaDC.Border.Class = "TextBoxBorder";
+            this.txtMaDC.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMaDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDC.Location = new System.Drawing.Point(290, 95);
+            this.txtMaDC.Name = "txtMaDC";
+            this.txtMaDC.PreventEnterBeep = true;
+            this.txtMaDC.Size = new System.Drawing.Size(272, 27);
+            this.txtMaDC.TabIndex = 0;
             // 
             // ThemDungCu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 529);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtMaDC);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cmbKhuVuc);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.CK2);
-            this.Controls.Add(this.cmbCaTap);
+            this.Controls.Add(this.cmbTinhTrang);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtGia);
-            this.Controls.Add(this.txtMaGoi);
+            this.Controls.Add(this.txtTenDC);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThemDungCu";
             this.Text = "ThemDungCu";
+            this.Load += new System.EventHandler(this.ThemDC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -369,16 +345,14 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
         private Bunifu.Framework.UI.BunifuDropdown cmbKhuVuc;
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuCheckbox CK2;
-        private Bunifu.Framework.UI.BunifuDropdown cmbCaTap;
+        private Bunifu.Framework.UI.BunifuDropdown cmbTinhTrang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGia;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGoi;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenDC;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaDC;
     }
 }

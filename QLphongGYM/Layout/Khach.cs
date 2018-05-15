@@ -179,7 +179,9 @@ namespace QLphongGYM.Layout
 
         private void btnGiaHanThe_Click(object sender, EventArgs e)
         {
-
+            SubForms.GiaHanThe giaHanThe = new SubForms.GiaHanThe();
+            giaHanThe.ShowDialog();
+            DisplayData();
         }
     }
 }

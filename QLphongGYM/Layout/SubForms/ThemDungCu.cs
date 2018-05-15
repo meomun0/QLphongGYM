@@ -35,6 +35,41 @@ namespace QLphongGYM.Layout.SubForms
             }
         }
 
+        private void ThemDC_Load(object sender, EventArgs e)
+        {
+            txtMaDC.Enabled = false;
+            SuggestID();
+            if (SubClasses.GetDataDC.UpdateModeOn == false)
+            {
+                txtMaDC.Text = SugID;
+                btnUpdate.Visible = false;
+            }
+            else
+            {
+                btnSave.Visible = false;
+                txtMaDC.Text = SubClasses.GetDataDC.maDC;
+                txtTenDC.Text = SubClasses.GetDataDC.tenDC;
+                txtGia.Text = SubClasses.GetDataDC.gia;
+                if (SubClasses.GetDataDC.KVSD == "Trong kho")
+                    cmbKhuVuc.selectedIndex = 3;
+                else if (SubClasses.GetDataDC.KVSD == "Body and Mind studio")
+                    cmbKhuVuc.selectedIndex = 2;
+                else if (SubClasses.GetDataDC.KVSD == "Private studio")
+                    cmbKhuVuc.selectedIndex = 1;
+                else
+                    cmbKhuVuc.selectedIndex = 0;
+                if (SubClasses.GetDataDC.tinhTrang == "Dự trữ")
+                    cmbTinhTrang.selectedIndex = 3;
+                else if (SubClasses.GetDataDC.tinhTrang == "Hỏng hóc")
+                    cmbTinhTrang.selectedIndex = 2;
+                else if (SubClasses.GetDataDC.tinhTrang == "Sửa chữa")
+                    cmbTinhTrang.selectedIndex = 1;
+                else
+                    cmbTinhTrang.selectedIndex = 0;
+
+            }
+        }
+
         private void close_Click(object sender, EventArgs e)
         {
             SubClasses.GetDataGoiTap.UpdateModeOn = false;
@@ -55,25 +90,25 @@ namespace QLphongGYM.Layout.SubForms
         private void SuggestID()
         {
             int len, j, num;
-            string MaKM = string.Empty, str;
+            string MaDC = string.Empty, str;
             con.Close();
             con.Open();
-            cmdDC = new SqlCommand("SELECT MAX([Mã NV]) as max FROM dbo.NHANVIEN WHERE [Mã NV] LIKE 'DC_16%'", con);
+            cmdDC = new SqlCommand("SELECT MAX([Mã dụng cụ]) as max FROM dbo.DUNGCU WHERE [Mã dụng cụ] LIKE 'DC_16%'", con);
             SqlDataReader dta = cmdDC.ExecuteReader();
-            if (dta.Read() == true)
+            if (dta.Read() == true && dta.GetValue(0).ToString()!="")
             {
-                MaKM = dta["max"].ToString();
-                len = MaKM.Length;
+                MaDC = dta["max"].ToString();
+                len = MaDC.Length;
                 for (j = 0; j < len; j++)
                 {
-                    MaKM = (dta["max"].ToString()).Substring(j);
-                    if (Regex.IsMatch(MaKM, @"^\d+$"))
+                    MaDC = (dta["max"].ToString()).Substring(j);
+                    if (Regex.IsMatch(MaDC, @"^\d+$"))
                     {
                         break;
                     }
                 }
                 str = (dta["max"].ToString()).Substring(0, j);
-                num = Convert.ToInt32(MaKM);
+                num = Convert.ToInt32(MaDC);
                 num++;
                 SugID = str + num;
             }
@@ -86,12 +121,52 @@ namespace QLphongGYM.Layout.SubForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            if (txtMaDC.Text != "" && txtTenDC.Text != "" && txtGia.Text != "")
+            {
+                con.Open();
+                if(cmbKhuVuc.selectedValue=="Trong kho")
+                {
+                    cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                    "',NULL,N'" + cmbKhuVuc.selectedValue + "',N'Insert'", con);
+                }
+                else
+                {
+                    cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                    "','"+DateTime.Now.ToShortDateString()+"',N'" + cmbKhuVuc.selectedValue + "',N'Insert'", con);
+                }
+                cmdDC.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Thêm thành công");
+                HideF();
+            }
+            else
+            {
+                MessageBox.Show("Nhập thiếu");
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            con.Open();
+            if (SubClasses.GetDataDC.ngaySD=="" && cmbKhuVuc.selectedValue=="Trong kho")
+            {
+                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                "',NULL,N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+            }
+            else if(SubClasses.GetDataDC.ngaySD == "" && cmbKhuVuc.selectedValue != "Trong kho")
+            {
+                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                "','" + DateTime.Now.ToShortDateString() + "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+            }
+            else
+            {
+                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                "','" + Convert.ToDateTime(SubClasses.GetDataDC.ngaySD)+ "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+            }
+            cmdDC.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Sửa thành công");
+            HideF();
         }
     }
 }

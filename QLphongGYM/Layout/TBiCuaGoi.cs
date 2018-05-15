@@ -28,9 +28,10 @@ namespace QLphongGYM.Layout
 
         private void TBiCuaGoi_Load(object sender, EventArgs e)
         {
-            
+            DisplayData();
             cmbFilter.SelectedIndex = 2;
         }
+
         private void txtInp_Leave(object sender, EventArgs e)
         {
             if (txtInp.Text.Length == 0)
@@ -47,6 +48,16 @@ namespace QLphongGYM.Layout
                 txtInp.Text = "";
                 txtInp.ForeColor = SystemColors.WindowText;
             }
+        }
+
+        private void DisplayData()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            adapt = new SqlDataAdapter("select * from dbo.[Tbi_GoiTap]", con);
+            adapt.Fill(dt);
+            dataTBicuaGoi.DataSource = dt;
+            con.Close();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

@@ -139,7 +139,6 @@ namespace QLphongGYM.Layout
             }
             if (dataDungCu.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
             {
-                con.Open();
                 if (dataDungCu.CurrentCell != null && dataDungCu.CurrentCell.Value != null)
                 {
                     if ((MessageBox.Show("Xác nhận chỉnh sửa thông tin dụng cụ", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
@@ -150,11 +149,11 @@ namespace QLphongGYM.Layout
                         SubClasses.GetDataDC.gia = dataDungCu.Rows[e.RowIndex].Cells[2].Value.ToString();
                         SubClasses.GetDataDC.tinhTrang = dataDungCu.Rows[e.RowIndex].Cells[3].Value.ToString();
                         SubClasses.GetDataDC.ngayMua = Convert.ToDateTime(dataDungCu.Rows[e.RowIndex].Cells[4].Value.ToString());
-                        SubClasses.GetDataDC.ngaySD = Convert.ToDateTime(dataDungCu.Rows[e.RowIndex].Cells[5].Value.ToString());
+                        SubClasses.GetDataDC.ngaySD = dataDungCu.Rows[e.RowIndex].Cells[5].Value.ToString();
                         SubClasses.GetDataDC.KVSD = dataDungCu.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                        SubForms.ThemGoiTap themGOI = new SubForms.ThemGoiTap();
-                        themGOI.ShowDialog();
+                        SubForms.ThemDungCu themDC = new SubForms.ThemDungCu();
+                        themDC.ShowDialog();
                         if (SubClasses.GetDataDC.UpdateModeOn == false) DisplayData();
                     }
                 }

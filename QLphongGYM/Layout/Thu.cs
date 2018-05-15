@@ -70,6 +70,7 @@ namespace QLphongGYM.Layout
             }
             else
             {
+                this.dataThu.Columns[7].Visible = false;
                 adapt = new SqlDataAdapter("select * from dbo.[THU] where IsDel = 0 ", con);
             }
             adapt.Fill(dt);
@@ -228,6 +229,7 @@ namespace QLphongGYM.Layout
             con.Close();
             DisplayData();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtSLTien.Text != "" && isExist(makhach, magoi))

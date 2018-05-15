@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGoiKhach = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.mãKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +50,6 @@
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.txtGK_MaK = new System.Windows.Forms.ComboBox();
             this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGoiKhach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHACHGOIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_GoiCuaKhach)).BeginInit();
@@ -92,40 +90,6 @@
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton4.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.BorderRadius = 0;
-            this.btnSave.ButtonText = "              Lưu";
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSave.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSave.Iconimage = null;
-            this.btnSave.Iconimage_right = null;
-            this.btnSave.Iconimage_right_Selected = null;
-            this.btnSave.Iconimage_Selected = null;
-            this.btnSave.IconMarginLeft = 0;
-            this.btnSave.IconMarginRight = 0;
-            this.btnSave.IconRightVisible = true;
-            this.btnSave.IconRightZoom = 0D;
-            this.btnSave.IconVisible = true;
-            this.btnSave.IconZoom = 90D;
-            this.btnSave.IsTab = false;
-            this.btnSave.Location = new System.Drawing.Point(767, 442);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSave.selected = false;
-            this.btnSave.Size = new System.Drawing.Size(107, 35);
-            this.btnSave.TabIndex = 51;
-            this.btnSave.Text = "              Lưu";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Textcolor = System.Drawing.Color.White;
-            this.btnSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // btnInsert
             // 
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -147,7 +111,7 @@
             this.btnInsert.IconVisible = true;
             this.btnInsert.IconZoom = 90D;
             this.btnInsert.IsTab = false;
-            this.btnInsert.Location = new System.Drawing.Point(59, 14);
+            this.btnInsert.Location = new System.Drawing.Point(725, 439);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnInsert.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -196,7 +160,7 @@
             this.dataGoiKhach.Name = "dataGoiKhach";
             this.dataGoiKhach.ReadOnly = true;
             this.dataGoiKhach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGoiKhach.Size = new System.Drawing.Size(928, 336);
+            this.dataGoiKhach.Size = new System.Drawing.Size(928, 354);
             this.dataGoiKhach.TabIndex = 41;
             this.dataGoiKhach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGoiKhach_Click);
             // 
@@ -265,7 +229,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(551, 425);
+            this.label2.Location = new System.Drawing.Point(455, 450);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 54;
@@ -275,7 +239,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(307, 425);
+            this.label1.Location = new System.Drawing.Point(211, 450);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 53;
@@ -286,7 +250,7 @@
             this.txtMaGoi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtMaGoi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtMaGoi.FormattingEnabled = true;
-            this.txtMaGoi.Location = new System.Drawing.Point(614, 422);
+            this.txtMaGoi.Location = new System.Drawing.Point(518, 447);
             this.txtMaGoi.Name = "txtMaGoi";
             this.txtMaGoi.Size = new System.Drawing.Size(121, 21);
             this.txtMaGoi.TabIndex = 63;
@@ -323,7 +287,7 @@
             this.txtGK_MaK.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtGK_MaK.FormattingEnabled = true;
             this.txtGK_MaK.ItemHeight = 13;
-            this.txtGK_MaK.Location = new System.Drawing.Point(368, 422);
+            this.txtGK_MaK.Location = new System.Drawing.Point(272, 447);
             this.txtGK_MaK.MaxDropDownItems = 5;
             this.txtGK_MaK.Name = "txtGK_MaK";
             this.txtGK_MaK.Size = new System.Drawing.Size(121, 21);
@@ -365,45 +329,10 @@
             this.btnReload.Textcolor = System.Drawing.Color.White;
             this.btnReload.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.BorderRadius = 0;
-            this.btnCancel.ButtonText = "            Huỷ";
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCancel.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancel.Iconimage = null;
-            this.btnCancel.Iconimage_right = null;
-            this.btnCancel.Iconimage_right_Selected = null;
-            this.btnCancel.Iconimage_Selected = null;
-            this.btnCancel.IconMarginLeft = 0;
-            this.btnCancel.IconMarginRight = 0;
-            this.btnCancel.IconRightVisible = true;
-            this.btnCancel.IconRightZoom = 0D;
-            this.btnCancel.IconVisible = true;
-            this.btnCancel.IconZoom = 90D;
-            this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(880, 442);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCancel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCancel.selected = false;
-            this.btnCancel.Size = new System.Drawing.Size(107, 35);
-            this.btnCancel.TabIndex = 117;
-            this.btnCancel.Text = "            Huỷ";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Textcolor = System.Drawing.Color.White;
-            this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // GoiCuaKhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.txtGK_MaK);
             this.Controls.Add(this.cmbFilter);
@@ -412,7 +341,6 @@
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.dataGoiKhach);
             this.Name = "GoiCuaKhach";
@@ -428,7 +356,6 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGoiKhach;
         private System.Windows.Forms.BindingSource kHACHGOIBindingSource;
@@ -447,6 +374,5 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
         private System.Windows.Forms.ComboBox txtGK_MaK;
         private Bunifu.Framework.UI.BunifuFlatButton btnReload;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
     }
 }

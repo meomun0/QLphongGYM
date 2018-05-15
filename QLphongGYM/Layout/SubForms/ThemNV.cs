@@ -122,7 +122,6 @@ namespace QLphongGYM.Layout.SubForms
             {
                 txtMaNV.Text = SugID;
                 DPNBD.Value = DateTime.Now;
-
                 btnUpdate.Visible = false;
             }
             else

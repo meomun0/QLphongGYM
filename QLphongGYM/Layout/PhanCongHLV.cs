@@ -47,6 +47,7 @@ namespace QLphongGYM.Layout
                 panel3.Visible = false;
             }
         }
+
         private void AutoFill()
         {
             con.Open();
@@ -55,6 +56,7 @@ namespace QLphongGYM.Layout
             con.Close();
 
         }
+
         private void DisplayData()
         {
             con.Open();
@@ -64,6 +66,7 @@ namespace QLphongGYM.Layout
             dataPhanCong.DataSource = dt;
             con.Close();
         }
+
         private void btnGK_Delete_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -85,6 +88,7 @@ namespace QLphongGYM.Layout
                 con.Close();
             }
         }
+
         private void btnPK_Insert_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -116,9 +120,11 @@ namespace QLphongGYM.Layout
                 if (dataPhanCong.CurrentCell != null && dataPhanCong.CurrentCell.Value != null)
                 {
                     txtMaHLV.Text = dataPhanCong.CurrentCell.Value.ToString();
+                    
                 }
             }
         }
+
         private void txtInp_Leave(object sender, EventArgs e)
         {
             if (txtInp.Text.Length == 0)

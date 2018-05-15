@@ -169,7 +169,6 @@ namespace QLphongGYM.Layout
                     }
                 }
             }
-
         }
 
         private void btnInsert_Click(object sender, EventArgs e)

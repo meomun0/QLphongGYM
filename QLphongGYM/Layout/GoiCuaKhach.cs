@@ -67,6 +67,7 @@ namespace QLphongGYM.Layout
                 txtInp.ForeColor = SystemColors.GrayText;
             }
         }
+
         private void txtInp_Enter(object sender, EventArgs e)
         {
             if (txtInp.Text == "Nhập N.dung tìm")
@@ -96,6 +97,7 @@ namespace QLphongGYM.Layout
             con.Close();
 
         }
+
         private void DisplayData()
         {
             this.kHACH_GOITableAdapter.Fill(this.gYMDataSet_GoiCuaKhach.KHACH_GOI);
@@ -103,10 +105,7 @@ namespace QLphongGYM.Layout
 
         private void MaKhach_Change(object sender, EventArgs e)
         {
-            makhach = txtGK_MaK.Text;
-            int len = makhach.Length;
-            int vt = makhach.IndexOf("(");
-            makhach = makhach.Substring(vt + 1, len - vt - 2);//Tách mã khách chỉ còn mã không còn tên 
+            //Tách mã khách chỉ còn mã không còn tên 
             txtMaGoi.ResetText();
         }
 
@@ -125,16 +124,19 @@ namespace QLphongGYM.Layout
             }
             con.Close();
         }
-        private void MaGoi_Change(object sender, EventArgs e)
-        {
-            magoi = txtMaGoi.Text;
-            int len = magoi.Length;
-            int vt = magoi.IndexOf("(");
-            magoi = magoi.Substring(vt + 1, len - vt - 2);
-        }
 
-        private bool isExist(string makhach, string magoi)
+        private bool isExist()
         {
+            makhach = txtGK_MaK.Text;
+            int len = makhach.Length;
+            int vt = makhach.IndexOf("(");
+            makhach = makhach.Substring(vt + 1, len - vt - 2);
+
+            magoi = txtMaGoi.Text;
+            int len2 = magoi.Length;
+            int vt2 = magoi.IndexOf("(");
+            magoi = magoi.Substring(vt2 + 1, len2 - vt2 - 2);
+            MessageBox.Show(makhach + "/" + magoi);
             con.Open();
             cmdKG = new SqlCommand("SELECT * FROM dbo.[KHÁCH] WHERE [Mã khách]='" + makhach + "'", con);
             SqlDataReader dta = cmdKG.ExecuteReader();
@@ -152,22 +154,24 @@ namespace QLphongGYM.Layout
                 SqlDataReader dta2 = cmdKG.ExecuteReader();
                 if (dta2.Read() == false)
                 {
-                    con.Close();
                     MessageBox.Show("Gói tập " + magoi + " không tồn tại.");
                     return false;
                 }
-                else return true;
+                else
+                {
+                    con.Close();
+                    return true;
+                }
             }
         }
 
         private void btnGK_Insert_Click(object sender, EventArgs e)
         {
-            if (isExist(makhach, magoi))
+            if (isExist())
             {
                 con.Open();
-                cmdKG = new SqlCommand("EXECUTE [dbo].[IUD_KhachGoi] '" + txtGK_MaK.Text + "','" + txtMaGoi.Text + "','Select'", con);
+                cmdKG = new SqlCommand("EXECUTE [dbo].[IUD_KhachGoi] '" + makhach + "','" + magoi + "','Select'", con);
                 SqlDataReader KGdta = cmdKG.ExecuteReader();
-
                 if (KGdta.Read() == true)
                 {
                     con.Close();
@@ -177,7 +181,7 @@ namespace QLphongGYM.Layout
                 {
                     con.Close();
                     con.Open();
-                    cmdKG = new SqlCommand("EXECUTE [dbo].[IUD_KhachGoi] '" + txtGK_MaK.Text + "','" + txtMaGoi.Text + "','Insert'", con);
+                    cmdKG = new SqlCommand("EXECUTE [dbo].[IUD_KhachGoi] '" + makhach + "','" + magoi + "','Insert'", con);
                     cmdKG.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Thêm thành công");
