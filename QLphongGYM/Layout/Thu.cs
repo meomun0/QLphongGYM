@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QLphongGYM.Layout
 {
@@ -47,7 +48,6 @@ namespace QLphongGYM.Layout
             panelContent.Visible = false;
             txtMaThu.Enabled = false;
             txtNgThucHien.Enabled = false;
-            txtSLTien.Enabled = false;
 
             con.Open();
             DataTable dt2 = new DataTable();
@@ -77,7 +77,7 @@ namespace QLphongGYM.Layout
             dataThu.DataSource = dt;
             con.Close();
         }
-        //water mark textbox Tìm kiếm -->
+        #region
         private void txtInp_Leave(object sender, EventArgs e)
         {
             if (txtInp.Text.Length == 0)
@@ -94,7 +94,7 @@ namespace QLphongGYM.Layout
                 txtInp.ForeColor = SystemColors.WindowText;
             }
         }
-        //<--
+        #endregion
         //Tách mã khách
         private void MaKhach_Change(object sender, EventArgs e)
         {
@@ -120,6 +120,7 @@ namespace QLphongGYM.Layout
             {
                 txtMaGoi.Items.Add((string)row["ma"]);
             }
+            txtMaGoi.Items.Add("Gia hạn thẻ(GH_0001)");
             con.Close();
         }
         //HIện tiền ; tách mã gói tập; thêm mô tả
@@ -144,8 +145,16 @@ namespace QLphongGYM.Layout
             mk = txtMaKhach.Text;
             vt = mk.IndexOf("(");
             tenkhach = mk.Substring(0, vt);
-            txtMota.Text = "Khách hàng " + tenkhach + " đóng tiền gói tập " + tengoi;
-            txtMaThu.Text = makhach + "/" + magoi;
+            if (magoi == "GH_0001")
+            {
+                txtMota.Text = "Khách hàng " + tenkhach + " gia hạn thẻ ";
+                SuggestID();
+            }
+            else
+            {
+                txtMota.Text = "Khách hàng " + tenkhach + " đóng tiền gói tập " + tengoi;
+                txtMaThu.Text = makhach + "/" + magoi;
+            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -190,14 +199,49 @@ namespace QLphongGYM.Layout
                 con.Open();
                 cmdKG = new SqlCommand("SELECT * FROM dbo.[GÓI TẬP] WHERE [Mã gói tập]='" + magoi + "'", con);
                 SqlDataReader dta2 = cmdKG.ExecuteReader();
-                if (dta2.Read() == false)
+                if ((dta2.Read() == true && dta.GetValue(0).ToString() != "") || magoi=="GH_0001")
+                {
+                    return true;
+                }
+                else
                 {
                     con.Close();
-                    MessageBox.Show("Gói tập "+magoi+" không tồn tại.");
+                    MessageBox.Show("Gói tập " + magoi + " không tồn tại.");
                     return false;
                 }
-                else return true;
             }
+        }
+
+        private void SuggestID()
+        {
+            int len, j, num;
+            string MaKM = string.Empty, str;
+            con.Close();
+            con.Open();
+            cmdKG = new SqlCommand("SELECT MAX([Mã khách]) as max FROM dbo.KHÁCH where [Mã khách] like 'M_18%'", con);
+            SqlDataReader dta = cmdKG.ExecuteReader();
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+            {
+                MaKM = dta["max"].ToString();
+                len = MaKM.Length;
+                for (j = 0; j < len; j++)
+                {
+                    MaKM = (dta["max"].ToString()).Substring(j);
+                    if (Regex.IsMatch(MaKM, @"^\d+$"))
+                    {
+                        break;
+                    }
+                }
+                str = (dta["max"].ToString()).Substring(0, j);
+                num = Convert.ToInt32(MaKM);
+                num++;
+                txtMaThu.Text = str + num;
+            }
+            else
+            {
+                txtMaThu.Text = "M_180000";
+            }
+            con.Close();
         }
 
         private void dataThu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -243,11 +287,14 @@ namespace QLphongGYM.Layout
                     con.Close();
                     DisplayData();
 
-                    con.Open();
-                    cmdKG = new SqlCommand("update dbo.[KHACH_GOI] set " +
-                    "[ThanhToan(Y/N)] ='1' where [Mã khách hàng] = '" + makhach + "' and [Mã gói tập]='" + magoi + "'", con);
-                    cmdKG.ExecuteNonQuery();
-                    con.Close();
+                    if (magoi != "GH_0001")
+                    {
+                        con.Open();
+                        cmdKG = new SqlCommand("update dbo.[KHACH_GOI] set " +
+                        "[ThanhToan(Y/N)] ='1' where [Mã khách hàng] = '" + makhach + "' and [Mã gói tập]='" + magoi + "'", con);
+                        cmdKG.ExecuteNonQuery();
+                        con.Close();
+                    }
 
                     txtMaGoi.ResetText();
                     txtMaGoi.Items.Clear();

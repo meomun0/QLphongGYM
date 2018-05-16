@@ -57,7 +57,7 @@ namespace QLphongGYM.Layout.SubForms
             con.Open();
             cmdNV = new SqlCommand("SELECT MAX([Mã NV]) as max FROM dbo.NHANVIEN", con);
             SqlDataReader dta = cmdNV.ExecuteReader();
-            if (dta.Read() == true)
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "" && dta.GetValue(0).ToString() != "")
             {
                 MaKM = dta["max"].ToString();
                 len = MaKM.Length;

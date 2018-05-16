@@ -49,6 +49,8 @@
             this.txtMaKhach = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.DPHanThe = new Bunifu.Framework.UI.BunifuDatepicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(135, 157);
+            this.label5.Location = new System.Drawing.Point(135, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 22);
             this.label5.TabIndex = 51;
@@ -118,7 +120,7 @@
             this.txtHoTen.Border.Class = "TextBoxBorder";
             this.txtHoTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(286, 156);
+            this.txtHoTen.Location = new System.Drawing.Point(286, 145);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PreventEnterBeep = true;
             this.txtHoTen.Size = new System.Drawing.Size(272, 27);
@@ -133,7 +135,7 @@
             this.cmbGT.Items = new string[] {
         "Nam",
         "Nữ"};
-            this.cmbGT.Location = new System.Drawing.Point(286, 210);
+            this.cmbGT.Location = new System.Drawing.Point(286, 190);
             this.cmbGT.Name = "cmbGT";
             this.cmbGT.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
             this.cmbGT.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(217)))), ((int)(((byte)(222)))));
@@ -145,7 +147,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(135, 217);
+            this.label2.Location = new System.Drawing.Point(135, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 22);
             this.label2.TabIndex = 53;
@@ -155,7 +157,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(135, 278);
+            this.label4.Location = new System.Drawing.Point(135, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 55;
@@ -168,7 +170,7 @@
             this.DPNS.ForeColor = System.Drawing.Color.White;
             this.DPNS.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DPNS.FormatCustom = "0:dd/MM/yyyy";
-            this.DPNS.Location = new System.Drawing.Point(286, 272);
+            this.DPNS.Location = new System.Drawing.Point(286, 243);
             this.DPNS.Name = "DPNS";
             this.DPNS.Size = new System.Drawing.Size(272, 35);
             this.DPNS.TabIndex = 54;
@@ -178,7 +180,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 337);
+            this.label1.Location = new System.Drawing.Point(135, 351);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 22);
             this.label1.TabIndex = 57;
@@ -193,7 +195,7 @@
             this.txtSDT.Border.Class = "TextBoxBorder";
             this.txtSDT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(286, 337);
+            this.txtSDT.Location = new System.Drawing.Point(286, 349);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PreventEnterBeep = true;
             this.txtSDT.Size = new System.Drawing.Size(272, 27);
@@ -218,7 +220,7 @@
             this.txtDiaChi.Border.Class = "TextBoxBorder";
             this.txtDiaChi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(286, 397);
+            this.txtDiaChi.Location = new System.Drawing.Point(286, 394);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PreventEnterBeep = true;
             this.txtDiaChi.Size = new System.Drawing.Size(272, 27);
@@ -327,11 +329,36 @@
             this.bunifuDragControl1.TargetControl = this.panel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(135, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 22);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "Hạn thẻ";
+            // 
+            // DPHanThe
+            // 
+            this.DPHanThe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
+            this.DPHanThe.BorderRadius = 5;
+            this.DPHanThe.ForeColor = System.Drawing.Color.White;
+            this.DPHanThe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DPHanThe.FormatCustom = "0:dd/MM/yyyy";
+            this.DPHanThe.Location = new System.Drawing.Point(286, 296);
+            this.DPHanThe.Name = "DPHanThe";
+            this.DPHanThe.Size = new System.Drawing.Size(272, 35);
+            this.DPHanThe.TabIndex = 75;
+            this.DPHanThe.Value = new System.DateTime(2018, 5, 4, 0, 0, 0, 0);
+            // 
             // ThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 529);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.DPHanThe);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMaKhach);
             this.Controls.Add(this.btnSave);
@@ -379,5 +406,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaKhach;
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label label7;
+        private Bunifu.Framework.UI.BunifuDatepicker DPHanThe;
     }
 }

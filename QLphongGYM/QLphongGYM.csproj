@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GYMDataSet_LSGiaHan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GYMDataSet_NhanVien.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,11 +171,11 @@
     <Compile Include="Layout\SubClasses\GetDataGoiTap.cs" />
     <Compile Include="Layout\SubClasses\GetDataKhach.cs" />
     <Compile Include="Layout\SubClasses\GetNVData.cs" />
-    <Compile Include="Layout\SubForms\GiaHanThe.cs">
+    <Compile Include="Layout\SubForms\LichSuGiaHanThe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Layout\SubForms\GiaHanThe.Designer.cs">
-      <DependentUpon>GiaHanThe.cs</DependentUpon>
+    <Compile Include="Layout\SubForms\LichSuGiaHanThe.Designer.cs">
+      <DependentUpon>LichSuGiaHanThe.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\SubForms\ThemDungCu.cs">
       <SubType>Form</SubType>
@@ -241,8 +246,8 @@
     <EmbeddedResource Include="Layout\PhanCongHLV.resx">
       <DependentUpon>PhanCongHLV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Layout\SubForms\GiaHanThe.resx">
-      <DependentUpon>GiaHanThe.cs</DependentUpon>
+    <EmbeddedResource Include="Layout\SubForms\LichSuGiaHanThe.resx">
+      <DependentUpon>LichSuGiaHanThe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\SubForms\ThemDungCu.resx">
       <DependentUpon>ThemDungCu.cs</DependentUpon>
@@ -325,6 +330,17 @@
     </None>
     <None Include="GYMDataSet_Khach.xss">
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_LSGiaHan.xsc">
+      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
+    </None>
+    <None Include="GYMDataSet_LSGiaHan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_LSGiaHan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GYMDataSet_LSGiaHan.xss">
+      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
     </None>
     <None Include="GYMDataSet_NhanVien.xsc">
       <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>

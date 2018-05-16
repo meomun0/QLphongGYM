@@ -166,10 +166,10 @@ namespace QLphongGYM.Layout
 
                         SubForms.ThemGoiTap themGOI = new SubForms.ThemGoiTap();
                         themGOI.ShowDialog();
-                        if (SubClasses.GetDataGoiTap.UpdateModeOn == false) DisplayData();
+                        con.Close();
+                        DisplayData();
                     }
                 }
-                con.Close();
             }
             if (dataGoiTap.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
             {

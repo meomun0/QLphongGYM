@@ -105,12 +105,16 @@ namespace QLphongGYM.Layout
 
         private void MaKhach_Change(object sender, EventArgs e)
         {
-            //Tách mã khách chỉ còn mã không còn tên 
             txtMaGoi.ResetText();
         }
 
         private void MaKhach_Leave(object sender, EventArgs e)
         {
+            makhach = txtGK_MaK.Text;
+            int len = makhach.Length;
+            int vt = makhach.IndexOf("(");
+            makhach = makhach.Substring(vt + 1, len - vt - 2);
+
             txtMaGoi.Items.Clear();
             txtMaGoi.ResetText();
             con.Open();
@@ -136,17 +140,11 @@ namespace QLphongGYM.Layout
             int len2 = magoi.Length;
             int vt2 = magoi.IndexOf("(");
             magoi = magoi.Substring(vt2 + 1, len2 - vt2 - 2);
-            MessageBox.Show(makhach + "/" + magoi);
+
             con.Open();
             cmdKG = new SqlCommand("SELECT * FROM dbo.[KHÁCH] WHERE [Mã khách]='" + makhach + "'", con);
             SqlDataReader dta = cmdKG.ExecuteReader();
-            if (dta.Read() == false)
-            {
-                con.Close();
-                MessageBox.Show("Khách hàng " + makhach + " không tồn tại.");
-                return false;
-            }
-            else
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
             {
                 con.Close();
                 con.Open();
@@ -163,6 +161,12 @@ namespace QLphongGYM.Layout
                     return true;
                 }
             }
+            else
+            {
+                con.Close();
+                MessageBox.Show("Khách hàng " + makhach + " không tồn tại.");
+                return false;
+            }
         }
 
         private void btnGK_Insert_Click(object sender, EventArgs e)
@@ -172,7 +176,7 @@ namespace QLphongGYM.Layout
                 con.Open();
                 cmdKG = new SqlCommand("EXECUTE [dbo].[IUD_KhachGoi] '" + makhach + "','" + magoi + "','Select'", con);
                 SqlDataReader KGdta = cmdKG.ExecuteReader();
-                if (KGdta.Read() == true)
+                if (KGdta.Read() == true && KGdta.GetValue(0).ToString() != "")
                 {
                     con.Close();
                     MessageBox.Show("Đã tồn tại");

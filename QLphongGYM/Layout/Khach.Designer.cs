@@ -318,7 +318,7 @@
             this.btnGiaHanThe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnGiaHanThe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGiaHanThe.BorderRadius = 0;
-            this.btnGiaHanThe.ButtonText = "Gia hạn thẻ";
+            this.btnGiaHanThe.ButtonText = "Lịch sử gia hạn";
             this.btnGiaHanThe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGiaHanThe.DisabledColor = System.Drawing.Color.Gray;
             this.btnGiaHanThe.Iconcolor = System.Drawing.Color.Transparent;
@@ -341,7 +341,7 @@
             this.btnGiaHanThe.selected = false;
             this.btnGiaHanThe.Size = new System.Drawing.Size(107, 35);
             this.btnGiaHanThe.TabIndex = 119;
-            this.btnGiaHanThe.Text = "Gia hạn thẻ";
+            this.btnGiaHanThe.Text = "Lịch sử gia hạn";
             this.btnGiaHanThe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGiaHanThe.Textcolor = System.Drawing.Color.White;
             this.btnGiaHanThe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

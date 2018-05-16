@@ -28,7 +28,7 @@ namespace QLphongGYM
                 string sql = "select * from dbo.Users where UserName='" + tk + "' and Pass='" + mk + "'";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 SqlDataReader dta = cmd.ExecuteReader(); //select ExecuteReader();  insert/delete ExecuteNonQuery
-                if (dta.Read() == true)
+                if (dta.Read() == true && dta.GetValue(0).ToString() != "")
                 {
                     UserInfo.userName = tk;
                     UserInfo.fullName = dta["FullName"].ToString();

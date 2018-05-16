@@ -28,6 +28,10 @@ namespace QLphongGYM.Layout
 
         private void Khach_Load(object sender, EventArgs e)
         {
+            con.Open();
+            KHCmd = new SqlCommand("EXECUTE dbo.Insert_HanThe", con);
+            KHCmd.ExecuteNonQuery();
+            con.Close();
             DisplayData();
             cmbFilter.SelectedIndex = 1;
             DataGridViewImageColumn delbut = new DataGridViewImageColumn();
@@ -179,7 +183,7 @@ namespace QLphongGYM.Layout
 
         private void btnGiaHanThe_Click(object sender, EventArgs e)
         {
-            SubForms.GiaHanThe giaHanThe = new SubForms.GiaHanThe();
+            SubForms.LichSuGiaHanThe giaHanThe = new SubForms.LichSuGiaHanThe();
             giaHanThe.ShowDialog();
             DisplayData();
         }

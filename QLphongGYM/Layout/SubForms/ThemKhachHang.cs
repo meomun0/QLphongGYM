@@ -104,7 +104,7 @@ namespace QLphongGYM.Layout.SubForms
             {
                 con.Open();
                 cmdKH = new SqlCommand("EXECUTE dbo.IUD_KHACH '" + txtMaKhach.Text + "',N'" + txtHoTen.Text + "',N'" + cmbGT.selectedValue + "','" + DPNS.Value.ToShortDateString() +
-                    "','" + txtSDT.Text + "',N'" + txtDiaChi.Text + "','" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "',N'Update'", con);
+                    "','" + txtSDT.Text + "',N'" + txtDiaChi.Text + "','" + SubClasses.GetDataKhach.ngayDK + "','" + DPHanThe.Value.ToShortDateString() + "',N'Update'", con);
                 cmdKH.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Cập nhật thành công");
@@ -121,9 +121,12 @@ namespace QLphongGYM.Layout.SubForms
             {
                 txtMaKhach.Text = SugID;
                 btnUpdate.Visible = false;
+                DPHanThe.Enabled = false;
+                DPHanThe.Value = DateTime.Now;
             }
             else
             {
+                DPHanThe.Value = SubClasses.GetDataKhach.hanThe;
                 btnSave.Visible = false;
                 txtMaKhach.Text = SubClasses.GetDataKhach.maKhach;
                 txtHoTen.Text = SubClasses.GetDataKhach.tenKhach;

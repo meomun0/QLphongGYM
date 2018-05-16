@@ -93,7 +93,7 @@ namespace QLphongGYM.Layout
             con.Open();
             cmdChi = new SqlCommand("SELECT MAX([Mã chi]) as max FROM dbo.CHI where [Mã chi] like 'M_17%'", con);
             SqlDataReader dta = cmdChi.ExecuteReader();
-            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "" && dta.GetValue(0).ToString() != "")
             {
                 MaKM = dta["max"].ToString();
                 len = MaKM.Length;

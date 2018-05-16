@@ -95,7 +95,7 @@ namespace QLphongGYM.Layout.SubForms
             con.Open();
             cmdDC = new SqlCommand("SELECT MAX([Mã dụng cụ]) as max FROM dbo.DUNGCU WHERE [Mã dụng cụ] LIKE 'DC_16%'", con);
             SqlDataReader dta = cmdDC.ExecuteReader();
-            if (dta.Read() == true && dta.GetValue(0).ToString()!="")
+            if (dta.Read() == true && dta.GetValue(0).ToString() != "" && dta.GetValue(0).ToString()!="")
             {
                 MaDC = dta["max"].ToString();
                 len = MaDC.Length;
