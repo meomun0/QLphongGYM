@@ -31,71 +31,76 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cmbMaGoi = new System.Windows.Forms.ComboBox();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cmbQuyen = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGK_MaK = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.dataGoiKhach = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.gYMDataSet_Users = new QLphongGYM.GYMDataSet_Users();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new QLphongGYM.GYMDataSet_UsersTableAdapters.UsersTableAdapter();
+            this.txtTen = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.dataEditAccess = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.privilegeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gYMDataSet_Users = new QLphongGYM.GYMDataSet_Users();
+            this.usersTableAdapter = new QLphongGYM.GYMDataSet_UsersTableAdapters.UsersTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.txtUserName = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuCustomTextbox2 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGoiKhach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Users)).BeginInit();
+            this.txtID = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEditAccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Users)).BeginInit();
             this.SuspendLayout();
             // 
-            // cmbMaGoi
+            // cmbQuyen
             // 
-            this.cmbMaGoi.FormattingEnabled = true;
-            this.cmbMaGoi.Location = new System.Drawing.Point(868, 209);
-            this.cmbMaGoi.Name = "cmbMaGoi";
-            this.cmbMaGoi.Size = new System.Drawing.Size(121, 21);
-            this.cmbMaGoi.TabIndex = 70;
+            this.cmbQuyen.FormattingEnabled = true;
+            this.cmbQuyen.Items.AddRange(new object[] {
+            "low",
+            "normal",
+            "high"});
+            this.cmbQuyen.Location = new System.Drawing.Point(868, 209);
+            this.cmbQuyen.Name = "cmbQuyen";
+            this.cmbQuyen.Size = new System.Drawing.Size(121, 21);
+            this.cmbQuyen.TabIndex = 70;
             // 
-            // bunifuFlatButton4
+            // btnUpdate
             // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "         Update";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 90D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(829, 340);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(107, 35);
-            this.bunifuFlatButton4.TabIndex = 68;
-            this.bunifuFlatButton4.Text = "         Update";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.BorderRadius = 0;
+            this.btnUpdate.ButtonText = "         Update";
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.DisabledColor = System.Drawing.Color.Gray;
+            this.btnUpdate.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Iconimage = null;
+            this.btnUpdate.Iconimage_right = null;
+            this.btnUpdate.Iconimage_right_Selected = null;
+            this.btnUpdate.Iconimage_Selected = null;
+            this.btnUpdate.IconMarginLeft = 0;
+            this.btnUpdate.IconMarginRight = 0;
+            this.btnUpdate.IconRightVisible = true;
+            this.btnUpdate.IconRightZoom = 0D;
+            this.btnUpdate.IconVisible = true;
+            this.btnUpdate.IconZoom = 90D;
+            this.btnUpdate.IsTab = false;
+            this.btnUpdate.Location = new System.Drawing.Point(910, 341);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnUpdate.selected = false;
+            this.btnUpdate.Size = new System.Drawing.Size(107, 35);
+            this.btnUpdate.TabIndex = 68;
+            this.btnUpdate.Text = "         Update";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Textcolor = System.Drawing.Color.White;
+            this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label2
             // 
@@ -115,24 +120,24 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "FullName";
             // 
-            // txtGK_MaK
+            // txtTen
             // 
-            this.txtGK_MaK.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtGK_MaK.Location = new System.Drawing.Point(868, 139);
-            this.txtGK_MaK.Name = "txtGK_MaK";
-            this.txtGK_MaK.Size = new System.Drawing.Size(121, 20);
-            this.txtGK_MaK.TabIndex = 65;
+            this.txtTen.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtTen.Location = new System.Drawing.Point(868, 139);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(121, 20);
+            this.txtTen.TabIndex = 65;
             // 
-            // dataGoiKhach
+            // dataEditAccess
             // 
-            this.dataGoiKhach.AllowUserToAddRows = false;
-            this.dataGoiKhach.AllowUserToDeleteRows = false;
+            this.dataEditAccess.AllowUserToAddRows = false;
+            this.dataEditAccess.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGoiKhach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGoiKhach.AutoGenerateColumns = false;
-            this.dataGoiKhach.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGoiKhach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGoiKhach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataEditAccess.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataEditAccess.AutoGenerateColumns = false;
+            this.dataEditAccess.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataEditAccess.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataEditAccess.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,38 +145,25 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGoiKhach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGoiKhach.ColumnHeadersHeight = 25;
-            this.dataGoiKhach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataEditAccess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataEditAccess.ColumnHeadersHeight = 25;
+            this.dataEditAccess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userNameDataGridViewTextBoxColumn,
             this.fullNameDataGridViewTextBoxColumn,
             this.privilegeDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn});
-            this.dataGoiKhach.DataSource = this.usersBindingSource;
-            this.dataGoiKhach.DoubleBuffered = true;
-            this.dataGoiKhach.EnableHeadersVisualStyles = false;
-            this.dataGoiKhach.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dataGoiKhach.HeaderForeColor = System.Drawing.Color.Honeydew;
-            this.dataGoiKhach.Location = new System.Drawing.Point(59, 43);
-            this.dataGoiKhach.Name = "dataGoiKhach";
-            this.dataGoiKhach.ReadOnly = true;
-            this.dataGoiKhach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGoiKhach.Size = new System.Drawing.Size(654, 389);
-            this.dataGoiKhach.TabIndex = 64;
-            // 
-            // gYMDataSet_Users
-            // 
-            this.gYMDataSet_Users.DataSetName = "GYMDataSet_Users";
-            this.gYMDataSet_Users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.gYMDataSet_Users;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.dataEditAccess.DataSource = this.usersBindingSource;
+            this.dataEditAccess.DoubleBuffered = true;
+            this.dataEditAccess.EnableHeadersVisualStyles = false;
+            this.dataEditAccess.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dataEditAccess.HeaderForeColor = System.Drawing.Color.Honeydew;
+            this.dataEditAccess.Location = new System.Drawing.Point(59, 43);
+            this.dataEditAccess.Name = "dataEditAccess";
+            this.dataEditAccess.ReadOnly = true;
+            this.dataEditAccess.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataEditAccess.Size = new System.Drawing.Size(654, 389);
+            this.dataEditAccess.TabIndex = 64;
+            this.dataEditAccess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGoiKhach_CellClick);
             // 
             // userNameDataGridViewTextBoxColumn
             // 
@@ -205,6 +197,20 @@
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.gYMDataSet_Users;
+            // 
+            // gYMDataSet_Users
+            // 
+            this.gYMDataSet_Users.DataSetName = "GYMDataSet_Users";
+            this.gYMDataSet_Users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -214,13 +220,13 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "UserName";
             // 
-            // bunifuCustomTextbox1
+            // txtUserName
             // 
-            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(868, 69);
-            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
-            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(121, 20);
-            this.bunifuCustomTextbox1.TabIndex = 71;
+            this.txtUserName.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtUserName.Location = new System.Drawing.Point(868, 69);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(121, 20);
+            this.txtUserName.TabIndex = 71;
             // 
             // label4
             // 
@@ -231,103 +237,106 @@
             this.label4.TabIndex = 74;
             this.label4.Text = "ID";
             // 
-            // bunifuCustomTextbox2
+            // txtID
             // 
-            this.bunifuCustomTextbox2.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomTextbox2.Location = new System.Drawing.Point(868, 279);
-            this.bunifuCustomTextbox2.Name = "bunifuCustomTextbox2";
-            this.bunifuCustomTextbox2.Size = new System.Drawing.Size(121, 20);
-            this.bunifuCustomTextbox2.TabIndex = 73;
+            this.txtID.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtID.Location = new System.Drawing.Point(868, 279);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(121, 20);
+            this.txtID.TabIndex = 73;
             // 
-            // bunifuFlatButton1
+            // btnSave
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "           Insert";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(745, 397);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(107, 35);
-            this.bunifuFlatButton1.TabIndex = 75;
-            this.bunifuFlatButton1.Text = "           Insert";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.BorderRadius = 0;
+            this.btnSave.ButtonText = "           Insert";
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSave.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSave.Iconimage = null;
+            this.btnSave.Iconimage_right = null;
+            this.btnSave.Iconimage_right_Selected = null;
+            this.btnSave.Iconimage_Selected = null;
+            this.btnSave.IconMarginLeft = 0;
+            this.btnSave.IconMarginRight = 0;
+            this.btnSave.IconRightVisible = true;
+            this.btnSave.IconRightZoom = 0D;
+            this.btnSave.IconVisible = true;
+            this.btnSave.IconZoom = 90D;
+            this.btnSave.IsTab = false;
+            this.btnSave.Location = new System.Drawing.Point(757, 341);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSave.selected = false;
+            this.btnSave.Size = new System.Drawing.Size(107, 35);
+            this.btnSave.TabIndex = 75;
+            this.btnSave.Text = "           Insert";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Textcolor = System.Drawing.Color.White;
+            this.btnSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // bunifuFlatButton2
+            // btnCancel
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "            Delete";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = null;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 90D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(912, 397);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(107, 35);
-            this.bunifuFlatButton2.TabIndex = 76;
-            this.bunifuFlatButton2.Text = "            Delete";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.BorderRadius = 0;
+            this.btnCancel.ButtonText = "          Huỷ bỏ";
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancel.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancel.Iconimage = null;
+            this.btnCancel.Iconimage_right = null;
+            this.btnCancel.Iconimage_right_Selected = null;
+            this.btnCancel.Iconimage_Selected = null;
+            this.btnCancel.IconMarginLeft = 0;
+            this.btnCancel.IconMarginRight = 0;
+            this.btnCancel.IconRightVisible = true;
+            this.btnCancel.IconRightZoom = 0D;
+            this.btnCancel.IconVisible = true;
+            this.btnCancel.IconZoom = 90D;
+            this.btnCancel.IsTab = false;
+            this.btnCancel.Location = new System.Drawing.Point(831, 397);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.btnCancel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancel.selected = false;
+            this.btnCancel.Size = new System.Drawing.Size(107, 35);
+            this.btnCancel.TabIndex = 118;
+            this.btnCancel.Text = "          Huỷ bỏ";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Textcolor = System.Drawing.Color.White;
+            this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // EditAccess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuFlatButton2);
-            this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.bunifuCustomTextbox2);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.bunifuCustomTextbox1);
-            this.Controls.Add(this.cmbMaGoi);
-            this.Controls.Add(this.bunifuFlatButton4);
+            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.cmbQuyen);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtGK_MaK);
-            this.Controls.Add(this.dataGoiKhach);
+            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.dataEditAccess);
             this.Name = "EditAccess";
             this.Size = new System.Drawing.Size(1042, 501);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGoiKhach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Users)).EndInit();
+            this.Load += new System.EventHandler(this.EditAccess_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataEditAccess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Users)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,12 +344,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbMaGoi;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
+        private System.Windows.Forms.ComboBox cmbQuyen;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtGK_MaK;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dataGoiKhach;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtTen;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dataEditAccess;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private GYMDataSet_Users gYMDataSet_Users;
         private GYMDataSet_UsersTableAdapters.UsersTableAdapter usersTableAdapter;
@@ -349,10 +358,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn privilegeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox1;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUserName;
         private System.Windows.Forms.Label label4;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtID;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSave;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
     }
 }

@@ -272,6 +272,24 @@ namespace QLphongGYM.Layout
             }
             con.Close();
             DisplayData();
+            if (dataThu.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+            {
+                if (dataThu.CurrentCell != null && dataThu.CurrentCell.Value != null)
+                {
+                    if (dataThu.Rows[e.RowIndex].Cells[7].Value.ToString() == "True" && UserInfo.privilege == "high")
+                    {
+                        con.Open();
+                        if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            string maThu = dataThu.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            cmdKG = new SqlCommand("UPDATE dbo.THU SET IsDel = 0 WHERE [Mã thu] ='" + maThu + "'", con);
+                            cmdKG.ExecuteNonQuery();
+                            con.Close();
+                            DisplayData();
+                        }
+                    }
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -282,7 +300,7 @@ namespace QLphongGYM.Layout
                 {
                     con.Close();
                     con.Open();
-                    cmdKG = new SqlCommand("EXECUTE [dbo].[ID_Thu] '" + makhach + "/" + magoi + "','" + makhach + "','" + magoi + "','" + txtSLTien.Text + "','" + UserInfo.ID + "',N'" + txtMota.Text + "','Insert'", con);
+                    cmdKG = new SqlCommand("EXECUTE [dbo].[ID_Thu] '" +txtMaThu.Text+ "','" + makhach + "','" + magoi + "','" + txtSLTien.Text + "','" + UserInfo.ID + "',N'" + txtMota.Text + "','Insert'", con);
                     cmdKG.ExecuteNonQuery();
                     con.Close();
                     DisplayData();

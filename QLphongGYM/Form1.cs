@@ -87,58 +87,47 @@ namespace QLphongGYM
         private void TongQuan_Click(object sender, EventArgs e)
         {
             panelTongquan.Controls.Clear();
-            panelTongquan.Controls.Add(new Layout.GoiTap());
+            panelTongquan.Controls.Add(new Layout.ThongKe());
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //    access.Enabled = false;
-            //    logout.Enabled = false;
-            //    btTongQuan.Enabled = false;
-            //    btThu.Enabled = false;
-            //    btChi.Enabled = false;
-            //    btDungCu.Enabled = false;
-            //    btkhachhang.Enabled = false;
-            //    btKhachGoi.Enabled = false;
-            //    btThietBi.Enabled = false;
-            //    btNhanVien.Enabled = false;
+            DoiMatKhau.Enabled = false;
+            access.Enabled = false;
+            logout.Enabled = false;
+            btTongQuan.Enabled = false;
+            btThu.Enabled = false;
+            btChi.Enabled = false;
+            btDungCu.Enabled = false;
+            btkhachhang.Enabled = false;
+            btKhachGoi.Enabled = false;
+            btThietBi.Enabled = false;
+            btNhanVien.Enabled = false;
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
             FormLogin formlogin = new FormLogin();
             formlogin.ShowDialog();
+            login.Enabled = false;
+            logout.Enabled = true;
+            btTongQuan.Enabled = true;
+            btThu.Enabled = true;
+            btChi.Enabled = true;
+            btDungCu.Enabled = true;
+            btkhachhang.Enabled = true;
+            btKhachGoi.Enabled = true;
+            btThietBi.Enabled = true;
+            DoiMatKhau.Enabled = true;
+            btNhanVien.Enabled = true;
             if (UserInfo.privilege=="normal")
             {
-                pictureBox1.Visible = true;
-                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName + ", Quyền: " + UserInfo.privilege;
-                pictureBox1.Image = Image.FromFile(@".\icons\hai1rs.png");
-                login.Enabled = false;
-                logout.Enabled = true;
-                btTongQuan.Enabled = true;
-                btThu.Enabled = true;
-                btChi.Enabled = true;
-                btDungCu.Enabled = true;
-                btkhachhang.Enabled = true;
-                btKhachGoi.Enabled = true;
-                btThietBi.Enabled = true;
+                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName;
             }
             if (UserInfo.privilege == "high")
             {
-                pictureBox1.Visible = true;
-                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName + ", Quyền: " + UserInfo.privilege;
-                pictureBox1.Image = Image.FromFile(@".\icons\hai3rs.PNG");
-                login.Enabled = false;
+                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName ;
                 access.Enabled = true;
-                logout.Enabled = true;
-                btTongQuan.Enabled = true;
-                btThu.Enabled = true;
-                btChi.Enabled = true;
-                btDungCu.Enabled = true;
-                btkhachhang.Enabled = true;
-                btKhachGoi.Enabled = true;
-                btThietBi.Enabled = true;
-                btNhanVien.Enabled = true;
             }
             panelTongquan.Controls.Clear();
             panelTongquan.Controls.Add(new Layout.GoiTap());
@@ -149,7 +138,6 @@ namespace QLphongGYM
             if (MessageBox.Show("Bạn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Status.Text = "Bạn chưa đăng nhập. Nhấp Login!!!";
-                pictureBox1.Visible = false;
                 login.Enabled = true;
                 access.Enabled = false;
                 logout.Enabled = false;
@@ -161,6 +149,7 @@ namespace QLphongGYM
                 btKhachGoi.Enabled = false;
                 btThietBi.Enabled = false;
                 btNhanVien.Enabled = false;
+                DoiMatKhau.Enabled = false;
                 UserInfo.fullName = "";
                 UserInfo.ID = "";
                 UserInfo.privilege = "";
@@ -195,6 +184,17 @@ namespace QLphongGYM
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void DoiMatKhau_Click(object sender, EventArgs e)
+        {
+            Layout.DoiMatKhau formDoiMK = new Layout.DoiMatKhau();
+            formDoiMK.ShowDialog();
+        }
+
+        private void Status_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

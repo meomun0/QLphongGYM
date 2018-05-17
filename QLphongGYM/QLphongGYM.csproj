@@ -125,6 +125,12 @@
     <Compile Include="Layout\Chi.Designer.cs">
       <DependentUpon>Chi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\DungCu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,6 +213,12 @@
     <Compile Include="Layout\TBiCuaGoi.Designer.cs">
       <DependentUpon>TBiCuaGoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\Thu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +227,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongkE.cs" />
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -224,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\Chi.resx">
       <DependentUpon>Chi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\DungCu.resx">
       <DependentUpon>DungCu.cs</DependentUpon>
@@ -263,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\TBiCuaGoi.resx">
       <DependentUpon>TBiCuaGoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\Thu.resx">
       <DependentUpon>Thu.cs</DependentUpon>

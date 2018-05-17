@@ -37,7 +37,6 @@ namespace QLphongGYM.Layout
             if (UserInfo.privilege == "normal" || UserInfo.privilege == "high")
             {
                 btnInsert.Visible = true;
-
                 DataGridViewImageColumn delbut = new DataGridViewImageColumn();
                 delbut.Image = Image.FromFile(Environment.CurrentDirectory + @"\icons\modified.png");
                 delbut.Width = 35;
@@ -54,7 +53,7 @@ namespace QLphongGYM.Layout
             }
             else
             {
-                //btnInsert.Visible = false;
+                btnInsert.Visible = false;
             }
         }
 

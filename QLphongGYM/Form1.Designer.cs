@@ -52,11 +52,11 @@
             this.minimize = new System.Windows.Forms.Panel();
             this.btexit = new System.Windows.Forms.Panel();
             this.panelTongquan = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DoiMatKhau = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -465,7 +465,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.DoiMatKhau);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.Status);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.logout);
@@ -490,6 +491,7 @@
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(0, 17);
             this.Status.TabIndex = 10;
+            this.Status.Click += new System.EventHandler(this.Status_Click);
             // 
             // label3
             // 
@@ -506,11 +508,11 @@
             this.logout.AutoSize = true;
             this.logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.logout.Location = new System.Drawing.Point(817, 19);
+            this.logout.Location = new System.Drawing.Point(905, 19);
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(59, 17);
+            this.logout.Size = new System.Drawing.Size(51, 17);
             this.logout.TabIndex = 8;
-            this.logout.Text = "Log Out";
+            this.logout.Text = "Đ.Xuất";
             this.logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // access
@@ -520,9 +522,9 @@
             this.access.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.access.Location = new System.Drawing.Point(705, 19);
             this.access.Name = "access";
-            this.access.Size = new System.Drawing.Size(80, 17);
+            this.access.Size = new System.Drawing.Size(88, 17);
             this.access.TabIndex = 7;
-            this.access.Text = "Edit access";
+            this.access.Text = "Sửa truy cập";
             this.access.Click += new System.EventHandler(this.EditAccess_Click);
             // 
             // label5
@@ -540,11 +542,11 @@
             this.login.AutoSize = true;
             this.login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.login.Location = new System.Drawing.Point(630, 19);
+            this.login.Location = new System.Drawing.Point(617, 19);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(43, 17);
+            this.login.Size = new System.Drawing.Size(56, 17);
             this.login.TabIndex = 5;
-            this.login.Text = "Login";
+            this.login.Text = "Đ.Nhập";
             this.login.Click += new System.EventHandler(this.Login_Click);
             // 
             // minimize
@@ -578,14 +580,27 @@
             this.panelTongquan.Size = new System.Drawing.Size(1046, 493);
             this.panelTongquan.TabIndex = 6;
             // 
-            // pictureBox1
+            // DoiMatKhau
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(893, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 58);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.DoiMatKhau.AutoSize = true;
+            this.DoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DoiMatKhau.Location = new System.Drawing.Point(817, 19);
+            this.DoiMatKhau.Name = "DoiMatKhau";
+            this.DoiMatKhau.Size = new System.Drawing.Size(53, 17);
+            this.DoiMatKhau.TabIndex = 12;
+            this.DoiMatKhau.Text = "Đổi MK";
+            this.DoiMatKhau.Click += new System.EventHandler(this.DoiMatKhau_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(879, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 28);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "/";
             // 
             // MainForm
             // 
@@ -604,7 +619,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -633,7 +647,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btThietBi;
         private Bunifu.Framework.UI.BunifuFlatButton btNhanVien;
         private System.Windows.Forms.Label Status;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label DoiMatKhau;
+        private System.Windows.Forms.Label label4;
     }
 }
 
