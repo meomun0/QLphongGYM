@@ -459,7 +459,8 @@
             "Lớp VIP",
             "Gói kèm riêng",
             "Zumba",
-            "Aerobic"});
+            "Aerobic",
+            "Yoga"});
             this.cmbTenGoi.Location = new System.Drawing.Point(290, 73);
             this.cmbTenGoi.Name = "cmbTenGoi";
             this.cmbTenGoi.Size = new System.Drawing.Size(272, 21);

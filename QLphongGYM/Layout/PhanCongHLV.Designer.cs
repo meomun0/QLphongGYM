@@ -36,13 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataPhanCong = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.mãHLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mãGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênHLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pHÂNCÔNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_PhanCong = new QLphongGYM.GYMDataSet_PhanCong();
-            this.pHÂN_CÔNGTableAdapter = new QLphongGYM.GYMDataSet_PhanCongTableAdapters.PHÂN_CÔNGTableAdapter();
             this.cmbMaGoi = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,10 +43,17 @@
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmbMaHLV = new System.Windows.Forms.ComboBox();
+            this.gYMDataSet_PhanCong = new QLphongGYM.DATA.GYMDataSet_PhanCong();
+            this.pHÂNCÔNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pHÂN_CÔNGTableAdapter = new QLphongGYM.DATA.GYMDataSet_PhanCongTableAdapters.PHÂN_CÔNGTableAdapter();
+            this.mãHLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mãGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênHLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhanCong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pHÂNCÔNGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_PhanCong)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_PhanCong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHÂNCÔNGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFlatButton4
@@ -181,52 +181,6 @@
             this.dataPhanCong.TabIndex = 41;
             this.dataPhanCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGoiKhach_Click);
             // 
-            // mãHLVDataGridViewTextBoxColumn
-            // 
-            this.mãHLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãHLVDataGridViewTextBoxColumn.DataPropertyName = "Mã HLV";
-            this.mãHLVDataGridViewTextBoxColumn.HeaderText = "Mã HLV";
-            this.mãHLVDataGridViewTextBoxColumn.Name = "mãHLVDataGridViewTextBoxColumn";
-            this.mãHLVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mãGóiTậpDataGridViewTextBoxColumn
-            // 
-            this.mãGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Mã gói tập";
-            this.mãGóiTậpDataGridViewTextBoxColumn.HeaderText = "Mã gói tập";
-            this.mãGóiTậpDataGridViewTextBoxColumn.Name = "mãGóiTậpDataGridViewTextBoxColumn";
-            this.mãGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênGóiTậpDataGridViewTextBoxColumn
-            // 
-            this.tênGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Tên gói tập";
-            this.tênGóiTậpDataGridViewTextBoxColumn.HeaderText = "Tên gói tập";
-            this.tênGóiTậpDataGridViewTextBoxColumn.Name = "tênGóiTậpDataGridViewTextBoxColumn";
-            this.tênGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênHLVDataGridViewTextBoxColumn
-            // 
-            this.tênHLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênHLVDataGridViewTextBoxColumn.DataPropertyName = "Tên HLV";
-            this.tênHLVDataGridViewTextBoxColumn.HeaderText = "Tên HLV";
-            this.tênHLVDataGridViewTextBoxColumn.Name = "tênHLVDataGridViewTextBoxColumn";
-            this.tênHLVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pHÂNCÔNGBindingSource
-            // 
-            this.pHÂNCÔNGBindingSource.DataMember = "PHÂN CÔNG";
-            this.pHÂNCÔNGBindingSource.DataSource = this.gYMDataSet_PhanCong;
-            // 
-            // gYMDataSet_PhanCong
-            // 
-            this.gYMDataSet_PhanCong.DataSetName = "GYMDataSet_PhanCong";
-            this.gYMDataSet_PhanCong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pHÂN_CÔNGTableAdapter
-            // 
-            this.pHÂN_CÔNGTableAdapter.ClearBeforeFill = true;
-            // 
             // cmbMaGoi
             // 
             this.cmbMaGoi.FormattingEnabled = true;
@@ -301,6 +255,52 @@
             this.cmbMaHLV.SelectedValueChanged += new System.EventHandler(this.cmbMaHLV_SelectedValueChanged);
             this.cmbMaHLV.Leave += new System.EventHandler(this.cmbMaHLV_Leave);
             // 
+            // gYMDataSet_PhanCong
+            // 
+            this.gYMDataSet_PhanCong.DataSetName = "GYMDataSet_PhanCong";
+            this.gYMDataSet_PhanCong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pHÂNCÔNGBindingSource
+            // 
+            this.pHÂNCÔNGBindingSource.DataMember = "PHÂN CÔNG";
+            this.pHÂNCÔNGBindingSource.DataSource = this.gYMDataSet_PhanCong;
+            // 
+            // pHÂN_CÔNGTableAdapter
+            // 
+            this.pHÂN_CÔNGTableAdapter.ClearBeforeFill = true;
+            // 
+            // mãHLVDataGridViewTextBoxColumn
+            // 
+            this.mãHLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãHLVDataGridViewTextBoxColumn.DataPropertyName = "Mã HLV";
+            this.mãHLVDataGridViewTextBoxColumn.HeaderText = "Mã HLV";
+            this.mãHLVDataGridViewTextBoxColumn.Name = "mãHLVDataGridViewTextBoxColumn";
+            this.mãHLVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mãGóiTậpDataGridViewTextBoxColumn
+            // 
+            this.mãGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Mã gói tập";
+            this.mãGóiTậpDataGridViewTextBoxColumn.HeaderText = "Mã gói tập";
+            this.mãGóiTậpDataGridViewTextBoxColumn.Name = "mãGóiTậpDataGridViewTextBoxColumn";
+            this.mãGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênGóiTậpDataGridViewTextBoxColumn
+            // 
+            this.tênGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Tên gói tập";
+            this.tênGóiTậpDataGridViewTextBoxColumn.HeaderText = "Tên gói tập";
+            this.tênGóiTậpDataGridViewTextBoxColumn.Name = "tênGóiTậpDataGridViewTextBoxColumn";
+            this.tênGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênHLVDataGridViewTextBoxColumn
+            // 
+            this.tênHLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênHLVDataGridViewTextBoxColumn.DataPropertyName = "Tên HLV";
+            this.tênHLVDataGridViewTextBoxColumn.HeaderText = "Tên HLV";
+            this.tênHLVDataGridViewTextBoxColumn.Name = "tênHLVDataGridViewTextBoxColumn";
+            this.tênHLVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // PhanCongHLV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,10 +316,10 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.PhanCongHLV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPhanCong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pHÂNCÔNGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_PhanCong)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_PhanCong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHÂNCÔNGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,13 +331,6 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataPhanCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãHLVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiTậpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênGóiTậpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênHLVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource pHÂNCÔNGBindingSource;
-        private GYMDataSet_PhanCong gYMDataSet_PhanCong;
-        private GYMDataSet_PhanCongTableAdapters.PHÂN_CÔNGTableAdapter pHÂN_CÔNGTableAdapter;
         private System.Windows.Forms.ComboBox cmbMaGoi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -345,5 +338,12 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cmbMaHLV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãHLVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiTậpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tênGóiTậpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tênHLVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pHÂNCÔNGBindingSource;
+        private DATA.GYMDataSet_PhanCong gYMDataSet_PhanCong;
+        private DATA.GYMDataSet_PhanCongTableAdapters.PHÂN_CÔNGTableAdapter pHÂN_CÔNGTableAdapter;
     }
 }

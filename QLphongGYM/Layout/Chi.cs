@@ -168,7 +168,9 @@ namespace QLphongGYM.Layout
                 }
             }
             else
+            {
                 MessageBox.Show("Vui lòng điền các thông tin còn trống");
+            }
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -209,27 +211,28 @@ namespace QLphongGYM.Layout
                         }
                     }
                 }
-                if (dataChi.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+                con.Close();
+                DisplayData();
+            }
+            if (dataChi.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                if (dataChi.CurrentCell != null && dataChi.CurrentCell.Value != null)
                 {
-                    if (dataChi.CurrentCell != null && dataChi.CurrentCell.Value != null)
+                    if (dataChi.Rows[e.RowIndex].Cells[10].Value.ToString() == "True" && UserInfo.privilege == "high")
                     {
-                        if (dataChi.Rows[e.RowIndex].Cells[10].Value.ToString() == "True" && UserInfo.privilege == "high")
+                        con.Open();
+                        if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
-                            con.Open();
-                            if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                            {
-                                string maChi = dataChi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                                cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + maChi + "','','','','Show'", con);
-                                cmdChi.ExecuteNonQuery();
-                                con.Close();
-                                DisplayData();
-                            }
+                            string maChi = dataChi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + maChi + "','','','','Show'", con);
+                            cmdChi.ExecuteNonQuery();
+                            con.Close();
+                            DisplayData();
                         }
                     }
                 }
             }
-            con.Close();
-            DisplayData();
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

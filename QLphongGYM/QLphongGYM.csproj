@@ -88,52 +88,57 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_Chi.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_Chi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_DungCu.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_DungCu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_DungCu.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_GoiCuaKhach.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_GoiCuaKhach.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_GoiTap.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_GoiTap.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_Khach.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_Khach.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_NhanVien.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_NhanVien.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_PhanCong.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_PhanCong.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_TBGT.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_TBGT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_Thu.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_Thu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GYMDataSet_Users.Designer.cs">
+    <Compile Include="DATA\GYMDataSet_Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATA\GYMDataSet_Users1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
@@ -334,114 +339,114 @@
     <None Include="DATA\GYMDataSet_LSuGiaHan.xss">
       <DependentUpon>GYMDataSet_LSuGiaHan.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Chi.xsc">
+    <None Include="DATA\GYMDataSet_Chi.xsc">
       <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Chi.xsd">
+    <None Include="DATA\GYMDataSet_Chi.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_Chi.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_Chi.xss">
+    <None Include="DATA\GYMDataSet_Chi.xss">
       <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_DungCu.xsc">
+    <None Include="DATA\GYMDataSet_DungCu.xsc">
       <DependentUpon>GYMDataSet_DungCu.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_DungCu.xsd">
+    <None Include="DATA\GYMDataSet_DungCu.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_DungCu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_DungCu.xss">
+    <None Include="DATA\GYMDataSet_DungCu.xss">
       <DependentUpon>GYMDataSet_DungCu.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_GoiCuaKhach.xsc">
+    <None Include="DATA\GYMDataSet_GoiCuaKhach.xsc">
       <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_GoiCuaKhach.xsd">
+    <None Include="DATA\GYMDataSet_GoiCuaKhach.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_GoiCuaKhach.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_GoiCuaKhach.xss">
+    <None Include="DATA\GYMDataSet_GoiCuaKhach.xss">
       <DependentUpon>GYMDataSet_GoiCuaKhach.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_GoiTap.xsc">
+    <None Include="DATA\GYMDataSet_GoiTap.xsc">
       <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_GoiTap.xsd">
+    <None Include="DATA\GYMDataSet_GoiTap.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_GoiTap.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_GoiTap.xss">
+    <None Include="DATA\GYMDataSet_GoiTap.xss">
       <DependentUpon>GYMDataSet_GoiTap.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Khach.xsc">
+    <None Include="DATA\GYMDataSet_Khach.xsc">
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Khach.xsd">
+    <None Include="DATA\GYMDataSet_Khach.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_Khach.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_Khach.xss">
+    <None Include="DATA\GYMDataSet_Khach.xss">
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_NhanVien.xsc">
+    <None Include="DATA\GYMDataSet_NhanVien.xsc">
       <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_NhanVien.xsd">
+    <None Include="DATA\GYMDataSet_NhanVien.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_NhanVien.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_NhanVien.xss">
+    <None Include="DATA\GYMDataSet_NhanVien.xss">
       <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_PhanCong.xsc">
+    <None Include="DATA\GYMDataSet_PhanCong.xsc">
       <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_PhanCong.xsd">
+    <None Include="DATA\GYMDataSet_PhanCong.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_PhanCong.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_PhanCong.xss">
+    <None Include="DATA\GYMDataSet_PhanCong.xss">
       <DependentUpon>GYMDataSet_PhanCong.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_TBGT.xsc">
+    <None Include="DATA\GYMDataSet_TBGT.xsc">
       <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_TBGT.xsd">
+    <None Include="DATA\GYMDataSet_TBGT.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_TBGT.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_TBGT.xss">
+    <None Include="DATA\GYMDataSet_TBGT.xss">
       <DependentUpon>GYMDataSet_TBGT.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Thu.xsc">
+    <None Include="DATA\GYMDataSet_Thu.xsc">
       <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Thu.xsd">
+    <None Include="DATA\GYMDataSet_Thu.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GYMDataSet_Thu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GYMDataSet_Thu.xss">
+    <None Include="DATA\GYMDataSet_Thu.xss">
       <DependentUpon>GYMDataSet_Thu.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Users.xsc">
+    <None Include="DATA\GYMDataSet_Users.xsc">
       <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
     </None>
-    <None Include="GYMDataSet_Users.xsd">
+    <None Include="DATA\GYMDataSet_Users.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GYMDataSet_Users.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>GYMDataSet_Users1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="GYMDataSet_Users.xss">
+    <None Include="DATA\GYMDataSet_Users.xss">
       <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />

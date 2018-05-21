@@ -34,12 +34,12 @@
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataDungCu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.dUNGCUBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_DungCu = new QLphongGYM.GYMDataSet_DungCu();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.dUNGCUTableAdapter = new QLphongGYM.GYMDataSet_DungCuTableAdapters.DUNGCUTableAdapter();
             this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gYMDataSet_DungCu = new QLphongGYM.DATA.GYMDataSet_DungCu();
+            this.dUNGCUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dUNGCUTableAdapter = new QLphongGYM.DATA.GYMDataSet_DungCuTableAdapters.DUNGCUTableAdapter();
             this.mãDụngCụDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tênDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giáDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +49,8 @@
             this.khuVucSDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataDungCu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dUNGCUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_DungCu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dUNGCUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFlatButton4
@@ -164,16 +164,6 @@
             this.dataDungCu.TabIndex = 64;
             this.dataDungCu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDungCu_CellClick);
             // 
-            // dUNGCUBindingSource
-            // 
-            this.dUNGCUBindingSource.DataMember = "DUNGCU";
-            this.dUNGCUBindingSource.DataSource = this.gYMDataSet_DungCu;
-            // 
-            // gYMDataSet_DungCu
-            // 
-            this.gYMDataSet_DungCu.DataSetName = "GYMDataSet_DungCu";
-            this.gYMDataSet_DungCu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cmbFilter
             // 
             this.cmbFilter.FormattingEnabled = true;
@@ -199,10 +189,6 @@
             this.txtInp.TabIndex = 82;
             this.txtInp.Enter += new System.EventHandler(this.txtInp_Enter);
             this.txtInp.Leave += new System.EventHandler(this.txtInp_Leave);
-            // 
-            // dUNGCUTableAdapter
-            // 
-            this.dUNGCUTableAdapter.ClearBeforeFill = true;
             // 
             // btnReload
             // 
@@ -239,6 +225,20 @@
             this.btnReload.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // gYMDataSet_DungCu
+            // 
+            this.gYMDataSet_DungCu.DataSetName = "GYMDataSet_DungCu";
+            this.gYMDataSet_DungCu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dUNGCUBindingSource
+            // 
+            this.dUNGCUBindingSource.DataMember = "DUNGCU";
+            this.dUNGCUBindingSource.DataSource = this.gYMDataSet_DungCu;
+            // 
+            // dUNGCUTableAdapter
+            // 
+            this.dUNGCUTableAdapter.ClearBeforeFill = true;
+            // 
             // mãDụngCụDataGridViewTextBoxColumn
             // 
             this.mãDụngCụDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -251,7 +251,7 @@
             // 
             this.tênDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tênDataGridViewTextBoxColumn.DataPropertyName = "Tên";
-            this.tênDataGridViewTextBoxColumn.HeaderText = "Tên";
+            this.tênDataGridViewTextBoxColumn.HeaderText = "Tên dụng cụ";
             this.tênDataGridViewTextBoxColumn.Name = "tênDataGridViewTextBoxColumn";
             this.tênDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -291,7 +291,7 @@
             // 
             this.khuVucSDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.khuVucSDDataGridViewTextBoxColumn.DataPropertyName = "KhuVucSD";
-            this.khuVucSDDataGridViewTextBoxColumn.HeaderText = "Khu vực sử dụng";
+            this.khuVucSDDataGridViewTextBoxColumn.HeaderText = "Khu vực SD";
             this.khuVucSDDataGridViewTextBoxColumn.Name = "khuVucSDDataGridViewTextBoxColumn";
             this.khuVucSDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -317,8 +317,8 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.DungCu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataDungCu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dUNGCUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_DungCu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dUNGCUBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,9 +330,6 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataDungCu;
         private System.Windows.Forms.ComboBox cmbFilter;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
-        private System.Windows.Forms.BindingSource dUNGCUBindingSource;
-        private GYMDataSet_DungCu gYMDataSet_DungCu;
-        private GYMDataSet_DungCuTableAdapters.DUNGCUTableAdapter dUNGCUTableAdapter;
         private Bunifu.Framework.UI.BunifuFlatButton btnReload;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãDụngCụDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tênDataGridViewTextBoxColumn;
@@ -342,5 +339,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn khuVucSDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource dUNGCUBindingSource;
+        private DATA.GYMDataSet_DungCu gYMDataSet_DungCu;
+        private DATA.GYMDataSet_DungCuTableAdapters.DUNGCUTableAdapter dUNGCUTableAdapter;
     }
 }

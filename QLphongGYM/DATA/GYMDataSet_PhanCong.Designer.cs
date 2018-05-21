@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace QLphongGYM {
+namespace QLphongGYM.DATA {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace QLphongGYM {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("GYMDataSet_GoiTap")]
+    [global::System.Xml.Serialization.XmlRootAttribute("GYMDataSet_PhanCong")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class GYMDataSet_GoiTap : global::System.Data.DataSet {
+    public partial class GYMDataSet_PhanCong : global::System.Data.DataSet {
         
-        private GÓI_TẬPDataTable tableGÓI_TẬP;
+        private PHÂN_CÔNGDataTable tablePHÂN_CÔNG;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public GYMDataSet_GoiTap() {
+        public GYMDataSet_PhanCong() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace QLphongGYM {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected GYMDataSet_GoiTap(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected GYMDataSet_PhanCong(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace QLphongGYM {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GÓI TẬP"] != null)) {
-                    base.Tables.Add(new GÓI_TẬPDataTable(ds.Tables["GÓI TẬP"]));
+                if ((ds.Tables["PHÂN CÔNG"] != null)) {
+                    base.Tables.Add(new PHÂN_CÔNGDataTable(ds.Tables["PHÂN CÔNG"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace QLphongGYM {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GÓI_TẬPDataTable GÓI_TẬP {
+        public PHÂN_CÔNGDataTable PHÂN_CÔNG {
             get {
-                return this.tableGÓI_TẬP;
+                return this.tablePHÂN_CÔNG;
             }
         }
         
@@ -127,7 +127,7 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            GYMDataSet_GoiTap cln = ((GYMDataSet_GoiTap)(base.Clone()));
+            GYMDataSet_PhanCong cln = ((GYMDataSet_PhanCong)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace QLphongGYM {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GÓI TẬP"] != null)) {
-                    base.Tables.Add(new GÓI_TẬPDataTable(ds.Tables["GÓI TẬP"]));
+                if ((ds.Tables["PHÂN CÔNG"] != null)) {
+                    base.Tables.Add(new PHÂN_CÔNGDataTable(ds.Tables["PHÂN CÔNG"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGÓI_TẬP = ((GÓI_TẬPDataTable)(base.Tables["GÓI TẬP"]));
+            this.tablePHÂN_CÔNG = ((PHÂN_CÔNGDataTable)(base.Tables["PHÂN CÔNG"]));
             if ((initTable == true)) {
-                if ((this.tableGÓI_TẬP != null)) {
-                    this.tableGÓI_TẬP.InitVars();
+                if ((this.tablePHÂN_CÔNG != null)) {
+                    this.tablePHÂN_CÔNG.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "GYMDataSet_GoiTap";
+            this.DataSetName = "GYMDataSet_PhanCong";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/GYMDataSet_GoiTap.xsd";
+            this.Namespace = "http://tempuri.org/GYMDataSet_PhanCong.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGÓI_TẬP = new GÓI_TẬPDataTable();
-            base.Tables.Add(this.tableGÓI_TẬP);
+            this.tablePHÂN_CÔNG = new PHÂN_CÔNGDataTable();
+            base.Tables.Add(this.tablePHÂN_CÔNG);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeGÓI_TẬP() {
+        private bool ShouldSerializePHÂN_CÔNG() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            GYMDataSet_GoiTap ds = new GYMDataSet_GoiTap();
+            GYMDataSet_PhanCong ds = new GYMDataSet_PhanCong();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,39 +270,27 @@ namespace QLphongGYM {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void GÓI_TẬPRowChangeEventHandler(object sender, GÓI_TẬPRowChangeEvent e);
+        public delegate void PHÂN_CÔNGRowChangeEventHandler(object sender, PHÂN_CÔNGRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GÓI_TẬPDataTable : global::System.Data.TypedTableBase<GÓI_TẬPRow> {
+        public partial class PHÂN_CÔNGDataTable : global::System.Data.TypedTableBase<PHÂN_CÔNGRow> {
+            
+            private global::System.Data.DataColumn columnMã_HLV;
             
             private global::System.Data.DataColumn columnMã_gói_tập;
             
             private global::System.Data.DataColumn columnTên_gói_tập;
             
-            private global::System.Data.DataColumn columnGiá;
-            
-            private global::System.Data.DataColumn columnNgày_bắt_đầu;
-            
-            private global::System.Data.DataColumn columnNgày_kết_thúc;
-            
-            private global::System.Data.DataColumn columnBuổi;
-            
-            private global::System.Data.DataColumn columnCa;
-            
-            private global::System.Data.DataColumn columnKhuVucTap;
-            
-            private global::System.Data.DataColumn columnSố_người_ĐK;
-            
-            private global::System.Data.DataColumn columnIsDel;
+            private global::System.Data.DataColumn columnTên_HLV;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPDataTable() {
-                this.TableName = "GÓI TẬP";
+            public PHÂN_CÔNGDataTable() {
+                this.TableName = "PHÂN CÔNG";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +298,7 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal GÓI_TẬPDataTable(global::System.Data.DataTable table) {
+            internal PHÂN_CÔNGDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,9 +315,17 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected GÓI_TẬPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PHÂN_CÔNGDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Mã_HLVColumn {
+                get {
+                    return this.columnMã_HLV;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -350,65 +346,9 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn GiáColumn {
+            public global::System.Data.DataColumn Tên_HLVColumn {
                 get {
-                    return this.columnGiá;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ngày_bắt_đầuColumn {
-                get {
-                    return this.columnNgày_bắt_đầu;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ngày_kết_thúcColumn {
-                get {
-                    return this.columnNgày_kết_thúc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BuổiColumn {
-                get {
-                    return this.columnBuổi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CaColumn {
-                get {
-                    return this.columnCa;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn KhuVucTapColumn {
-                get {
-                    return this.columnKhuVucTap;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Số_người_ĐKColumn {
-                get {
-                    return this.columnSố_người_ĐK;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IsDelColumn {
-                get {
-                    return this.columnIsDel;
+                    return this.columnTên_HLV;
                 }
             }
             
@@ -423,61 +363,56 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRow this[int index] {
+            public PHÂN_CÔNGRow this[int index] {
                 get {
-                    return ((GÓI_TẬPRow)(this.Rows[index]));
+                    return ((PHÂN_CÔNGRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GÓI_TẬPRowChangeEventHandler GÓI_TẬPRowChanging;
+            public event PHÂN_CÔNGRowChangeEventHandler PHÂN_CÔNGRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GÓI_TẬPRowChangeEventHandler GÓI_TẬPRowChanged;
+            public event PHÂN_CÔNGRowChangeEventHandler PHÂN_CÔNGRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GÓI_TẬPRowChangeEventHandler GÓI_TẬPRowDeleting;
+            public event PHÂN_CÔNGRowChangeEventHandler PHÂN_CÔNGRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GÓI_TẬPRowChangeEventHandler GÓI_TẬPRowDeleted;
+            public event PHÂN_CÔNGRowChangeEventHandler PHÂN_CÔNGRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddGÓI_TẬPRow(GÓI_TẬPRow row) {
+            public void AddPHÂN_CÔNGRow(PHÂN_CÔNGRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRow AddGÓI_TẬPRow(string Mã_gói_tập, string Tên_gói_tập, decimal Giá, System.DateTime Ngày_bắt_đầu, System.DateTime Ngày_kết_thúc, string Buổi, string Ca, string KhuVucTap, int Số_người_ĐK, bool IsDel) {
-                GÓI_TẬPRow rowGÓI_TẬPRow = ((GÓI_TẬPRow)(this.NewRow()));
+            public PHÂN_CÔNGRow AddPHÂN_CÔNGRow(string Mã_HLV, string Mã_gói_tập, string Tên_gói_tập, string Tên_HLV) {
+                PHÂN_CÔNGRow rowPHÂN_CÔNGRow = ((PHÂN_CÔNGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Mã_HLV,
                         Mã_gói_tập,
                         Tên_gói_tập,
-                        Giá,
-                        Ngày_bắt_đầu,
-                        Ngày_kết_thúc,
-                        Buổi,
-                        Ca,
-                        KhuVucTap,
-                        Số_người_ĐK,
-                        IsDel};
-                rowGÓI_TẬPRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGÓI_TẬPRow);
-                return rowGÓI_TẬPRow;
+                        Tên_HLV};
+                rowPHÂN_CÔNGRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPHÂN_CÔNGRow);
+                return rowPHÂN_CÔNGRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRow FindByMã_gói_tập(string Mã_gói_tập) {
-                return ((GÓI_TẬPRow)(this.Rows.Find(new object[] {
+            public PHÂN_CÔNGRow FindByMã_HLVMã_gói_tập(string Mã_HLV, string Mã_gói_tập) {
+                return ((PHÂN_CÔNGRow)(this.Rows.Find(new object[] {
+                            Mã_HLV,
                             Mã_gói_tập})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GÓI_TẬPDataTable cln = ((GÓI_TẬPDataTable)(base.Clone()));
+                PHÂN_CÔNGDataTable cln = ((PHÂN_CÔNGDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -485,83 +420,64 @@ namespace QLphongGYM {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GÓI_TẬPDataTable();
+                return new PHÂN_CÔNGDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnMã_HLV = base.Columns["Mã HLV"];
                 this.columnMã_gói_tập = base.Columns["Mã gói tập"];
                 this.columnTên_gói_tập = base.Columns["Tên gói tập"];
-                this.columnGiá = base.Columns["Giá"];
-                this.columnNgày_bắt_đầu = base.Columns["Ngày bắt đầu"];
-                this.columnNgày_kết_thúc = base.Columns["Ngày kết thúc"];
-                this.columnBuổi = base.Columns["Buổi"];
-                this.columnCa = base.Columns["Ca"];
-                this.columnKhuVucTap = base.Columns["KhuVucTap"];
-                this.columnSố_người_ĐK = base.Columns["Số người ĐK"];
-                this.columnIsDel = base.Columns["IsDel"];
+                this.columnTên_HLV = base.Columns["Tên HLV"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnMã_HLV = new global::System.Data.DataColumn("Mã HLV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMã_HLV);
                 this.columnMã_gói_tập = new global::System.Data.DataColumn("Mã gói tập", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMã_gói_tập);
                 this.columnTên_gói_tập = new global::System.Data.DataColumn("Tên gói tập", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTên_gói_tập);
-                this.columnGiá = new global::System.Data.DataColumn("Giá", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGiá);
-                this.columnNgày_bắt_đầu = new global::System.Data.DataColumn("Ngày bắt đầu", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNgày_bắt_đầu);
-                this.columnNgày_kết_thúc = new global::System.Data.DataColumn("Ngày kết thúc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNgày_kết_thúc);
-                this.columnBuổi = new global::System.Data.DataColumn("Buổi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBuổi);
-                this.columnCa = new global::System.Data.DataColumn("Ca", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCa);
-                this.columnKhuVucTap = new global::System.Data.DataColumn("KhuVucTap", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKhuVucTap);
-                this.columnSố_người_ĐK = new global::System.Data.DataColumn("Số người ĐK", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSố_người_ĐK);
-                this.columnIsDel = new global::System.Data.DataColumn("IsDel", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIsDel);
+                this.columnTên_HLV = new global::System.Data.DataColumn("Tên HLV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTên_HLV);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMã_HLV,
                                 this.columnMã_gói_tập}, true));
+                this.columnMã_HLV.AllowDBNull = false;
+                this.columnMã_HLV.MaxLength = 13;
                 this.columnMã_gói_tập.AllowDBNull = false;
-                this.columnMã_gói_tập.Unique = true;
-                this.columnMã_gói_tập.MaxLength = 12;
-                this.columnTên_gói_tập.AllowDBNull = false;
+                this.columnMã_gói_tập.MaxLength = 10;
                 this.columnTên_gói_tập.MaxLength = 50;
-                this.columnBuổi.MaxLength = 50;
-                this.columnCa.MaxLength = 50;
-                this.columnKhuVucTap.MaxLength = 50;
+                this.columnTên_HLV.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRow NewGÓI_TẬPRow() {
-                return ((GÓI_TẬPRow)(this.NewRow()));
+            public PHÂN_CÔNGRow NewPHÂN_CÔNGRow() {
+                return ((PHÂN_CÔNGRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GÓI_TẬPRow(builder);
+                return new PHÂN_CÔNGRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GÓI_TẬPRow);
+                return typeof(PHÂN_CÔNGRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GÓI_TẬPRowChanged != null)) {
-                    this.GÓI_TẬPRowChanged(this, new GÓI_TẬPRowChangeEvent(((GÓI_TẬPRow)(e.Row)), e.Action));
+                if ((this.PHÂN_CÔNGRowChanged != null)) {
+                    this.PHÂN_CÔNGRowChanged(this, new PHÂN_CÔNGRowChangeEvent(((PHÂN_CÔNGRow)(e.Row)), e.Action));
                 }
             }
             
@@ -569,8 +485,8 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GÓI_TẬPRowChanging != null)) {
-                    this.GÓI_TẬPRowChanging(this, new GÓI_TẬPRowChangeEvent(((GÓI_TẬPRow)(e.Row)), e.Action));
+                if ((this.PHÂN_CÔNGRowChanging != null)) {
+                    this.PHÂN_CÔNGRowChanging(this, new PHÂN_CÔNGRowChangeEvent(((PHÂN_CÔNGRow)(e.Row)), e.Action));
                 }
             }
             
@@ -578,8 +494,8 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GÓI_TẬPRowDeleted != null)) {
-                    this.GÓI_TẬPRowDeleted(this, new GÓI_TẬPRowChangeEvent(((GÓI_TẬPRow)(e.Row)), e.Action));
+                if ((this.PHÂN_CÔNGRowDeleted != null)) {
+                    this.PHÂN_CÔNGRowDeleted(this, new PHÂN_CÔNGRowChangeEvent(((PHÂN_CÔNGRow)(e.Row)), e.Action));
                 }
             }
             
@@ -587,14 +503,14 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GÓI_TẬPRowDeleting != null)) {
-                    this.GÓI_TẬPRowDeleting(this, new GÓI_TẬPRowChangeEvent(((GÓI_TẬPRow)(e.Row)), e.Action));
+                if ((this.PHÂN_CÔNGRowDeleting != null)) {
+                    this.PHÂN_CÔNGRowDeleting(this, new PHÂN_CÔNGRowChangeEvent(((PHÂN_CÔNGRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveGÓI_TẬPRow(GÓI_TẬPRow row) {
+            public void RemovePHÂN_CÔNGRow(PHÂN_CÔNGRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -603,7 +519,7 @@ namespace QLphongGYM {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                GYMDataSet_GoiTap ds = new GYMDataSet_GoiTap();
+                GYMDataSet_PhanCong ds = new GYMDataSet_PhanCong();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -621,7 +537,7 @@ namespace QLphongGYM {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GÓI_TẬPDataTable";
+                attribute2.FixedValue = "PHÂN_CÔNGDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -665,25 +581,36 @@ namespace QLphongGYM {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GÓI_TẬPRow : global::System.Data.DataRow {
+        public partial class PHÂN_CÔNGRow : global::System.Data.DataRow {
             
-            private GÓI_TẬPDataTable tableGÓI_TẬP;
+            private PHÂN_CÔNGDataTable tablePHÂN_CÔNG;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal GÓI_TẬPRow(global::System.Data.DataRowBuilder rb) : 
+            internal PHÂN_CÔNGRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGÓI_TẬP = ((GÓI_TẬPDataTable)(this.Table));
+                this.tablePHÂN_CÔNG = ((PHÂN_CÔNGDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Mã_HLV {
+                get {
+                    return ((string)(this[this.tablePHÂN_CÔNG.Mã_HLVColumn]));
+                }
+                set {
+                    this[this.tablePHÂN_CÔNG.Mã_HLVColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Mã_gói_tập {
                 get {
-                    return ((string)(this[this.tableGÓI_TẬP.Mã_gói_tậpColumn]));
+                    return ((string)(this[this.tablePHÂN_CÔNG.Mã_gói_tậpColumn]));
                 }
                 set {
-                    this[this.tableGÓI_TẬP.Mã_gói_tậpColumn] = value;
+                    this[this.tablePHÂN_CÔNG.Mã_gói_tậpColumn] = value;
                 }
             }
             
@@ -691,235 +618,56 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Tên_gói_tập {
                 get {
-                    return ((string)(this[this.tableGÓI_TẬP.Tên_gói_tậpColumn]));
-                }
-                set {
-                    this[this.tableGÓI_TẬP.Tên_gói_tậpColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Giá {
-                get {
                     try {
-                        return ((decimal)(this[this.tableGÓI_TẬP.GiáColumn]));
+                        return ((string)(this[this.tablePHÂN_CÔNG.Tên_gói_tậpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Giá\' in table \'GÓI TẬP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tên gói tập\' in table \'PHÂN CÔNG\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGÓI_TẬP.GiáColumn] = value;
+                    this[this.tablePHÂN_CÔNG.Tên_gói_tậpColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Ngày_bắt_đầu {
+            public string Tên_HLV {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableGÓI_TẬP.Ngày_bắt_đầuColumn]));
+                        return ((string)(this[this.tablePHÂN_CÔNG.Tên_HLVColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ngày bắt đầu\' in table \'GÓI TẬP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tên HLV\' in table \'PHÂN CÔNG\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGÓI_TẬP.Ngày_bắt_đầuColumn] = value;
+                    this[this.tablePHÂN_CÔNG.Tên_HLVColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Ngày_kết_thúc {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableGÓI_TẬP.Ngày_kết_thúcColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ngày kết thúc\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.Ngày_kết_thúcColumn] = value;
-                }
+            public bool IsTên_gói_tậpNull() {
+                return this.IsNull(this.tablePHÂN_CÔNG.Tên_gói_tậpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Buổi {
-                get {
-                    try {
-                        return ((string)(this[this.tableGÓI_TẬP.BuổiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Buổi\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.BuổiColumn] = value;
-                }
+            public void SetTên_gói_tậpNull() {
+                this[this.tablePHÂN_CÔNG.Tên_gói_tậpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Ca {
-                get {
-                    try {
-                        return ((string)(this[this.tableGÓI_TẬP.CaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ca\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.CaColumn] = value;
-                }
+            public bool IsTên_HLVNull() {
+                return this.IsNull(this.tablePHÂN_CÔNG.Tên_HLVColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string KhuVucTap {
-                get {
-                    try {
-                        return ((string)(this[this.tableGÓI_TẬP.KhuVucTapColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KhuVucTap\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.KhuVucTapColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Số_người_ĐK {
-                get {
-                    try {
-                        return ((int)(this[this.tableGÓI_TẬP.Số_người_ĐKColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Số người ĐK\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.Số_người_ĐKColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDel {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGÓI_TẬP.IsDelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsDel\' in table \'GÓI TẬP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGÓI_TẬP.IsDelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsGiáNull() {
-                return this.IsNull(this.tableGÓI_TẬP.GiáColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetGiáNull() {
-                this[this.tableGÓI_TẬP.GiáColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNgày_bắt_đầuNull() {
-                return this.IsNull(this.tableGÓI_TẬP.Ngày_bắt_đầuColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNgày_bắt_đầuNull() {
-                this[this.tableGÓI_TẬP.Ngày_bắt_đầuColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNgày_kết_thúcNull() {
-                return this.IsNull(this.tableGÓI_TẬP.Ngày_kết_thúcColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNgày_kết_thúcNull() {
-                this[this.tableGÓI_TẬP.Ngày_kết_thúcColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBuổiNull() {
-                return this.IsNull(this.tableGÓI_TẬP.BuổiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBuổiNull() {
-                this[this.tableGÓI_TẬP.BuổiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCaNull() {
-                return this.IsNull(this.tableGÓI_TẬP.CaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCaNull() {
-                this[this.tableGÓI_TẬP.CaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsKhuVucTapNull() {
-                return this.IsNull(this.tableGÓI_TẬP.KhuVucTapColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetKhuVucTapNull() {
-                this[this.tableGÓI_TẬP.KhuVucTapColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSố_người_ĐKNull() {
-                return this.IsNull(this.tableGÓI_TẬP.Số_người_ĐKColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSố_người_ĐKNull() {
-                this[this.tableGÓI_TẬP.Số_người_ĐKColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIsDelNull() {
-                return this.IsNull(this.tableGÓI_TẬP.IsDelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIsDelNull() {
-                this[this.tableGÓI_TẬP.IsDelColumn] = global::System.Convert.DBNull;
+            public void SetTên_HLVNull() {
+                this[this.tablePHÂN_CÔNG.Tên_HLVColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -927,22 +675,22 @@ namespace QLphongGYM {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class GÓI_TẬPRowChangeEvent : global::System.EventArgs {
+        public class PHÂN_CÔNGRowChangeEvent : global::System.EventArgs {
             
-            private GÓI_TẬPRow eventRow;
+            private PHÂN_CÔNGRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRowChangeEvent(GÓI_TẬPRow row, global::System.Data.DataRowAction action) {
+            public PHÂN_CÔNGRowChangeEvent(PHÂN_CÔNGRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GÓI_TẬPRow Row {
+            public PHÂN_CÔNGRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -958,7 +706,7 @@ namespace QLphongGYM {
         }
     }
 }
-namespace QLphongGYM.GYMDataSet_GoiTapTableAdapters {
+namespace QLphongGYM.DATA.GYMDataSet_PhanCongTableAdapters {
     
     
     /// <summary>
@@ -970,7 +718,7 @@ namespace QLphongGYM.GYMDataSet_GoiTapTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GÓI_TẬPTableAdapter : global::System.ComponentModel.Component {
+    public partial class PHÂN_CÔNGTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -984,7 +732,7 @@ namespace QLphongGYM.GYMDataSet_GoiTapTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public GÓI_TẬPTableAdapter() {
+        public PHÂN_CÔNGTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1081,88 +829,46 @@ namespace QLphongGYM.GYMDataSet_GoiTapTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GÓI TẬP";
+            tableMapping.DataSetTable = "PHÂN CÔNG";
+            tableMapping.ColumnMappings.Add("Mã HLV", "Mã HLV");
             tableMapping.ColumnMappings.Add("Mã gói tập", "Mã gói tập");
             tableMapping.ColumnMappings.Add("Tên gói tập", "Tên gói tập");
-            tableMapping.ColumnMappings.Add("Giá", "Giá");
-            tableMapping.ColumnMappings.Add("Ngày bắt đầu", "Ngày bắt đầu");
-            tableMapping.ColumnMappings.Add("Ngày kết thúc", "Ngày kết thúc");
-            tableMapping.ColumnMappings.Add("Buổi", "Buổi");
-            tableMapping.ColumnMappings.Add("Ca", "Ca");
-            tableMapping.ColumnMappings.Add("KhuVucTap", "KhuVucTap");
-            tableMapping.ColumnMappings.Add("Số người ĐK", "Số người ĐK");
-            tableMapping.ColumnMappings.Add("IsDel", "IsDel");
+            tableMapping.ColumnMappings.Add("Tên HLV", "Tên HLV");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GÓI TẬP] WHERE (([Mã gói tập] = @Original_Mã_gói_tập) AND ([Tên gói tập] = @Original_Tên_gói_tập) AND ((@IsNull_Giá = 1 AND [Giá] IS NULL) OR ([Giá] = @Original_Giá)) AND ((@IsNull_Ngày_bắt_đầu = 1 AND [Ngày bắt đầu] IS NULL) OR ([Ngày bắt đầu] = @Original_Ngày_bắt_đầu)) AND ((@IsNull_Ngày_kết_thúc = 1 AND [Ngày kết thúc] IS NULL) OR ([Ngày kết thúc] = @Original_Ngày_kết_thúc)) AND ((@IsNull_Buổi = 1 AND [Buổi] IS NULL) OR ([Buổi] = @Original_Buổi)) AND ((@IsNull_Ca = 1 AND [Ca] IS NULL) OR ([Ca] = @Original_Ca)) AND ((@IsNull_KhuVucTap = 1 AND [KhuVucTap] IS NULL) OR ([KhuVucTap] = @Original_KhuVucTap)) AND ((@IsNull_Số_người_ĐK = 1 AND [Số người ĐK] IS NULL) OR ([Số người ĐK] = @Original_Số_người_ĐK)) AND ((@IsNull_IsDel = 1 AND [IsDel] IS NULL) OR ([IsDel] = @Original_IsDel)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PHÂN CÔNG] WHERE (([Mã HLV] = @Original_Mã_HLV) AND ([Mã gói tập] = @Original_Mã_gói_tập) AND ((@IsNull_Tên_gói_tập = 1 AND [Tên gói tập] IS NULL) OR ([Tên gói tập] = @Original_Tên_gói_tập)) AND ((@IsNull_Tên_HLV = 1 AND [Tên HLV] IS NULL) OR ([Tên HLV] = @Original_Tên_HLV)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_HLV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã HLV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_gói_tập", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã gói tập", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên_gói_tập", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tên_gói_tập", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Giá", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Giá", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ngày_bắt_đầu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ngày_bắt_đầu", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ngày_kết_thúc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ngày_kết_thúc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Buổi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Buổi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KhuVucTap", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KhuVucTap", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsDel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên_HLV", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tên_HLV", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GÓI TẬP] ([Mã gói tập], [Tên gói tập], [Giá], [Ngày bắt đầu], [Ngày kết thúc], [Buổi], [Ca], [KhuVucTap], [Số người ĐK], [IsDel]) VALUES (@Mã_gói_tập, @Tên_gói_tập, @Giá, @Ngày_bắt_đầu, @Ngày_kết_thúc, @Buổi, @Ca, @KhuVucTap, @Số_người_ĐK, @IsDel);
-SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày kết thúc], Buổi, Ca, KhuVucTap, [Số người ĐK], IsDel FROM [GÓI TẬP] WHERE ([Mã gói tập] = @Mã_gói_tập)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PHÂN CÔNG] ([Mã HLV], [Mã gói tập], [Tên gói tập], [Tên HLV]) VALUES (@Mã_HLV, @Mã_gói_tập, @Tên_gói_tập, @Tên_HLV);
+SELECT [Mã HLV], [Mã gói tập], [Tên gói tập], [Tên HLV] FROM [PHÂN CÔNG] WHERE ([Mã HLV] = @Mã_HLV) AND ([Mã gói tập] = @Mã_gói_tập)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_HLV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã HLV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_gói_tập", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã gói tập", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên_gói_tập", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Giá", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_bắt_đầu", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_kết_thúc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Buổi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KhuVucTap", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên_HLV", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GÓI TẬP] SET [Mã gói tập] = @Mã_gói_tập, [Tên gói tập] = @Tên_gói_tập, [Giá] = @Giá, [Ngày bắt đầu] = @Ngày_bắt_đầu, [Ngày kết thúc] = @Ngày_kết_thúc, [Buổi] = @Buổi, [Ca] = @Ca, [KhuVucTap] = @KhuVucTap, [Số người ĐK] = @Số_người_ĐK, [IsDel] = @IsDel WHERE (([Mã gói tập] = @Original_Mã_gói_tập) AND ([Tên gói tập] = @Original_Tên_gói_tập) AND ((@IsNull_Giá = 1 AND [Giá] IS NULL) OR ([Giá] = @Original_Giá)) AND ((@IsNull_Ngày_bắt_đầu = 1 AND [Ngày bắt đầu] IS NULL) OR ([Ngày bắt đầu] = @Original_Ngày_bắt_đầu)) AND ((@IsNull_Ngày_kết_thúc = 1 AND [Ngày kết thúc] IS NULL) OR ([Ngày kết thúc] = @Original_Ngày_kết_thúc)) AND ((@IsNull_Buổi = 1 AND [Buổi] IS NULL) OR ([Buổi] = @Original_Buổi)) AND ((@IsNull_Ca = 1 AND [Ca] IS NULL) OR ([Ca] = @Original_Ca)) AND ((@IsNull_KhuVucTap = 1 AND [KhuVucTap] IS NULL) OR ([KhuVucTap] = @Original_KhuVucTap)) AND ((@IsNull_Số_người_ĐK = 1 AND [Số người ĐK] IS NULL) OR ([Số người ĐK] = @Original_Số_người_ĐK)) AND ((@IsNull_IsDel = 1 AND [IsDel] IS NULL) OR ([IsDel] = @Original_IsDel)));
-SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày kết thúc], Buổi, Ca, KhuVucTap, [Số người ĐK], IsDel FROM [GÓI TẬP] WHERE ([Mã gói tập] = @Mã_gói_tập)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PHÂN CÔNG] SET [Mã HLV] = @Mã_HLV, [Mã gói tập] = @Mã_gói_tập, [Tên gói tập] = @Tên_gói_tập, [Tên HLV] = @Tên_HLV WHERE (([Mã HLV] = @Original_Mã_HLV) AND ([Mã gói tập] = @Original_Mã_gói_tập) AND ((@IsNull_Tên_gói_tập = 1 AND [Tên gói tập] IS NULL) OR ([Tên gói tập] = @Original_Tên_gói_tập)) AND ((@IsNull_Tên_HLV = 1 AND [Tên HLV] IS NULL) OR ([Tên HLV] = @Original_Tên_HLV)));
+SELECT [Mã HLV], [Mã gói tập], [Tên gói tập], [Tên HLV] FROM [PHÂN CÔNG] WHERE ([Mã HLV] = @Mã_HLV) AND ([Mã gói tập] = @Mã_gói_tập)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_HLV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã HLV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mã_gói_tập", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã gói tập", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên_gói_tập", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Giá", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_bắt_đầu", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngày_kết_thúc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Buổi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KhuVucTap", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tên_HLV", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_HLV", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã HLV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mã_gói_tập", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mã gói tập", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên_gói_tập", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tên_gói_tập", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên gói tập", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Giá", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Giá", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Giá", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ngày_bắt_đầu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ngày_bắt_đầu", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày bắt đầu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ngày_kết_thúc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ngày_kết_thúc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngày kết thúc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Buổi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Buổi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Buổi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KhuVucTap", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KhuVucTap", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KhuVucTap", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Số_người_ĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Số người ĐK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsDel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDel", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tên_HLV", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tên_HLV", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tên HLV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1178,8 +884,7 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày kết thúc], Buổi, C" +
-                "a, KhuVucTap, [Số người ĐK], IsDel FROM dbo.[GÓI TẬP]";
+            this._commandCollection[0].CommandText = "SELECT [Mã HLV], [Mã gói tập], [Tên gói tập], [Tên HLV] FROM dbo.[PHÂN CÔNG]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1187,7 +892,7 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(GYMDataSet_GoiTap.GÓI_TẬPDataTable dataTable) {
+        public virtual int Fill(GYMDataSet_PhanCong.PHÂN_CÔNGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1200,9 +905,9 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual GYMDataSet_GoiTap.GÓI_TẬPDataTable GetData() {
+        public virtual GYMDataSet_PhanCong.PHÂN_CÔNGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            GYMDataSet_GoiTap.GÓI_TẬPDataTable dataTable = new GYMDataSet_GoiTap.GÓI_TẬPDataTable();
+            GYMDataSet_PhanCong.PHÂN_CÔNGDataTable dataTable = new GYMDataSet_PhanCong.PHÂN_CÔNGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1210,15 +915,15 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(GYMDataSet_GoiTap.GÓI_TẬPDataTable dataTable) {
+        public virtual int Update(GYMDataSet_PhanCong.PHÂN_CÔNGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(GYMDataSet_GoiTap dataSet) {
-            return this.Adapter.Update(dataSet, "GÓI TẬP");
+        public virtual int Update(GYMDataSet_PhanCong dataSet) {
+            return this.Adapter.Update(dataSet, "PHÂN CÔNG");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1240,82 +945,34 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Mã_gói_tập, string Original_Tên_gói_tập, global::System.Nullable<decimal> Original_Giá, global::System.Nullable<global::System.DateTime> Original_Ngày_bắt_đầu, global::System.Nullable<global::System.DateTime> Original_Ngày_kết_thúc, string Original_Buổi, string Original_Ca, string Original_KhuVucTap, global::System.Nullable<int> Original_Số_người_ĐK, global::System.Nullable<bool> Original_IsDel) {
+        public virtual int Delete(string Original_Mã_HLV, string Original_Mã_gói_tập, string Original_Tên_gói_tập, string Original_Tên_HLV) {
+            if ((Original_Mã_HLV == null)) {
+                throw new global::System.ArgumentNullException("Original_Mã_HLV");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Mã_HLV));
+            }
             if ((Original_Mã_gói_tập == null)) {
                 throw new global::System.ArgumentNullException("Original_Mã_gói_tập");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Mã_gói_tập));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Mã_gói_tập));
             }
             if ((Original_Tên_gói_tập == null)) {
-                throw new global::System.ArgumentNullException("Original_Tên_gói_tập");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Tên_gói_tập));
-            }
-            if ((Original_Giá.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_Giá.Value));
-            }
-            else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_Ngày_bắt_đầu.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Ngày_bắt_đầu.Value));
-            }
             else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Tên_gói_tập));
+            }
+            if ((Original_Tên_HLV == null)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_Ngày_kết_thúc.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Ngày_kết_thúc.Value));
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Buổi == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Buổi));
-            }
-            if ((Original_Ca == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Ca));
-            }
-            if ((Original_KhuVucTap == null)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_KhuVucTap));
-            }
-            if ((Original_Số_người_ĐK.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_Số_người_ĐK.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsDel.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((bool)(Original_IsDel.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Tên_HLV));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1337,66 +994,30 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Mã_gói_tập, string Tên_gói_tập, global::System.Nullable<decimal> Giá, global::System.Nullable<global::System.DateTime> Ngày_bắt_đầu, global::System.Nullable<global::System.DateTime> Ngày_kết_thúc, string Buổi, string Ca, string KhuVucTap, global::System.Nullable<int> Số_người_ĐK, global::System.Nullable<bool> IsDel) {
+        public virtual int Insert(string Mã_HLV, string Mã_gói_tập, string Tên_gói_tập, string Tên_HLV) {
+            if ((Mã_HLV == null)) {
+                throw new global::System.ArgumentNullException("Mã_HLV");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Mã_HLV));
+            }
             if ((Mã_gói_tập == null)) {
                 throw new global::System.ArgumentNullException("Mã_gói_tập");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Mã_gói_tập));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Mã_gói_tập));
             }
             if ((Tên_gói_tập == null)) {
-                throw new global::System.ArgumentNullException("Tên_gói_tập");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Tên_gói_tập));
-            }
-            if ((Giá.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Giá.Value));
-            }
-            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Ngày_bắt_đầu.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Ngày_bắt_đầu.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Tên_gói_tập));
+            }
+            if ((Tên_HLV == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Ngày_kết_thúc.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Ngày_kết_thúc.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Buổi == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Buổi));
-            }
-            if ((Ca == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Ca));
-            }
-            if ((KhuVucTap == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(KhuVucTap));
-            }
-            if ((Số_người_ĐK.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Số_người_ĐK.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsDel.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(IsDel.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Tên_HLV));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1418,162 +1039,58 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Mã_gói_tập, 
-                    string Tên_gói_tập, 
-                    global::System.Nullable<decimal> Giá, 
-                    global::System.Nullable<global::System.DateTime> Ngày_bắt_đầu, 
-                    global::System.Nullable<global::System.DateTime> Ngày_kết_thúc, 
-                    string Buổi, 
-                    string Ca, 
-                    string KhuVucTap, 
-                    global::System.Nullable<int> Số_người_ĐK, 
-                    global::System.Nullable<bool> IsDel, 
-                    string Original_Mã_gói_tập, 
-                    string Original_Tên_gói_tập, 
-                    global::System.Nullable<decimal> Original_Giá, 
-                    global::System.Nullable<global::System.DateTime> Original_Ngày_bắt_đầu, 
-                    global::System.Nullable<global::System.DateTime> Original_Ngày_kết_thúc, 
-                    string Original_Buổi, 
-                    string Original_Ca, 
-                    string Original_KhuVucTap, 
-                    global::System.Nullable<int> Original_Số_người_ĐK, 
-                    global::System.Nullable<bool> Original_IsDel) {
+        public virtual int Update(string Mã_HLV, string Mã_gói_tập, string Tên_gói_tập, string Tên_HLV, string Original_Mã_HLV, string Original_Mã_gói_tập, string Original_Tên_gói_tập, string Original_Tên_HLV) {
+            if ((Mã_HLV == null)) {
+                throw new global::System.ArgumentNullException("Mã_HLV");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Mã_HLV));
+            }
             if ((Mã_gói_tập == null)) {
                 throw new global::System.ArgumentNullException("Mã_gói_tập");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Mã_gói_tập));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Mã_gói_tập));
             }
             if ((Tên_gói_tập == null)) {
-                throw new global::System.ArgumentNullException("Tên_gói_tập");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Tên_gói_tập));
-            }
-            if ((Giá.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Giá.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Ngày_bắt_đầu.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Ngày_bắt_đầu.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Tên_gói_tập));
+            }
+            if ((Tên_HLV == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Ngày_kết_thúc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Ngày_kết_thúc.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Tên_HLV));
+            }
+            if ((Original_Mã_HLV == null)) {
+                throw new global::System.ArgumentNullException("Original_Mã_HLV");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Buổi == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Buổi));
-            }
-            if ((Ca == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Ca));
-            }
-            if ((KhuVucTap == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(KhuVucTap));
-            }
-            if ((Số_người_ĐK.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Số_người_ĐK.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsDel.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(IsDel.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Mã_HLV));
             }
             if ((Original_Mã_gói_tập == null)) {
                 throw new global::System.ArgumentNullException("Original_Mã_gói_tập");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Mã_gói_tập));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Mã_gói_tập));
             }
             if ((Original_Tên_gói_tập == null)) {
-                throw new global::System.ArgumentNullException("Original_Tên_gói_tập");
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Tên_gói_tập));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Tên_gói_tập));
             }
-            if ((Original_Giá.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Giá.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Ngày_bắt_đầu.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Ngày_bắt_đầu.Value));
+            if ((Original_Tên_HLV == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Ngày_kết_thúc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Ngày_kết_thúc.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Buổi == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Buổi));
-            }
-            if ((Original_Ca == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Ca));
-            }
-            if ((Original_KhuVucTap == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_KhuVucTap));
-            }
-            if ((Original_Số_người_ĐK.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Số_người_ĐK.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsDel.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_IsDel.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Tên_HLV));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1595,27 +1112,8 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Tên_gói_tập, 
-                    global::System.Nullable<decimal> Giá, 
-                    global::System.Nullable<global::System.DateTime> Ngày_bắt_đầu, 
-                    global::System.Nullable<global::System.DateTime> Ngày_kết_thúc, 
-                    string Buổi, 
-                    string Ca, 
-                    string KhuVucTap, 
-                    global::System.Nullable<int> Số_người_ĐK, 
-                    global::System.Nullable<bool> IsDel, 
-                    string Original_Mã_gói_tập, 
-                    string Original_Tên_gói_tập, 
-                    global::System.Nullable<decimal> Original_Giá, 
-                    global::System.Nullable<global::System.DateTime> Original_Ngày_bắt_đầu, 
-                    global::System.Nullable<global::System.DateTime> Original_Ngày_kết_thúc, 
-                    string Original_Buổi, 
-                    string Original_Ca, 
-                    string Original_KhuVucTap, 
-                    global::System.Nullable<int> Original_Số_người_ĐK, 
-                    global::System.Nullable<bool> Original_IsDel) {
-            return this.Update(Original_Mã_gói_tập, Tên_gói_tập, Giá, Ngày_bắt_đầu, Ngày_kết_thúc, Buổi, Ca, KhuVucTap, Số_người_ĐK, IsDel, Original_Mã_gói_tập, Original_Tên_gói_tập, Original_Giá, Original_Ngày_bắt_đầu, Original_Ngày_kết_thúc, Original_Buổi, Original_Ca, Original_KhuVucTap, Original_Số_người_ĐK, Original_IsDel);
+        public virtual int Update(string Tên_gói_tập, string Tên_HLV, string Original_Mã_HLV, string Original_Mã_gói_tập, string Original_Tên_gói_tập, string Original_Tên_HLV) {
+            return this.Update(Original_Mã_HLV, Original_Mã_gói_tập, Tên_gói_tập, Tên_HLV, Original_Mã_HLV, Original_Mã_gói_tập, Original_Tên_gói_tập, Original_Tên_HLV);
         }
     }
     
@@ -1631,7 +1129,7 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         
         private UpdateOrderOption _updateOrder;
         
-        private GÓI_TẬPTableAdapter _gÓI_TẬPTableAdapter;
+        private PHÂN_CÔNGTableAdapter _pHÂN_CÔNGTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1653,12 +1151,12 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public GÓI_TẬPTableAdapter GÓI_TẬPTableAdapter {
+        public PHÂN_CÔNGTableAdapter PHÂN_CÔNGTableAdapter {
             get {
-                return this._gÓI_TẬPTableAdapter;
+                return this._pHÂN_CÔNGTableAdapter;
             }
             set {
-                this._gÓI_TẬPTableAdapter = value;
+                this._pHÂN_CÔNGTableAdapter = value;
             }
         }
         
@@ -1681,9 +1179,9 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._gÓI_TẬPTableAdapter != null) 
-                            && (this._gÓI_TẬPTableAdapter.Connection != null))) {
-                    return this._gÓI_TẬPTableAdapter.Connection;
+                if (((this._pHÂN_CÔNGTableAdapter != null) 
+                            && (this._pHÂN_CÔNGTableAdapter.Connection != null))) {
+                    return this._pHÂN_CÔNGTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1698,7 +1196,7 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._gÓI_TẬPTableAdapter != null)) {
+                if ((this._pHÂN_CÔNGTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1710,14 +1208,14 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(GYMDataSet_GoiTap dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(GYMDataSet_PhanCong dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gÓI_TẬPTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GÓI_TẬP.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._pHÂN_CÔNGTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PHÂN_CÔNG.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._gÓI_TẬPTableAdapter.Update(updatedRows));
+                    result = (result + this._pHÂN_CÔNGTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1729,13 +1227,13 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(GYMDataSet_GoiTap dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(GYMDataSet_PhanCong dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gÓI_TẬPTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GÓI_TẬP.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._pHÂN_CÔNGTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PHÂN_CÔNG.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._gÓI_TẬPTableAdapter.Update(addedRows));
+                    result = (result + this._pHÂN_CÔNGTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1747,13 +1245,13 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(GYMDataSet_GoiTap dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(GYMDataSet_PhanCong dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._gÓI_TẬPTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GÓI_TẬP.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pHÂN_CÔNGTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PHÂN_CÔNG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._gÓI_TẬPTableAdapter.Update(deletedRows));
+                    result = (result + this._pHÂN_CÔNGTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1789,15 +1287,15 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(GYMDataSet_GoiTap dataSet) {
+        public virtual int UpdateAll(GYMDataSet_PhanCong dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._gÓI_TẬPTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._gÓI_TẬPTableAdapter.Connection) == false))) {
+            if (((this._pHÂN_CÔNGTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._pHÂN_CÔNGTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1833,13 +1331,13 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._gÓI_TẬPTableAdapter != null)) {
-                    revertConnections.Add(this._gÓI_TẬPTableAdapter, this._gÓI_TẬPTableAdapter.Connection);
-                    this._gÓI_TẬPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._gÓI_TẬPTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._gÓI_TẬPTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._gÓI_TẬPTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._gÓI_TẬPTableAdapter.Adapter);
+                if ((this._pHÂN_CÔNGTableAdapter != null)) {
+                    revertConnections.Add(this._pHÂN_CÔNGTableAdapter, this._pHÂN_CÔNGTableAdapter.Connection);
+                    this._pHÂN_CÔNGTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._pHÂN_CÔNGTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._pHÂN_CÔNGTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._pHÂN_CÔNGTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._pHÂN_CÔNGTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1900,9 +1398,9 @@ SELECT [Mã gói tập], [Tên gói tập], Giá, [Ngày bắt đầu], [Ngày k
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._gÓI_TẬPTableAdapter != null)) {
-                    this._gÓI_TẬPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._gÓI_TẬPTableAdapter]));
-                    this._gÓI_TẬPTableAdapter.Transaction = null;
+                if ((this._pHÂN_CÔNGTableAdapter != null)) {
+                    this._pHÂN_CÔNGTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pHÂN_CÔNGTableAdapter]));
+                    this._pHÂN_CÔNGTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

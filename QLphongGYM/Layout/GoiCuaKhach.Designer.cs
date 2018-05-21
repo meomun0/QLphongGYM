@@ -34,15 +34,6 @@
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGoiKhach = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.mãKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mãGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngàyBĐDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngàyKTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhToanYNDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.kHACHGOIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_GoiCuaKhach = new QLphongGYM.GYMDataSet_GoiCuaKhach();
-            this.kHACH_GOITableAdapter = new QLphongGYM.GYMDataSet_GoiCuaKhachTableAdapters.KHACH_GOITableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaGoi = new System.Windows.Forms.ComboBox();
@@ -50,9 +41,18 @@
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.txtGK_MaK = new System.Windows.Forms.ComboBox();
             this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gYMDataSet_GoiCuaKhach = new QLphongGYM.DATA.GYMDataSet_GoiCuaKhach();
+            this.kHACHGOIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kHACH_GOITableAdapter = new QLphongGYM.DATA.GYMDataSet_GoiCuaKhachTableAdapters.KHACH_GOITableAdapter();
+            this.mãKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mãGóiTậpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngàyBĐDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngàyKTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhToanYNDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGoiKhach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHGOIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_GoiCuaKhach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHGOIBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFlatButton4
@@ -164,68 +164,6 @@
             this.dataGoiKhach.TabIndex = 41;
             this.dataGoiKhach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGoiKhach_Click);
             // 
-            // mãKháchHàngDataGridViewTextBoxColumn
-            // 
-            this.mãKháchHàngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãKháchHàngDataGridViewTextBoxColumn.DataPropertyName = "Mã khách hàng";
-            this.mãKháchHàngDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
-            this.mãKháchHàngDataGridViewTextBoxColumn.Name = "mãKháchHàngDataGridViewTextBoxColumn";
-            this.mãKháchHàngDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mãGóiTậpDataGridViewTextBoxColumn
-            // 
-            this.mãGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Mã gói tập";
-            this.mãGóiTậpDataGridViewTextBoxColumn.HeaderText = "Mã gói tập";
-            this.mãGóiTậpDataGridViewTextBoxColumn.Name = "mãGóiTậpDataGridViewTextBoxColumn";
-            this.mãGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngàyBĐDataGridViewTextBoxColumn
-            // 
-            this.ngàyBĐDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngàyBĐDataGridViewTextBoxColumn.DataPropertyName = "Ngày BĐ";
-            this.ngàyBĐDataGridViewTextBoxColumn.HeaderText = "Ngày BĐ";
-            this.ngàyBĐDataGridViewTextBoxColumn.Name = "ngàyBĐDataGridViewTextBoxColumn";
-            this.ngàyBĐDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngàyKTDataGridViewTextBoxColumn
-            // 
-            this.ngàyKTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngàyKTDataGridViewTextBoxColumn.DataPropertyName = "Ngày KT";
-            this.ngàyKTDataGridViewTextBoxColumn.HeaderText = "Ngày KT";
-            this.ngàyKTDataGridViewTextBoxColumn.Name = "ngàyKTDataGridViewTextBoxColumn";
-            this.ngàyKTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hLVDataGridViewTextBoxColumn
-            // 
-            this.hLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.hLVDataGridViewTextBoxColumn.DataPropertyName = "HLV";
-            this.hLVDataGridViewTextBoxColumn.HeaderText = "HLV";
-            this.hLVDataGridViewTextBoxColumn.Name = "hLVDataGridViewTextBoxColumn";
-            this.hLVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thanhToanYNDataGridViewCheckBoxColumn
-            // 
-            this.thanhToanYNDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thanhToanYNDataGridViewCheckBoxColumn.DataPropertyName = "ThanhToan(Y/N)";
-            this.thanhToanYNDataGridViewCheckBoxColumn.HeaderText = "ThanhToan(Y/N)";
-            this.thanhToanYNDataGridViewCheckBoxColumn.Name = "thanhToanYNDataGridViewCheckBoxColumn";
-            this.thanhToanYNDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // kHACHGOIBindingSource
-            // 
-            this.kHACHGOIBindingSource.DataMember = "KHACH_GOI";
-            this.kHACHGOIBindingSource.DataSource = this.gYMDataSet_GoiCuaKhach;
-            // 
-            // gYMDataSet_GoiCuaKhach
-            // 
-            this.gYMDataSet_GoiCuaKhach.DataSetName = "GYMDataSet_GoiCuaKhach";
-            this.gYMDataSet_GoiCuaKhach.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kHACH_GOITableAdapter
-            // 
-            this.kHACH_GOITableAdapter.ClearBeforeFill = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -329,6 +267,68 @@
             this.btnReload.Textcolor = System.Drawing.Color.White;
             this.btnReload.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // gYMDataSet_GoiCuaKhach
+            // 
+            this.gYMDataSet_GoiCuaKhach.DataSetName = "GYMDataSet_GoiCuaKhach";
+            this.gYMDataSet_GoiCuaKhach.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kHACHGOIBindingSource
+            // 
+            this.kHACHGOIBindingSource.DataMember = "KHACH_GOI";
+            this.kHACHGOIBindingSource.DataSource = this.gYMDataSet_GoiCuaKhach;
+            // 
+            // kHACH_GOITableAdapter
+            // 
+            this.kHACH_GOITableAdapter.ClearBeforeFill = true;
+            // 
+            // mãKháchHàngDataGridViewTextBoxColumn
+            // 
+            this.mãKháchHàngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãKháchHàngDataGridViewTextBoxColumn.DataPropertyName = "Mã khách hàng";
+            this.mãKháchHàngDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
+            this.mãKháchHàngDataGridViewTextBoxColumn.Name = "mãKháchHàngDataGridViewTextBoxColumn";
+            this.mãKháchHàngDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mãGóiTậpDataGridViewTextBoxColumn
+            // 
+            this.mãGóiTậpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãGóiTậpDataGridViewTextBoxColumn.DataPropertyName = "Mã gói tập";
+            this.mãGóiTậpDataGridViewTextBoxColumn.HeaderText = "Mã gói tập";
+            this.mãGóiTậpDataGridViewTextBoxColumn.Name = "mãGóiTậpDataGridViewTextBoxColumn";
+            this.mãGóiTậpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngàyBĐDataGridViewTextBoxColumn
+            // 
+            this.ngàyBĐDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngàyBĐDataGridViewTextBoxColumn.DataPropertyName = "Ngày BĐ";
+            this.ngàyBĐDataGridViewTextBoxColumn.HeaderText = "Ngày BĐ";
+            this.ngàyBĐDataGridViewTextBoxColumn.Name = "ngàyBĐDataGridViewTextBoxColumn";
+            this.ngàyBĐDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngàyKTDataGridViewTextBoxColumn
+            // 
+            this.ngàyKTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngàyKTDataGridViewTextBoxColumn.DataPropertyName = "Ngày KT";
+            this.ngàyKTDataGridViewTextBoxColumn.HeaderText = "Ngày KT";
+            this.ngàyKTDataGridViewTextBoxColumn.Name = "ngàyKTDataGridViewTextBoxColumn";
+            this.ngàyKTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hLVDataGridViewTextBoxColumn
+            // 
+            this.hLVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hLVDataGridViewTextBoxColumn.DataPropertyName = "HLV";
+            this.hLVDataGridViewTextBoxColumn.HeaderText = "HLV";
+            this.hLVDataGridViewTextBoxColumn.Name = "hLVDataGridViewTextBoxColumn";
+            this.hLVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thanhToanYNDataGridViewCheckBoxColumn
+            // 
+            this.thanhToanYNDataGridViewCheckBoxColumn.DataPropertyName = "ThanhToan(Y/N)";
+            this.thanhToanYNDataGridViewCheckBoxColumn.HeaderText = "ThanhToan(Y/N)";
+            this.thanhToanYNDataGridViewCheckBoxColumn.Name = "thanhToanYNDataGridViewCheckBoxColumn";
+            this.thanhToanYNDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.thanhToanYNDataGridViewCheckBoxColumn.Width = 35;
+            // 
             // GoiCuaKhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,8 +347,8 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.GoiCuaKhach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGoiKhach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHGOIBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_GoiCuaKhach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHGOIBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,15 +358,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGoiKhach;
-        private System.Windows.Forms.BindingSource kHACHGOIBindingSource;
-        private GYMDataSet_GoiCuaKhach gYMDataSet_GoiCuaKhach;
-        private GYMDataSet_GoiCuaKhachTableAdapters.KHACH_GOITableAdapter kHACH_GOITableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãKháchHàngDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiTậpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngàyBĐDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngàyKTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hLVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn thanhToanYNDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox txtMaGoi;
@@ -374,5 +365,14 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
         private System.Windows.Forms.ComboBox txtGK_MaK;
         private Bunifu.Framework.UI.BunifuFlatButton btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãKháchHàngDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiTậpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngàyBĐDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngàyKTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hLVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn thanhToanYNDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource kHACHGOIBindingSource;
+        private DATA.GYMDataSet_GoiCuaKhach gYMDataSet_GoiCuaKhach;
+        private DATA.GYMDataSet_GoiCuaKhachTableAdapters.KHACH_GOITableAdapter kHACH_GOITableAdapter;
     }
 }

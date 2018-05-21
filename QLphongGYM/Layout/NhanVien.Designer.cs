@@ -32,6 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataNhanVien = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.btnTimKiem = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gYMDataSet_NhanVien = new QLphongGYM.DATA.GYMDataSet_NhanVien();
+            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nHANVIENTableAdapter = new QLphongGYM.DATA.GYMDataSet_NhanVienTableAdapters.NHANVIENTableAdapter();
             this.mãNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tênDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,17 +51,9 @@
             this.lươngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quêQuánDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_NhanVien = new QLphongGYM.GYMDataSet_NhanVien();
-            this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.btnTimKiem = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.nHANVIENTableAdapter = new QLphongGYM.GYMDataSet_NhanVienTableAdapters.NHANVIENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_NhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataNhanVien
@@ -99,103 +99,6 @@
             this.dataNhanVien.Size = new System.Drawing.Size(1020, 374);
             this.dataNhanVien.TabIndex = 0;
             this.dataNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataNhanVien_CellClick);
-            // 
-            // mãNVDataGridViewTextBoxColumn
-            // 
-            this.mãNVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãNVDataGridViewTextBoxColumn.DataPropertyName = "Mã NV";
-            this.mãNVDataGridViewTextBoxColumn.HeaderText = "Mã NV";
-            this.mãNVDataGridViewTextBoxColumn.Name = "mãNVDataGridViewTextBoxColumn";
-            this.mãNVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênDataGridViewTextBoxColumn
-            // 
-            this.tênDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênDataGridViewTextBoxColumn.DataPropertyName = "Tên";
-            this.tênDataGridViewTextBoxColumn.HeaderText = "Tên";
-            this.tênDataGridViewTextBoxColumn.Name = "tênDataGridViewTextBoxColumn";
-            this.tênDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nSDataGridViewTextBoxColumn
-            // 
-            this.nSDataGridViewTextBoxColumn.DataPropertyName = "NS";
-            this.nSDataGridViewTextBoxColumn.HeaderText = "NS";
-            this.nSDataGridViewTextBoxColumn.Name = "nSDataGridViewTextBoxColumn";
-            this.nSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nSDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // gTDataGridViewTextBoxColumn
-            // 
-            this.gTDataGridViewTextBoxColumn.DataPropertyName = "GT";
-            this.gTDataGridViewTextBoxColumn.HeaderText = "GT";
-            this.gTDataGridViewTextBoxColumn.Name = "gTDataGridViewTextBoxColumn";
-            this.gTDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gTDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // sốĐiệnThoạiDataGridViewTextBoxColumn
-            // 
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.DataPropertyName = "Số điện thoại";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.Name = "sốĐiệnThoạiDataGridViewTextBoxColumn";
-            this.sốĐiệnThoạiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // chứcVụDataGridViewTextBoxColumn
-            // 
-            this.chứcVụDataGridViewTextBoxColumn.DataPropertyName = "Chức vụ";
-            this.chứcVụDataGridViewTextBoxColumn.HeaderText = "Chức vụ";
-            this.chứcVụDataGridViewTextBoxColumn.Name = "chứcVụDataGridViewTextBoxColumn";
-            this.chứcVụDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chứcVụDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // caLàmDataGridViewTextBoxColumn
-            // 
-            this.caLàmDataGridViewTextBoxColumn.DataPropertyName = "Ca làm";
-            this.caLàmDataGridViewTextBoxColumn.HeaderText = "Ca làm";
-            this.caLàmDataGridViewTextBoxColumn.Name = "caLàmDataGridViewTextBoxColumn";
-            this.caLàmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.caLàmDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // ngàyBĐDataGridViewTextBoxColumn
-            // 
-            this.ngàyBĐDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngàyBĐDataGridViewTextBoxColumn.DataPropertyName = "Ngày BĐ";
-            this.ngàyBĐDataGridViewTextBoxColumn.HeaderText = "Ngày BĐ";
-            this.ngàyBĐDataGridViewTextBoxColumn.Name = "ngàyBĐDataGridViewTextBoxColumn";
-            this.ngàyBĐDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lươngDataGridViewTextBoxColumn
-            // 
-            this.lươngDataGridViewTextBoxColumn.DataPropertyName = "Lương";
-            this.lươngDataGridViewTextBoxColumn.HeaderText = "Lương";
-            this.lươngDataGridViewTextBoxColumn.Name = "lươngDataGridViewTextBoxColumn";
-            this.lươngDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quêQuánDataGridViewTextBoxColumn
-            // 
-            this.quêQuánDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quêQuánDataGridViewTextBoxColumn.DataPropertyName = "Quê quán";
-            this.quêQuánDataGridViewTextBoxColumn.HeaderText = "Quê quán";
-            this.quêQuánDataGridViewTextBoxColumn.Name = "quêQuánDataGridViewTextBoxColumn";
-            this.quêQuánDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isDelDataGridViewCheckBoxColumn
-            // 
-            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
-            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isDelDataGridViewCheckBoxColumn.Width = 35;
-            // 
-            // nHANVIENBindingSource
-            // 
-            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
-            this.nHANVIENBindingSource.DataSource = this.gYMDataSet_NhanVien;
-            // 
-            // gYMDataSet_NhanVien
-            // 
-            this.gYMDataSet_NhanVien.DataSetName = "GYMDataSet_NhanVien";
-            this.gYMDataSet_NhanVien.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtInp
             // 
@@ -329,9 +232,106 @@
             this.btnInsert.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // gYMDataSet_NhanVien
+            // 
+            this.gYMDataSet_NhanVien.DataSetName = "GYMDataSet_NhanVien";
+            this.gYMDataSet_NhanVien.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nHANVIENBindingSource
+            // 
+            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
+            this.nHANVIENBindingSource.DataSource = this.gYMDataSet_NhanVien;
+            // 
             // nHANVIENTableAdapter
             // 
             this.nHANVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // mãNVDataGridViewTextBoxColumn
+            // 
+            this.mãNVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãNVDataGridViewTextBoxColumn.DataPropertyName = "Mã NV";
+            this.mãNVDataGridViewTextBoxColumn.HeaderText = "Mã NV";
+            this.mãNVDataGridViewTextBoxColumn.Name = "mãNVDataGridViewTextBoxColumn";
+            this.mãNVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênDataGridViewTextBoxColumn
+            // 
+            this.tênDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênDataGridViewTextBoxColumn.DataPropertyName = "Tên";
+            this.tênDataGridViewTextBoxColumn.HeaderText = "Tên";
+            this.tênDataGridViewTextBoxColumn.Name = "tênDataGridViewTextBoxColumn";
+            this.tênDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nSDataGridViewTextBoxColumn
+            // 
+            this.nSDataGridViewTextBoxColumn.DataPropertyName = "NS";
+            this.nSDataGridViewTextBoxColumn.HeaderText = "NS";
+            this.nSDataGridViewTextBoxColumn.Name = "nSDataGridViewTextBoxColumn";
+            this.nSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nSDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // gTDataGridViewTextBoxColumn
+            // 
+            this.gTDataGridViewTextBoxColumn.DataPropertyName = "GT";
+            this.gTDataGridViewTextBoxColumn.HeaderText = "GT";
+            this.gTDataGridViewTextBoxColumn.Name = "gTDataGridViewTextBoxColumn";
+            this.gTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gTDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // sốĐiệnThoạiDataGridViewTextBoxColumn
+            // 
+            this.sốĐiệnThoạiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sốĐiệnThoạiDataGridViewTextBoxColumn.DataPropertyName = "Số điện thoại";
+            this.sốĐiệnThoạiDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
+            this.sốĐiệnThoạiDataGridViewTextBoxColumn.Name = "sốĐiệnThoạiDataGridViewTextBoxColumn";
+            this.sốĐiệnThoạiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chứcVụDataGridViewTextBoxColumn
+            // 
+            this.chứcVụDataGridViewTextBoxColumn.DataPropertyName = "Chức vụ";
+            this.chứcVụDataGridViewTextBoxColumn.HeaderText = "Chức vụ";
+            this.chứcVụDataGridViewTextBoxColumn.Name = "chứcVụDataGridViewTextBoxColumn";
+            this.chứcVụDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chứcVụDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // caLàmDataGridViewTextBoxColumn
+            // 
+            this.caLàmDataGridViewTextBoxColumn.DataPropertyName = "Ca làm";
+            this.caLàmDataGridViewTextBoxColumn.HeaderText = "Ca làm";
+            this.caLàmDataGridViewTextBoxColumn.Name = "caLàmDataGridViewTextBoxColumn";
+            this.caLàmDataGridViewTextBoxColumn.ReadOnly = true;
+            this.caLàmDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // ngàyBĐDataGridViewTextBoxColumn
+            // 
+            this.ngàyBĐDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngàyBĐDataGridViewTextBoxColumn.DataPropertyName = "Ngày BĐ";
+            this.ngàyBĐDataGridViewTextBoxColumn.HeaderText = "Ngày BĐ";
+            this.ngàyBĐDataGridViewTextBoxColumn.Name = "ngàyBĐDataGridViewTextBoxColumn";
+            this.ngàyBĐDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lươngDataGridViewTextBoxColumn
+            // 
+            this.lươngDataGridViewTextBoxColumn.DataPropertyName = "Lương";
+            this.lươngDataGridViewTextBoxColumn.HeaderText = "Lương";
+            this.lươngDataGridViewTextBoxColumn.Name = "lươngDataGridViewTextBoxColumn";
+            this.lươngDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quêQuánDataGridViewTextBoxColumn
+            // 
+            this.quêQuánDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quêQuánDataGridViewTextBoxColumn.DataPropertyName = "Quê quán";
+            this.quêQuánDataGridViewTextBoxColumn.HeaderText = "Quê quán";
+            this.quêQuánDataGridViewTextBoxColumn.Name = "quêQuánDataGridViewTextBoxColumn";
+            this.quêQuánDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDelDataGridViewCheckBoxColumn
+            // 
+            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
+            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isDelDataGridViewCheckBoxColumn.Width = 35;
             // 
             // NhanVien
             // 
@@ -347,8 +347,8 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_NhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,9 +362,6 @@
         private System.Windows.Forms.ComboBox cmbFilter;
         private Bunifu.Framework.UI.BunifuFlatButton btnReload;
         private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
-        private System.Windows.Forms.BindingSource nHANVIENBindingSource;
-        private GYMDataSet_NhanVien gYMDataSet_NhanVien;
-        private GYMDataSet_NhanVienTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãNVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tênDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nSDataGridViewTextBoxColumn;
@@ -376,5 +373,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lươngDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quêQuánDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource nHANVIENBindingSource;
+        private DATA.GYMDataSet_NhanVien gYMDataSet_NhanVien;
+        private DATA.GYMDataSet_NhanVienTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
     }
 }

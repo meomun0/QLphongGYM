@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace QLphongGYM {
+namespace QLphongGYM.DATA {
     
     
     /// <summary>
@@ -1018,7 +1018,7 @@ namespace QLphongGYM {
         }
     }
 }
-namespace QLphongGYM.GYMDataSet_NhanVienTableAdapters {
+namespace QLphongGYM.DATA.GYMDataSet_NhanVienTableAdapters {
     
     
     /// <summary>

@@ -175,7 +175,7 @@ namespace QLphongGYM.Layout.SubForms
                         genID = "GYM_R" + num;
                         con.Close();
                         con.Open();
-                        cmdGT = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] LIKE 'GYM_T%' ", con);
+                        cmdGT = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] LIKE 'GYM_R%' ", con);
                         SqlDataReader dta2 = cmdGT.ExecuteReader();
                         if (dta2.Read())
                         {
@@ -239,6 +239,14 @@ namespace QLphongGYM.Layout.SubForms
                         num = Convert.ToInt32(temp);
                         num++;
                         genID = "Aerobic_" + num;
+                        con.Close();
+                        con.Open();
+                        cmdGT = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] LIKE 'Aerobic%' ", con);
+                        SqlDataReader dta2 = cmdGT.ExecuteReader();
+                        if (dta2.Read())
+                        {
+                            txtGia.Text = dta2["Giá"].ToString();
+                        }
                     }
                     else
                     {
@@ -249,7 +257,7 @@ namespace QLphongGYM.Layout.SubForms
                     con.Close();
                 }
             }
-            else if (type == "Aerobic")
+            else if (type == "Yoga")
             {
                 cmdGT = new SqlCommand("SELECT MAX([Mã gói tập]) as max FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] LIKE 'Yoga_%' ", con);
                 SqlDataReader dta = cmdGT.ExecuteReader();
@@ -264,6 +272,14 @@ namespace QLphongGYM.Layout.SubForms
                         num = Convert.ToInt32(temp);
                         num++;
                         genID = "Yoga_" + num;
+                        con.Close();
+                        con.Open();
+                        cmdGT = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] LIKE 'Yoga_%' ", con);
+                        SqlDataReader dta2 = cmdGT.ExecuteReader();
+                        if (dta2.Read())
+                        {
+                            txtGia.Text = dta2["Giá"].ToString();
+                        }
                     }
                     else
                     {

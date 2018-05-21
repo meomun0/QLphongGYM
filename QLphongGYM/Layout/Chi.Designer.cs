@@ -32,14 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataChi = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.mãChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sốTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nộiDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_Chi = new QLphongGYM.GYMDataSet_Chi();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSearch = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -55,14 +47,22 @@
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cHITableAdapter = new QLphongGYM.GYMDataSet_ChiTableAdapters.CHITableAdapter();
             this.txtThoiGian = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gYMDataSet_Chi = new QLphongGYM.DATA.GYMDataSet_Chi();
+            this.cHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cHITableAdapter = new QLphongGYM.DATA.GYMDataSet_ChiTableAdapters.CHITableAdapter();
+            this.mãChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sốTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nộiDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataChi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHIBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Chi)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Chi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHIBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataChi
@@ -103,64 +103,6 @@
             this.dataChi.Size = new System.Drawing.Size(928, 315);
             this.dataChi.TabIndex = 0;
             this.dataChi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataThu_CellClick);
-            // 
-            // mãChiDataGridViewTextBoxColumn
-            // 
-            this.mãChiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãChiDataGridViewTextBoxColumn.DataPropertyName = "Mã chi";
-            this.mãChiDataGridViewTextBoxColumn.HeaderText = "Mã chi";
-            this.mãChiDataGridViewTextBoxColumn.Name = "mãChiDataGridViewTextBoxColumn";
-            this.mãChiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sốTiềnDataGridViewTextBoxColumn
-            // 
-            this.sốTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sốTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số tiền";
-            this.sốTiềnDataGridViewTextBoxColumn.HeaderText = "Số tiền";
-            this.sốTiềnDataGridViewTextBoxColumn.Name = "sốTiềnDataGridViewTextBoxColumn";
-            this.sốTiềnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thờiGianDataGridViewTextBoxColumn
-            // 
-            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
-            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nộiDungDataGridViewTextBoxColumn
-            // 
-            this.nộiDungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nộiDungDataGridViewTextBoxColumn.DataPropertyName = "Nội dung";
-            this.nộiDungDataGridViewTextBoxColumn.HeaderText = "Nội dung";
-            this.nộiDungDataGridViewTextBoxColumn.Name = "nộiDungDataGridViewTextBoxColumn";
-            this.nộiDungDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngườiThựcHiệnDataGridViewTextBoxColumn
-            // 
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn.DataPropertyName = "Người thực hiện";
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn.HeaderText = "Người thực hiện";
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn.Name = "ngườiThựcHiệnDataGridViewTextBoxColumn";
-            this.ngườiThựcHiệnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isDelDataGridViewCheckBoxColumn
-            // 
-            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
-            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isDelDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // cHIBindingSource
-            // 
-            this.cHIBindingSource.DataMember = "CHI";
-            this.cHIBindingSource.DataSource = this.gYMDataSet_Chi;
-            // 
-            // gYMDataSet_Chi
-            // 
-            this.gYMDataSet_Chi.DataSetName = "GYMDataSet_Chi";
-            this.gYMDataSet_Chi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSave
             // 
@@ -403,10 +345,6 @@
             this.btnReload.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // cHITableAdapter
-            // 
-            this.cHITableAdapter.ClearBeforeFill = true;
-            // 
             // txtThoiGian
             // 
             this.txtThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -467,6 +405,68 @@
             this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // gYMDataSet_Chi
+            // 
+            this.gYMDataSet_Chi.DataSetName = "GYMDataSet_Chi";
+            this.gYMDataSet_Chi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cHIBindingSource
+            // 
+            this.cHIBindingSource.DataMember = "CHI";
+            this.cHIBindingSource.DataSource = this.gYMDataSet_Chi;
+            // 
+            // cHITableAdapter
+            // 
+            this.cHITableAdapter.ClearBeforeFill = true;
+            // 
+            // mãChiDataGridViewTextBoxColumn
+            // 
+            this.mãChiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãChiDataGridViewTextBoxColumn.DataPropertyName = "Mã chi";
+            this.mãChiDataGridViewTextBoxColumn.HeaderText = "Mã chi";
+            this.mãChiDataGridViewTextBoxColumn.Name = "mãChiDataGridViewTextBoxColumn";
+            this.mãChiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sốTiềnDataGridViewTextBoxColumn
+            // 
+            this.sốTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sốTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số tiền";
+            this.sốTiềnDataGridViewTextBoxColumn.HeaderText = "Số tiền";
+            this.sốTiềnDataGridViewTextBoxColumn.Name = "sốTiềnDataGridViewTextBoxColumn";
+            this.sốTiềnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thờiGianDataGridViewTextBoxColumn
+            // 
+            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
+            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nộiDungDataGridViewTextBoxColumn
+            // 
+            this.nộiDungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nộiDungDataGridViewTextBoxColumn.DataPropertyName = "Nội dung";
+            this.nộiDungDataGridViewTextBoxColumn.HeaderText = "Nội dung";
+            this.nộiDungDataGridViewTextBoxColumn.Name = "nộiDungDataGridViewTextBoxColumn";
+            this.nộiDungDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngườiThựcHiệnDataGridViewTextBoxColumn
+            // 
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn.DataPropertyName = "Người thực hiện";
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn.HeaderText = "Người thực hiện";
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn.Name = "ngườiThựcHiệnDataGridViewTextBoxColumn";
+            this.ngườiThựcHiệnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDelDataGridViewCheckBoxColumn
+            // 
+            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
+            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isDelDataGridViewCheckBoxColumn.Width = 35;
+            // 
             // Chi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,10 +484,10 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.Chi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataChi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHIBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Chi)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Chi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHIBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,17 +511,17 @@
         private System.Windows.Forms.ComboBox cmbFilter;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
         private Bunifu.Framework.UI.BunifuFlatButton btnReload;
+        private System.Windows.Forms.DateTimePicker txtThoiGian;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
+        private System.Windows.Forms.BindingSource cHIBindingSource;
+        private DATA.GYMDataSet_Chi gYMDataSet_Chi;
+        private DATA.GYMDataSet_ChiTableAdapters.CHITableAdapter cHITableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sốTiềnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thờiGianDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nộiDungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngườiThựcHiệnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource cHIBindingSource;
-        private GYMDataSet_Chi gYMDataSet_Chi;
-        private GYMDataSet_ChiTableAdapters.CHITableAdapter cHITableAdapter;
-        private System.Windows.Forms.DateTimePicker txtThoiGian;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
     }
 }

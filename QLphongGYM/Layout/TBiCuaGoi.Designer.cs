@@ -32,21 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataTBicuaGoi = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenGoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenThietBiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tBiGoiTapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_TBGT = new QLphongGYM.GYMDataSet_TBGT();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.tBi_GoiTapTableAdapter = new QLphongGYM.GYMDataSet_TBGTTableAdapters.TBi_GoiTapTableAdapter();
+            this.gYMDataSet_TBGT = new QLphongGYM.DATA.GYMDataSet_TBGT();
+            this.tBiGoiTapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBi_GoiTapTableAdapter = new QLphongGYM.DATA.GYMDataSet_TBGTTableAdapters.TBi_GoiTapTableAdapter();
+            this.mãGóiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mãThiếtBịDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenGoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenThietBiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataTBicuaGoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_TBGT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTBicuaGoi
@@ -69,8 +69,8 @@
             this.dataTBicuaGoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataTBicuaGoi.ColumnHeadersHeight = 25;
             this.dataTBicuaGoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.mãGóiDataGridViewTextBoxColumn,
+            this.mãThiếtBịDataGridViewTextBoxColumn,
             this.tenGoiDataGridViewTextBoxColumn,
             this.tenThietBiDataGridViewTextBoxColumn});
             this.dataTBicuaGoi.DataSource = this.tBiGoiTapBindingSource;
@@ -84,48 +84,6 @@
             this.dataTBicuaGoi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataTBicuaGoi.Size = new System.Drawing.Size(556, 444);
             this.dataTBicuaGoi.TabIndex = 41;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Mã gói";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã gói";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Mã thiết bị";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã thiết bị";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // tenGoiDataGridViewTextBoxColumn
-            // 
-            this.tenGoiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenGoiDataGridViewTextBoxColumn.DataPropertyName = "TenGoi";
-            this.tenGoiDataGridViewTextBoxColumn.HeaderText = "TenGoi";
-            this.tenGoiDataGridViewTextBoxColumn.Name = "tenGoiDataGridViewTextBoxColumn";
-            this.tenGoiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenThietBiDataGridViewTextBoxColumn
-            // 
-            this.tenThietBiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenThietBiDataGridViewTextBoxColumn.DataPropertyName = "TenThietBi";
-            this.tenThietBiDataGridViewTextBoxColumn.HeaderText = "TenThietBi";
-            this.tenThietBiDataGridViewTextBoxColumn.Name = "tenThietBiDataGridViewTextBoxColumn";
-            this.tenThietBiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tBiGoiTapBindingSource
-            // 
-            this.tBiGoiTapBindingSource.DataMember = "TBi_GoiTap";
-            this.tBiGoiTapBindingSource.DataSource = this.gYMDataSet_TBGT;
-            // 
-            // gYMDataSet_TBGT
-            // 
-            this.gYMDataSet_TBGT.DataSetName = "GYMDataSet_TBGT";
-            this.gYMDataSet_TBGT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -205,9 +163,51 @@
             this.txtInp.Enter += new System.EventHandler(this.txtInp_Enter);
             this.txtInp.Leave += new System.EventHandler(this.txtInp_Leave);
             // 
+            // gYMDataSet_TBGT
+            // 
+            this.gYMDataSet_TBGT.DataSetName = "GYMDataSet_TBGT";
+            this.gYMDataSet_TBGT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBiGoiTapBindingSource
+            // 
+            this.tBiGoiTapBindingSource.DataMember = "TBi_GoiTap";
+            this.tBiGoiTapBindingSource.DataSource = this.gYMDataSet_TBGT;
+            // 
             // tBi_GoiTapTableAdapter
             // 
             this.tBi_GoiTapTableAdapter.ClearBeforeFill = true;
+            // 
+            // mãGóiDataGridViewTextBoxColumn
+            // 
+            this.mãGóiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãGóiDataGridViewTextBoxColumn.DataPropertyName = "Mã gói";
+            this.mãGóiDataGridViewTextBoxColumn.HeaderText = "Mã gói";
+            this.mãGóiDataGridViewTextBoxColumn.Name = "mãGóiDataGridViewTextBoxColumn";
+            this.mãGóiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mãThiếtBịDataGridViewTextBoxColumn
+            // 
+            this.mãThiếtBịDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãThiếtBịDataGridViewTextBoxColumn.DataPropertyName = "Mã thiết bị";
+            this.mãThiếtBịDataGridViewTextBoxColumn.HeaderText = "Mã thiết bị";
+            this.mãThiếtBịDataGridViewTextBoxColumn.Name = "mãThiếtBịDataGridViewTextBoxColumn";
+            this.mãThiếtBịDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenGoiDataGridViewTextBoxColumn
+            // 
+            this.tenGoiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenGoiDataGridViewTextBoxColumn.DataPropertyName = "TenGoi";
+            this.tenGoiDataGridViewTextBoxColumn.HeaderText = "Tên gói";
+            this.tenGoiDataGridViewTextBoxColumn.Name = "tenGoiDataGridViewTextBoxColumn";
+            this.tenGoiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenThietBiDataGridViewTextBoxColumn
+            // 
+            this.tenThietBiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenThietBiDataGridViewTextBoxColumn.DataPropertyName = "TenThietBi";
+            this.tenThietBiDataGridViewTextBoxColumn.HeaderText = "Tên thiết bị";
+            this.tenThietBiDataGridViewTextBoxColumn.Name = "tenThietBiDataGridViewTextBoxColumn";
+            this.tenThietBiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // TBiCuaGoi
             // 
@@ -223,8 +223,8 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.TBiCuaGoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTBicuaGoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_TBGT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBiGoiTapBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,12 +237,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private System.Windows.Forms.ComboBox cmbFilter;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource tBiGoiTapBindingSource;
+        private DATA.GYMDataSet_TBGT gYMDataSet_TBGT;
+        private DATA.GYMDataSet_TBGTTableAdapters.TBi_GoiTapTableAdapter tBi_GoiTapTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãThiếtBịDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenGoiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenThietBiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tBiGoiTapBindingSource;
-        private GYMDataSet_TBGT gYMDataSet_TBGT;
-        private GYMDataSet_TBGTTableAdapters.TBi_GoiTapTableAdapter tBi_GoiTapTableAdapter;
     }
 }
