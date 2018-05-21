@@ -37,6 +37,25 @@
     </Reference>
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.18, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.18, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATA\GYMDataSet_LSuGiaHan.Designer.cs">
+      <DependentUpon>GYMDataSet_LSuGiaHan.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +112,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GYMDataSet_LSGiaHan.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
     </Compile>
     <Compile Include="GYMDataSet_NhanVien.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -172,6 +191,12 @@
     </Compile>
     <Compile Include="Layout\PhanCongHLV.Designer.cs">
       <DependentUpon>PhanCongHLV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\StartPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\SubClasses\GetDataDC.cs" />
     <Compile Include="Layout\SubClasses\GetDataGoiTap.cs" />
@@ -262,6 +287,9 @@
     <EmbeddedResource Include="Layout\PhanCongHLV.resx">
       <DependentUpon>PhanCongHLV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layout\StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layout\SubForms\LichSuGiaHanThe.resx">
       <DependentUpon>LichSuGiaHanThe.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +323,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DATA\GYMDataSet_LSuGiaHan.xsc">
+      <DependentUpon>GYMDataSet_LSuGiaHan.xsd</DependentUpon>
+    </None>
+    <None Include="DATA\GYMDataSet_LSuGiaHan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GYMDataSet_LSuGiaHan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATA\GYMDataSet_LSuGiaHan.xss">
+      <DependentUpon>GYMDataSet_LSuGiaHan.xsd</DependentUpon>
+    </None>
     <None Include="GYMDataSet_Chi.xsc">
       <DependentUpon>GYMDataSet_Chi.xsd</DependentUpon>
     </None>
@@ -349,17 +388,6 @@
     </None>
     <None Include="GYMDataSet_Khach.xss">
       <DependentUpon>GYMDataSet_Khach.xsd</DependentUpon>
-    </None>
-    <None Include="GYMDataSet_LSGiaHan.xsc">
-      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
-    </None>
-    <None Include="GYMDataSet_LSGiaHan.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GYMDataSet_LSGiaHan.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GYMDataSet_LSGiaHan.xss">
-      <DependentUpon>GYMDataSet_LSGiaHan.xsd</DependentUpon>
     </None>
     <None Include="GYMDataSet_NhanVien.xsc">
       <DependentUpon>GYMDataSet_NhanVien.xsd</DependentUpon>
@@ -416,6 +444,7 @@
     <None Include="GYMDataSet_Users.xss">
       <DependentUpon>GYMDataSet_Users.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -429,8 +458,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DATA\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

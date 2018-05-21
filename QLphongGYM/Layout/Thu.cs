@@ -349,5 +349,12 @@ namespace QLphongGYM.Layout
         {
             DisplayData();
         }
+
+        private void btnGiaHanThe_Click(object sender, EventArgs e)
+        {
+            SubForms.LichSuGiaHanThe giaHanThe = new SubForms.LichSuGiaHanThe();
+            giaHanThe.ShowDialog();
+            DisplayData();
+        }
     }
 }

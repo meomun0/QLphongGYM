@@ -65,6 +65,7 @@
             this.txtThoiGian = new System.Windows.Forms.DateTimePicker();
             this.tHUTableAdapter = new QLphongGYM.GYMDataSet_ThuTableAdapters.THUTableAdapter();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGiaHanThe = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).BeginInit();
@@ -507,7 +508,7 @@
             // btnCancel
             // 
             this.btnCancel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCancel.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.BorderRadius = 0;
             this.btnCancel.ButtonText = "          Huỷ bỏ";
@@ -539,10 +540,46 @@
             this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnGiaHanThe
+            // 
+            this.btnGiaHanThe.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGiaHanThe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGiaHanThe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGiaHanThe.BorderRadius = 0;
+            this.btnGiaHanThe.ButtonText = "Lịch sử gia hạn";
+            this.btnGiaHanThe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGiaHanThe.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGiaHanThe.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGiaHanThe.Iconimage = null;
+            this.btnGiaHanThe.Iconimage_right = null;
+            this.btnGiaHanThe.Iconimage_right_Selected = null;
+            this.btnGiaHanThe.Iconimage_Selected = null;
+            this.btnGiaHanThe.IconMarginLeft = 0;
+            this.btnGiaHanThe.IconMarginRight = 0;
+            this.btnGiaHanThe.IconRightVisible = true;
+            this.btnGiaHanThe.IconRightZoom = 0D;
+            this.btnGiaHanThe.IconVisible = true;
+            this.btnGiaHanThe.IconZoom = 90D;
+            this.btnGiaHanThe.IsTab = false;
+            this.btnGiaHanThe.Location = new System.Drawing.Point(170, 13);
+            this.btnGiaHanThe.Name = "btnGiaHanThe";
+            this.btnGiaHanThe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGiaHanThe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnGiaHanThe.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGiaHanThe.selected = false;
+            this.btnGiaHanThe.Size = new System.Drawing.Size(107, 35);
+            this.btnGiaHanThe.TabIndex = 120;
+            this.btnGiaHanThe.Text = "Lịch sử gia hạn";
+            this.btnGiaHanThe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGiaHanThe.Textcolor = System.Drawing.Color.White;
+            this.btnGiaHanThe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiaHanThe.Click += new System.EventHandler(this.btnGiaHanThe_Click);
+            // 
             // Thu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnGiaHanThe);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.btnReload);
@@ -601,5 +638,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn môTảDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngườiDuyệtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGiaHanThe;
     }
 }

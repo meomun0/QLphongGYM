@@ -232,8 +232,6 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataTBicuaGoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãGóiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãThiếtBịDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;

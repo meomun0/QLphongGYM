@@ -11,7 +11,6 @@ namespace QLphongGYM
     class ThongkE
     {
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
-        SqlDataAdapter adapt;
         SqlCommand cmdTK;
         public string getDta(string strsql)
         {
@@ -19,7 +18,7 @@ namespace QLphongGYM
             con.Open();
             cmdTK = new SqlCommand(strsql, con);
             SqlDataReader dta = cmdTK.ExecuteReader();
-            while (dta.Read() && dta.GetValue(0).ToString() != "")
+            if (dta.Read() && dta.GetValue(0).ToString() != "")
             {
                 temp = dta[0].ToString();
             }

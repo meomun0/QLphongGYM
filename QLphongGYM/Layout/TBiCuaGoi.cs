@@ -15,7 +15,6 @@ namespace QLphongGYM.Layout
     {
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
         SqlDataAdapter adapt;
-        SqlCommand cmdKG;
 
         public TBiCuaGoi()
         {

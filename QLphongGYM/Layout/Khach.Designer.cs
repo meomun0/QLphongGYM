@@ -49,7 +49,6 @@
             this.btnReload = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.kHÁCHTableAdapter = new QLphongGYM.GYMDataSet_KhachTableAdapters.KHÁCHTableAdapter();
-            this.btnGiaHanThe = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVKh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHÁCHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Khach)).BeginInit();
@@ -312,46 +311,10 @@
             // 
             this.kHÁCHTableAdapter.ClearBeforeFill = true;
             // 
-            // btnGiaHanThe
-            // 
-            this.btnGiaHanThe.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGiaHanThe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGiaHanThe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGiaHanThe.BorderRadius = 0;
-            this.btnGiaHanThe.ButtonText = "Lịch sử gia hạn";
-            this.btnGiaHanThe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGiaHanThe.DisabledColor = System.Drawing.Color.Gray;
-            this.btnGiaHanThe.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnGiaHanThe.Iconimage = null;
-            this.btnGiaHanThe.Iconimage_right = null;
-            this.btnGiaHanThe.Iconimage_right_Selected = null;
-            this.btnGiaHanThe.Iconimage_Selected = null;
-            this.btnGiaHanThe.IconMarginLeft = 0;
-            this.btnGiaHanThe.IconMarginRight = 0;
-            this.btnGiaHanThe.IconRightVisible = true;
-            this.btnGiaHanThe.IconRightZoom = 0D;
-            this.btnGiaHanThe.IconVisible = true;
-            this.btnGiaHanThe.IconZoom = 90D;
-            this.btnGiaHanThe.IsTab = false;
-            this.btnGiaHanThe.Location = new System.Drawing.Point(170, 12);
-            this.btnGiaHanThe.Name = "btnGiaHanThe";
-            this.btnGiaHanThe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGiaHanThe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnGiaHanThe.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnGiaHanThe.selected = false;
-            this.btnGiaHanThe.Size = new System.Drawing.Size(107, 35);
-            this.btnGiaHanThe.TabIndex = 119;
-            this.btnGiaHanThe.Text = "Lịch sử gia hạn";
-            this.btnGiaHanThe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGiaHanThe.Textcolor = System.Drawing.Color.White;
-            this.btnGiaHanThe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaHanThe.Click += new System.EventHandler(this.btnGiaHanThe_Click);
-            // 
             // Khach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnGiaHanThe);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.cmbFilter);
@@ -389,6 +352,5 @@
         private System.Windows.Forms.BindingSource kHÁCHBindingSource;
         private GYMDataSet_Khach gYMDataSet_Khach;
         private GYMDataSet_KhachTableAdapters.KHÁCHTableAdapter kHÁCHTableAdapter;
-        private Bunifu.Framework.UI.BunifuFlatButton btnGiaHanThe;
     }
 }

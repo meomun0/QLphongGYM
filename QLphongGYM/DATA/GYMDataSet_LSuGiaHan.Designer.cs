@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace QLphongGYM {
+namespace QLphongGYM.DATA {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace QLphongGYM {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("GYMDataSet_LSGiaHan")]
+    [global::System.Xml.Serialization.XmlRootAttribute("GYMDataSet_LSuGiaHan")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class GYMDataSet_LSGiaHan : global::System.Data.DataSet {
+    public partial class GYMDataSet_LSuGiaHan : global::System.Data.DataSet {
         
-        private expirationHistoryDataTable tableexpirationHistory;
+        private LSuGiaHanDataTable tableLSuGiaHan;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public GYMDataSet_LSGiaHan() {
+        public GYMDataSet_LSuGiaHan() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace QLphongGYM {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected GYMDataSet_LSGiaHan(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected GYMDataSet_LSuGiaHan(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace QLphongGYM {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["expirationHistory"] != null)) {
-                    base.Tables.Add(new expirationHistoryDataTable(ds.Tables["expirationHistory"]));
+                if ((ds.Tables["LSuGiaHan"] != null)) {
+                    base.Tables.Add(new LSuGiaHanDataTable(ds.Tables["LSuGiaHan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace QLphongGYM {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public expirationHistoryDataTable expirationHistory {
+        public LSuGiaHanDataTable LSuGiaHan {
             get {
-                return this.tableexpirationHistory;
+                return this.tableLSuGiaHan;
             }
         }
         
@@ -127,7 +127,7 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            GYMDataSet_LSGiaHan cln = ((GYMDataSet_LSGiaHan)(base.Clone()));
+            GYMDataSet_LSuGiaHan cln = ((GYMDataSet_LSuGiaHan)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace QLphongGYM {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["expirationHistory"] != null)) {
-                    base.Tables.Add(new expirationHistoryDataTable(ds.Tables["expirationHistory"]));
+                if ((ds.Tables["LSuGiaHan"] != null)) {
+                    base.Tables.Add(new LSuGiaHanDataTable(ds.Tables["LSuGiaHan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableexpirationHistory = ((expirationHistoryDataTable)(base.Tables["expirationHistory"]));
+            this.tableLSuGiaHan = ((LSuGiaHanDataTable)(base.Tables["LSuGiaHan"]));
             if ((initTable == true)) {
-                if ((this.tableexpirationHistory != null)) {
-                    this.tableexpirationHistory.InitVars();
+                if ((this.tableLSuGiaHan != null)) {
+                    this.tableLSuGiaHan.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "GYMDataSet_LSGiaHan";
+            this.DataSetName = "GYMDataSet_LSuGiaHan";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/GYMDataSet_LSGiaHan.xsd";
+            this.Namespace = "http://tempuri.org/GYMDataSet_LSuGiaHan.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableexpirationHistory = new expirationHistoryDataTable();
-            base.Tables.Add(this.tableexpirationHistory);
+            this.tableLSuGiaHan = new LSuGiaHanDataTable();
+            base.Tables.Add(this.tableLSuGiaHan);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeexpirationHistory() {
+        private bool ShouldSerializeLSuGiaHan() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace QLphongGYM {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            GYMDataSet_LSGiaHan ds = new GYMDataSet_LSGiaHan();
+            GYMDataSet_LSuGiaHan ds = new GYMDataSet_LSuGiaHan();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,33 @@ namespace QLphongGYM {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void expirationHistoryRowChangeEventHandler(object sender, expirationHistoryRowChangeEvent e);
+        public delegate void LSuGiaHanRowChangeEventHandler(object sender, LSuGiaHanRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class expirationHistoryDataTable : global::System.Data.TypedTableBase<expirationHistoryRow> {
+        public partial class LSuGiaHanDataTable : global::System.Data.TypedTableBase<LSuGiaHanRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnMa;
             
-            private global::System.Data.DataColumn columnidCustomer;
+            private global::System.Data.DataColumn columnMaKhach;
             
-            private global::System.Data.DataColumn columnnameCustomer;
+            private global::System.Data.DataColumn columnTenKhach;
             
-            private global::System.Data.DataColumn columnregistrationTime;
+            private global::System.Data.DataColumn columnTGĐK;
             
-            private global::System.Data.DataColumn columnpreviousExpiration;
+            private global::System.Data.DataColumn columnHanTruoc;
             
-            private global::System.Data.DataColumn columnnextExpiration;
+            private global::System.Data.DataColumn columnHanSau;
             
             private global::System.Data.DataColumn columncheck;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryDataTable() {
-                this.TableName = "expirationHistory";
+            public LSuGiaHanDataTable() {
+                this.TableName = "LSuGiaHan";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal expirationHistoryDataTable(global::System.Data.DataTable table) {
+            internal LSuGiaHanDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,56 +321,56 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected expirationHistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected LSuGiaHanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn MaColumn {
                 get {
-                    return this.columnid;
+                    return this.columnMa;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idCustomerColumn {
+            public global::System.Data.DataColumn MaKhachColumn {
                 get {
-                    return this.columnidCustomer;
+                    return this.columnMaKhach;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn nameCustomerColumn {
+            public global::System.Data.DataColumn TenKhachColumn {
                 get {
-                    return this.columnnameCustomer;
+                    return this.columnTenKhach;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn registrationTimeColumn {
+            public global::System.Data.DataColumn TGĐKColumn {
                 get {
-                    return this.columnregistrationTime;
+                    return this.columnTGĐK;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn previousExpirationColumn {
+            public global::System.Data.DataColumn HanTruocColumn {
                 get {
-                    return this.columnpreviousExpiration;
+                    return this.columnHanTruoc;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn nextExpirationColumn {
+            public global::System.Data.DataColumn HanSauColumn {
                 get {
-                    return this.columnnextExpiration;
+                    return this.columnHanSau;
                 }
             }
             
@@ -393,58 +393,58 @@ namespace QLphongGYM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRow this[int index] {
+            public LSuGiaHanRow this[int index] {
                 get {
-                    return ((expirationHistoryRow)(this.Rows[index]));
+                    return ((LSuGiaHanRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event expirationHistoryRowChangeEventHandler expirationHistoryRowChanging;
+            public event LSuGiaHanRowChangeEventHandler LSuGiaHanRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event expirationHistoryRowChangeEventHandler expirationHistoryRowChanged;
+            public event LSuGiaHanRowChangeEventHandler LSuGiaHanRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event expirationHistoryRowChangeEventHandler expirationHistoryRowDeleting;
+            public event LSuGiaHanRowChangeEventHandler LSuGiaHanRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event expirationHistoryRowChangeEventHandler expirationHistoryRowDeleted;
+            public event LSuGiaHanRowChangeEventHandler LSuGiaHanRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddexpirationHistoryRow(expirationHistoryRow row) {
+            public void AddLSuGiaHanRow(LSuGiaHanRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRow AddexpirationHistoryRow(string idCustomer, string nameCustomer, System.DateTime registrationTime, System.DateTime previousExpiration, System.DateTime nextExpiration, bool check) {
-                expirationHistoryRow rowexpirationHistoryRow = ((expirationHistoryRow)(this.NewRow()));
+            public LSuGiaHanRow AddLSuGiaHanRow(string MaKhach, string TenKhach, System.DateTime TGĐK, System.DateTime HanTruoc, System.DateTime HanSau, bool check) {
+                LSuGiaHanRow rowLSuGiaHanRow = ((LSuGiaHanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        idCustomer,
-                        nameCustomer,
-                        registrationTime,
-                        previousExpiration,
-                        nextExpiration,
+                        MaKhach,
+                        TenKhach,
+                        TGĐK,
+                        HanTruoc,
+                        HanSau,
                         check};
-                rowexpirationHistoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowexpirationHistoryRow);
-                return rowexpirationHistoryRow;
+                rowLSuGiaHanRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowLSuGiaHanRow);
+                return rowLSuGiaHanRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRow FindByid(int id) {
-                return ((expirationHistoryRow)(this.Rows.Find(new object[] {
-                            id})));
+            public LSuGiaHanRow FindByMa(int Ma) {
+                return ((LSuGiaHanRow)(this.Rows.Find(new object[] {
+                            Ma})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                expirationHistoryDataTable cln = ((expirationHistoryDataTable)(base.Clone()));
+                LSuGiaHanDataTable cln = ((LSuGiaHanDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,74 +452,74 @@ namespace QLphongGYM {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new expirationHistoryDataTable();
+                return new LSuGiaHanDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnidCustomer = base.Columns["idCustomer"];
-                this.columnnameCustomer = base.Columns["nameCustomer"];
-                this.columnregistrationTime = base.Columns["registrationTime"];
-                this.columnpreviousExpiration = base.Columns["previousExpiration"];
-                this.columnnextExpiration = base.Columns["nextExpiration"];
+                this.columnMa = base.Columns["Ma"];
+                this.columnMaKhach = base.Columns["MaKhach"];
+                this.columnTenKhach = base.Columns["TenKhach"];
+                this.columnTGĐK = base.Columns["TGĐK"];
+                this.columnHanTruoc = base.Columns["HanTruoc"];
+                this.columnHanSau = base.Columns["HanSau"];
                 this.columncheck = base.Columns["check"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnidCustomer = new global::System.Data.DataColumn("idCustomer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCustomer);
-                this.columnnameCustomer = new global::System.Data.DataColumn("nameCustomer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnameCustomer);
-                this.columnregistrationTime = new global::System.Data.DataColumn("registrationTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnregistrationTime);
-                this.columnpreviousExpiration = new global::System.Data.DataColumn("previousExpiration", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpreviousExpiration);
-                this.columnnextExpiration = new global::System.Data.DataColumn("nextExpiration", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnextExpiration);
+                this.columnMa = new global::System.Data.DataColumn("Ma", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMa);
+                this.columnMaKhach = new global::System.Data.DataColumn("MaKhach", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaKhach);
+                this.columnTenKhach = new global::System.Data.DataColumn("TenKhach", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenKhach);
+                this.columnTGĐK = new global::System.Data.DataColumn("TGĐK", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTGĐK);
+                this.columnHanTruoc = new global::System.Data.DataColumn("HanTruoc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHanTruoc);
+                this.columnHanSau = new global::System.Data.DataColumn("HanSau", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHanSau);
                 this.columncheck = new global::System.Data.DataColumn("check", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncheck);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
-                this.columnidCustomer.MaxLength = 12;
-                this.columnnameCustomer.MaxLength = 30;
+                                this.columnMa}, true));
+                this.columnMa.AutoIncrement = true;
+                this.columnMa.AutoIncrementSeed = -1;
+                this.columnMa.AutoIncrementStep = -1;
+                this.columnMa.AllowDBNull = false;
+                this.columnMa.ReadOnly = true;
+                this.columnMa.Unique = true;
+                this.columnMaKhach.MaxLength = 12;
+                this.columnTenKhach.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRow NewexpirationHistoryRow() {
-                return ((expirationHistoryRow)(this.NewRow()));
+            public LSuGiaHanRow NewLSuGiaHanRow() {
+                return ((LSuGiaHanRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new expirationHistoryRow(builder);
+                return new LSuGiaHanRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(expirationHistoryRow);
+                return typeof(LSuGiaHanRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.expirationHistoryRowChanged != null)) {
-                    this.expirationHistoryRowChanged(this, new expirationHistoryRowChangeEvent(((expirationHistoryRow)(e.Row)), e.Action));
+                if ((this.LSuGiaHanRowChanged != null)) {
+                    this.LSuGiaHanRowChanged(this, new LSuGiaHanRowChangeEvent(((LSuGiaHanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -527,8 +527,8 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.expirationHistoryRowChanging != null)) {
-                    this.expirationHistoryRowChanging(this, new expirationHistoryRowChangeEvent(((expirationHistoryRow)(e.Row)), e.Action));
+                if ((this.LSuGiaHanRowChanging != null)) {
+                    this.LSuGiaHanRowChanging(this, new LSuGiaHanRowChangeEvent(((LSuGiaHanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -536,8 +536,8 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.expirationHistoryRowDeleted != null)) {
-                    this.expirationHistoryRowDeleted(this, new expirationHistoryRowChangeEvent(((expirationHistoryRow)(e.Row)), e.Action));
+                if ((this.LSuGiaHanRowDeleted != null)) {
+                    this.LSuGiaHanRowDeleted(this, new LSuGiaHanRowChangeEvent(((LSuGiaHanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -545,14 +545,14 @@ namespace QLphongGYM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.expirationHistoryRowDeleting != null)) {
-                    this.expirationHistoryRowDeleting(this, new expirationHistoryRowChangeEvent(((expirationHistoryRow)(e.Row)), e.Action));
+                if ((this.LSuGiaHanRowDeleting != null)) {
+                    this.LSuGiaHanRowDeleting(this, new LSuGiaHanRowChangeEvent(((LSuGiaHanRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveexpirationHistoryRow(expirationHistoryRow row) {
+            public void RemoveLSuGiaHanRow(LSuGiaHanRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -561,7 +561,7 @@ namespace QLphongGYM {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                GYMDataSet_LSGiaHan ds = new GYMDataSet_LSGiaHan();
+                GYMDataSet_LSuGiaHan ds = new GYMDataSet_LSuGiaHan();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -579,7 +579,7 @@ namespace QLphongGYM {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "expirationHistoryDataTable";
+                attribute2.FixedValue = "LSuGiaHanDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -623,106 +623,105 @@ namespace QLphongGYM {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class expirationHistoryRow : global::System.Data.DataRow {
+        public partial class LSuGiaHanRow : global::System.Data.DataRow {
             
-            private expirationHistoryDataTable tableexpirationHistory;
+            private LSuGiaHanDataTable tableLSuGiaHan;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal expirationHistoryRow(global::System.Data.DataRowBuilder rb) : 
+            internal LSuGiaHanRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableexpirationHistory = ((expirationHistoryDataTable)(this.Table));
+                this.tableLSuGiaHan = ((LSuGiaHanDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
+            public int Ma {
                 get {
-                    return ((int)(this[this.tableexpirationHistory.idColumn]));
+                    return ((int)(this[this.tableLSuGiaHan.MaColumn]));
                 }
                 set {
-                    this[this.tableexpirationHistory.idColumn] = value;
+                    this[this.tableLSuGiaHan.MaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string idCustomer {
-                get {
-                    try {
-                        return ((string)(this[this.tableexpirationHistory.idCustomerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'idCustomer\' in table \'expirationHistory\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableexpirationHistory.idCustomerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string nameCustomer {
+            public string MaKhach {
                 get {
                     try {
-                        return ((string)(this[this.tableexpirationHistory.nameCustomerColumn]));
+                        return ((string)(this[this.tableLSuGiaHan.MaKhachColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nameCustomer\' in table \'expirationHistory\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaKhach\' in table \'LSuGiaHan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexpirationHistory.nameCustomerColumn] = value;
+                    this[this.tableLSuGiaHan.MaKhachColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime registrationTime {
+            public string TenKhach {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableexpirationHistory.registrationTimeColumn]));
+                        return ((string)(this[this.tableLSuGiaHan.TenKhachColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'registrationTime\' in table \'expirationHistory\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenKhach\' in table \'LSuGiaHan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexpirationHistory.registrationTimeColumn] = value;
+                    this[this.tableLSuGiaHan.TenKhachColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime previousExpiration {
+            public System.DateTime TGĐK {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableexpirationHistory.previousExpirationColumn]));
+                        return ((global::System.DateTime)(this[this.tableLSuGiaHan.TGĐKColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'previousExpiration\' in table \'expirationHistory\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TGĐK\' in table \'LSuGiaHan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexpirationHistory.previousExpirationColumn] = value;
+                    this[this.tableLSuGiaHan.TGĐKColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime nextExpiration {
+            public System.DateTime HanTruoc {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableexpirationHistory.nextExpirationColumn]));
+                        return ((global::System.DateTime)(this[this.tableLSuGiaHan.HanTruocColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nextExpiration\' in table \'expirationHistory\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HanTruoc\' in table \'LSuGiaHan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexpirationHistory.nextExpirationColumn] = value;
+                    this[this.tableLSuGiaHan.HanTruocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime HanSau {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLSuGiaHan.HanSauColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HanSau\' in table \'LSuGiaHan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLSuGiaHan.HanSauColumn] = value;
                 }
             }
             
@@ -731,87 +730,87 @@ namespace QLphongGYM {
             public bool check {
                 get {
                     try {
-                        return ((bool)(this[this.tableexpirationHistory.checkColumn]));
+                        return ((bool)(this[this.tableLSuGiaHan.checkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'check\' in table \'expirationHistory\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'check\' in table \'LSuGiaHan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexpirationHistory.checkColumn] = value;
+                    this[this.tableLSuGiaHan.checkColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsidCustomerNull() {
-                return this.IsNull(this.tableexpirationHistory.idCustomerColumn);
+            public bool IsMaKhachNull() {
+                return this.IsNull(this.tableLSuGiaHan.MaKhachColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetidCustomerNull() {
-                this[this.tableexpirationHistory.idCustomerColumn] = global::System.Convert.DBNull;
+            public void SetMaKhachNull() {
+                this[this.tableLSuGiaHan.MaKhachColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsnameCustomerNull() {
-                return this.IsNull(this.tableexpirationHistory.nameCustomerColumn);
+            public bool IsTenKhachNull() {
+                return this.IsNull(this.tableLSuGiaHan.TenKhachColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetnameCustomerNull() {
-                this[this.tableexpirationHistory.nameCustomerColumn] = global::System.Convert.DBNull;
+            public void SetTenKhachNull() {
+                this[this.tableLSuGiaHan.TenKhachColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsregistrationTimeNull() {
-                return this.IsNull(this.tableexpirationHistory.registrationTimeColumn);
+            public bool IsTGĐKNull() {
+                return this.IsNull(this.tableLSuGiaHan.TGĐKColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetregistrationTimeNull() {
-                this[this.tableexpirationHistory.registrationTimeColumn] = global::System.Convert.DBNull;
+            public void SetTGĐKNull() {
+                this[this.tableLSuGiaHan.TGĐKColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IspreviousExpirationNull() {
-                return this.IsNull(this.tableexpirationHistory.previousExpirationColumn);
+            public bool IsHanTruocNull() {
+                return this.IsNull(this.tableLSuGiaHan.HanTruocColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetpreviousExpirationNull() {
-                this[this.tableexpirationHistory.previousExpirationColumn] = global::System.Convert.DBNull;
+            public void SetHanTruocNull() {
+                this[this.tableLSuGiaHan.HanTruocColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsnextExpirationNull() {
-                return this.IsNull(this.tableexpirationHistory.nextExpirationColumn);
+            public bool IsHanSauNull() {
+                return this.IsNull(this.tableLSuGiaHan.HanSauColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetnextExpirationNull() {
-                this[this.tableexpirationHistory.nextExpirationColumn] = global::System.Convert.DBNull;
+            public void SetHanSauNull() {
+                this[this.tableLSuGiaHan.HanSauColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IscheckNull() {
-                return this.IsNull(this.tableexpirationHistory.checkColumn);
+                return this.IsNull(this.tableLSuGiaHan.checkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcheckNull() {
-                this[this.tableexpirationHistory.checkColumn] = global::System.Convert.DBNull;
+                this[this.tableLSuGiaHan.checkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -819,22 +818,22 @@ namespace QLphongGYM {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class expirationHistoryRowChangeEvent : global::System.EventArgs {
+        public class LSuGiaHanRowChangeEvent : global::System.EventArgs {
             
-            private expirationHistoryRow eventRow;
+            private LSuGiaHanRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRowChangeEvent(expirationHistoryRow row, global::System.Data.DataRowAction action) {
+            public LSuGiaHanRowChangeEvent(LSuGiaHanRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public expirationHistoryRow Row {
+            public LSuGiaHanRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -850,7 +849,7 @@ namespace QLphongGYM {
         }
     }
 }
-namespace QLphongGYM.GYMDataSet_LSGiaHanTableAdapters {
+namespace QLphongGYM.DATA.GYMDataSet_LSuGiaHanTableAdapters {
     
     
     /// <summary>
@@ -862,7 +861,7 @@ namespace QLphongGYM.GYMDataSet_LSGiaHanTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class expirationHistoryTableAdapter : global::System.ComponentModel.Component {
+    public partial class LSuGiaHanTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -876,7 +875,7 @@ namespace QLphongGYM.GYMDataSet_LSGiaHanTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public expirationHistoryTableAdapter() {
+        public LSuGiaHanTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -973,68 +972,68 @@ namespace QLphongGYM.GYMDataSet_LSGiaHanTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "expirationHistory";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("idCustomer", "idCustomer");
-            tableMapping.ColumnMappings.Add("nameCustomer", "nameCustomer");
-            tableMapping.ColumnMappings.Add("registrationTime", "registrationTime");
-            tableMapping.ColumnMappings.Add("previousExpiration", "previousExpiration");
-            tableMapping.ColumnMappings.Add("nextExpiration", "nextExpiration");
+            tableMapping.DataSetTable = "LSuGiaHan";
+            tableMapping.ColumnMappings.Add("Ma", "Ma");
+            tableMapping.ColumnMappings.Add("MaKhach", "MaKhach");
+            tableMapping.ColumnMappings.Add("TenKhach", "TenKhach");
+            tableMapping.ColumnMappings.Add("TGĐK", "TGĐK");
+            tableMapping.ColumnMappings.Add("HanTruoc", "HanTruoc");
+            tableMapping.ColumnMappings.Add("HanSau", "HanSau");
             tableMapping.ColumnMappings.Add("check", "check");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[expirationHistory] WHERE (([id] = @Original_id) AND ((@IsNull_idCustomer = 1 AND [idCustomer] IS NULL) OR ([idCustomer] = @Original_idCustomer)) AND ((@IsNull_nameCustomer = 1 AND [nameCustomer] IS NULL) OR ([nameCustomer] = @Original_nameCustomer)) AND ((@IsNull_registrationTime = 1 AND [registrationTime] IS NULL) OR ([registrationTime] = @Original_registrationTime)) AND ((@IsNull_previousExpiration = 1 AND [previousExpiration] IS NULL) OR ([previousExpiration] = @Original_previousExpiration)) AND ((@IsNull_nextExpiration = 1 AND [nextExpiration] IS NULL) OR ([nextExpiration] = @Original_nextExpiration)) AND ((@IsNull_check = 1 AND [check] IS NULL) OR ([check] = @Original_check)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[LSuGiaHan] WHERE (([Ma] = @Original_Ma) AND ((@IsNull_MaKhach = 1 AND [MaKhach] IS NULL) OR ([MaKhach] = @Original_MaKhach)) AND ((@IsNull_TenKhach = 1 AND [TenKhach] IS NULL) OR ([TenKhach] = @Original_TenKhach)) AND ((@IsNull_TGĐK = 1 AND [TGĐK] IS NULL) OR ([TGĐK] = @Original_TGĐK)) AND ((@IsNull_HanTruoc = 1 AND [HanTruoc] IS NULL) OR ([HanTruoc] = @Original_HanTruoc)) AND ((@IsNull_HanSau = 1 AND [HanSau] IS NULL) OR ([HanSau] = @Original_HanSau)) AND ((@IsNull_check = 1 AND [check] IS NULL) OR ([check] = @Original_check)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCustomer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCustomer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nameCustomer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nameCustomer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_registrationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_registrationTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_previousExpiration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_previousExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nextExpiration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nextExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ma", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MaKhach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaKhach", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TenKhach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TenKhach", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TGĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TGĐK", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HanTruoc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HanTruoc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HanSau", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HanSau", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_check", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_check", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[expirationHistory] ([idCustomer], [nameCustomer], [registrationTime], [previousExpiration], [nextExpiration], [check]) VALUES (@idCustomer, @nameCustomer, @registrationTime, @previousExpiration, @nextExpiration, @check);
-SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextExpiration, [check] FROM expirationHistory WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[LSuGiaHan] ([MaKhach], [TenKhach], [TGĐK], [HanTruoc], [HanSau], [check]) VALUES (@MaKhach, @TenKhach, @TGĐK, @HanTruoc, @HanSau, @check);
+SELECT Ma, MaKhach, TenKhach, TGĐK, HanTruoc, HanSau, [check] FROM LSuGiaHan WHERE (Ma = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCustomer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nameCustomer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@registrationTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@previousExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nextExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaKhach", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenKhach", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TGĐK", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HanTruoc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HanSau", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@check", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[expirationHistory] SET [idCustomer] = @idCustomer, [nameCustomer] = @nameCustomer, [registrationTime] = @registrationTime, [previousExpiration] = @previousExpiration, [nextExpiration] = @nextExpiration, [check] = @check WHERE (([id] = @Original_id) AND ((@IsNull_idCustomer = 1 AND [idCustomer] IS NULL) OR ([idCustomer] = @Original_idCustomer)) AND ((@IsNull_nameCustomer = 1 AND [nameCustomer] IS NULL) OR ([nameCustomer] = @Original_nameCustomer)) AND ((@IsNull_registrationTime = 1 AND [registrationTime] IS NULL) OR ([registrationTime] = @Original_registrationTime)) AND ((@IsNull_previousExpiration = 1 AND [previousExpiration] IS NULL) OR ([previousExpiration] = @Original_previousExpiration)) AND ((@IsNull_nextExpiration = 1 AND [nextExpiration] IS NULL) OR ([nextExpiration] = @Original_nextExpiration)) AND ((@IsNull_check = 1 AND [check] IS NULL) OR ([check] = @Original_check)));
-SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextExpiration, [check] FROM expirationHistory WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[LSuGiaHan] SET [MaKhach] = @MaKhach, [TenKhach] = @TenKhach, [TGĐK] = @TGĐK, [HanTruoc] = @HanTruoc, [HanSau] = @HanSau, [check] = @check WHERE (([Ma] = @Original_Ma) AND ((@IsNull_MaKhach = 1 AND [MaKhach] IS NULL) OR ([MaKhach] = @Original_MaKhach)) AND ((@IsNull_TenKhach = 1 AND [TenKhach] IS NULL) OR ([TenKhach] = @Original_TenKhach)) AND ((@IsNull_TGĐK = 1 AND [TGĐK] IS NULL) OR ([TGĐK] = @Original_TGĐK)) AND ((@IsNull_HanTruoc = 1 AND [HanTruoc] IS NULL) OR ([HanTruoc] = @Original_HanTruoc)) AND ((@IsNull_HanSau = 1 AND [HanSau] IS NULL) OR ([HanSau] = @Original_HanSau)) AND ((@IsNull_check = 1 AND [check] IS NULL) OR ([check] = @Original_check)));
+SELECT Ma, MaKhach, TenKhach, TGĐK, HanTruoc, HanSau, [check] FROM LSuGiaHan WHERE (Ma = @Ma)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCustomer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nameCustomer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@registrationTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@previousExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nextExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaKhach", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenKhach", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TGĐK", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HanTruoc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HanSau", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@check", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCustomer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCustomer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCustomer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nameCustomer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nameCustomer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nameCustomer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_registrationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_registrationTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "registrationTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_previousExpiration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_previousExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "previousExpiration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nextExpiration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nextExpiration", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nextExpiration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ma", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MaKhach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaKhach", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKhach", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TenKhach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TenKhach", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenKhach", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TGĐK", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TGĐK", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TGĐK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HanTruoc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HanTruoc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanTruoc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HanSau", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HanSau", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSau", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_check", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_check", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "check", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ma", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Ma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1050,8 +1049,7 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextEx" +
-                "piration, [check] FROM dbo.expirationHistory";
+            this._commandCollection[0].CommandText = "SELECT Ma, MaKhach, TenKhach, TGĐK, HanTruoc, HanSau, [check] FROM dbo.LSuGiaHan";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1059,7 +1057,7 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(GYMDataSet_LSGiaHan.expirationHistoryDataTable dataTable) {
+        public virtual int Fill(GYMDataSet_LSuGiaHan.LSuGiaHanDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1072,9 +1070,9 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual GYMDataSet_LSGiaHan.expirationHistoryDataTable GetData() {
+        public virtual GYMDataSet_LSuGiaHan.LSuGiaHanDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            GYMDataSet_LSGiaHan.expirationHistoryDataTable dataTable = new GYMDataSet_LSGiaHan.expirationHistoryDataTable();
+            GYMDataSet_LSuGiaHan.LSuGiaHanDataTable dataTable = new GYMDataSet_LSuGiaHan.LSuGiaHanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1082,15 +1080,15 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(GYMDataSet_LSGiaHan.expirationHistoryDataTable dataTable) {
+        public virtual int Update(GYMDataSet_LSuGiaHan.LSuGiaHanDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(GYMDataSet_LSGiaHan dataSet) {
-            return this.Adapter.Update(dataSet, "expirationHistory");
+        public virtual int Update(GYMDataSet_LSuGiaHan dataSet) {
+            return this.Adapter.Update(dataSet, "LSuGiaHan");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1112,43 +1110,43 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_idCustomer, string Original_nameCustomer, global::System.Nullable<global::System.DateTime> Original_registrationTime, global::System.Nullable<global::System.DateTime> Original_previousExpiration, global::System.Nullable<global::System.DateTime> Original_nextExpiration, global::System.Nullable<bool> Original_check) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_idCustomer == null)) {
+        public virtual int Delete(int Original_Ma, string Original_MaKhach, string Original_TenKhach, global::System.Nullable<global::System.DateTime> Original_TGĐK, global::System.Nullable<global::System.DateTime> Original_HanTruoc, global::System.Nullable<global::System.DateTime> Original_HanSau, global::System.Nullable<bool> Original_check) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Ma));
+            if ((Original_MaKhach == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_idCustomer));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MaKhach));
             }
-            if ((Original_nameCustomer == null)) {
+            if ((Original_TenKhach == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_nameCustomer));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TenKhach));
             }
-            if ((Original_registrationTime.HasValue == true)) {
+            if ((Original_TGĐK.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_registrationTime.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_TGĐK.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_previousExpiration.HasValue == true)) {
+            if ((Original_HanTruoc.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_previousExpiration.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_HanTruoc.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_nextExpiration.HasValue == true)) {
+            if ((Original_HanSau.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_nextExpiration.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_HanSau.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
@@ -1182,33 +1180,33 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string idCustomer, string nameCustomer, global::System.Nullable<global::System.DateTime> registrationTime, global::System.Nullable<global::System.DateTime> previousExpiration, global::System.Nullable<global::System.DateTime> nextExpiration, global::System.Nullable<bool> check) {
-            if ((idCustomer == null)) {
+        public virtual int Insert(string MaKhach, string TenKhach, global::System.Nullable<global::System.DateTime> TGĐK, global::System.Nullable<global::System.DateTime> HanTruoc, global::System.Nullable<global::System.DateTime> HanSau, global::System.Nullable<bool> check) {
+            if ((MaKhach == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(idCustomer));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MaKhach));
             }
-            if ((nameCustomer == null)) {
+            if ((TenKhach == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nameCustomer));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TenKhach));
             }
-            if ((registrationTime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(registrationTime.Value));
+            if ((TGĐK.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(TGĐK.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((previousExpiration.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(previousExpiration.Value));
+            if ((HanTruoc.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(HanTruoc.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((nextExpiration.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(nextExpiration.Value));
+            if ((HanSau.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(HanSau.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1239,33 +1237,33 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string idCustomer, string nameCustomer, global::System.Nullable<global::System.DateTime> registrationTime, global::System.Nullable<global::System.DateTime> previousExpiration, global::System.Nullable<global::System.DateTime> nextExpiration, global::System.Nullable<bool> check, int Original_id, string Original_idCustomer, string Original_nameCustomer, global::System.Nullable<global::System.DateTime> Original_registrationTime, global::System.Nullable<global::System.DateTime> Original_previousExpiration, global::System.Nullable<global::System.DateTime> Original_nextExpiration, global::System.Nullable<bool> Original_check, int id) {
-            if ((idCustomer == null)) {
+        public virtual int Update(string MaKhach, string TenKhach, global::System.Nullable<global::System.DateTime> TGĐK, global::System.Nullable<global::System.DateTime> HanTruoc, global::System.Nullable<global::System.DateTime> HanSau, global::System.Nullable<bool> check, int Original_Ma, string Original_MaKhach, string Original_TenKhach, global::System.Nullable<global::System.DateTime> Original_TGĐK, global::System.Nullable<global::System.DateTime> Original_HanTruoc, global::System.Nullable<global::System.DateTime> Original_HanSau, global::System.Nullable<bool> Original_check, int Ma) {
+            if ((MaKhach == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(idCustomer));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MaKhach));
             }
-            if ((nameCustomer == null)) {
+            if ((TenKhach == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nameCustomer));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TenKhach));
             }
-            if ((registrationTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(registrationTime.Value));
+            if ((TGĐK.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(TGĐK.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((previousExpiration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(previousExpiration.Value));
+            if ((HanTruoc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(HanTruoc.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((nextExpiration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(nextExpiration.Value));
+            if ((HanSau.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(HanSau.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1276,42 +1274,42 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
-            if ((Original_idCustomer == null)) {
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Ma));
+            if ((Original_MaKhach == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_idCustomer));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_MaKhach));
             }
-            if ((Original_nameCustomer == null)) {
+            if ((Original_TenKhach == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_nameCustomer));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TenKhach));
             }
-            if ((Original_registrationTime.HasValue == true)) {
+            if ((Original_TGĐK.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_registrationTime.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_TGĐK.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_previousExpiration.HasValue == true)) {
+            if ((Original_HanTruoc.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_previousExpiration.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_HanTruoc.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_nextExpiration.HasValue == true)) {
+            if ((Original_HanSau.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_nextExpiration.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_HanSau.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
@@ -1325,7 +1323,7 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Ma));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1346,8 +1344,8 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string idCustomer, string nameCustomer, global::System.Nullable<global::System.DateTime> registrationTime, global::System.Nullable<global::System.DateTime> previousExpiration, global::System.Nullable<global::System.DateTime> nextExpiration, global::System.Nullable<bool> check, int Original_id, string Original_idCustomer, string Original_nameCustomer, global::System.Nullable<global::System.DateTime> Original_registrationTime, global::System.Nullable<global::System.DateTime> Original_previousExpiration, global::System.Nullable<global::System.DateTime> Original_nextExpiration, global::System.Nullable<bool> Original_check) {
-            return this.Update(idCustomer, nameCustomer, registrationTime, previousExpiration, nextExpiration, check, Original_id, Original_idCustomer, Original_nameCustomer, Original_registrationTime, Original_previousExpiration, Original_nextExpiration, Original_check, Original_id);
+        public virtual int Update(string MaKhach, string TenKhach, global::System.Nullable<global::System.DateTime> TGĐK, global::System.Nullable<global::System.DateTime> HanTruoc, global::System.Nullable<global::System.DateTime> HanSau, global::System.Nullable<bool> check, int Original_Ma, string Original_MaKhach, string Original_TenKhach, global::System.Nullable<global::System.DateTime> Original_TGĐK, global::System.Nullable<global::System.DateTime> Original_HanTruoc, global::System.Nullable<global::System.DateTime> Original_HanSau, global::System.Nullable<bool> Original_check) {
+            return this.Update(MaKhach, TenKhach, TGĐK, HanTruoc, HanSau, check, Original_Ma, Original_MaKhach, Original_TenKhach, Original_TGĐK, Original_HanTruoc, Original_HanSau, Original_check, Original_Ma);
         }
     }
     
@@ -1363,7 +1361,7 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         
         private UpdateOrderOption _updateOrder;
         
-        private expirationHistoryTableAdapter _expirationHistoryTableAdapter;
+        private LSuGiaHanTableAdapter _lSuGiaHanTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1385,12 +1383,12 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public expirationHistoryTableAdapter expirationHistoryTableAdapter {
+        public LSuGiaHanTableAdapter LSuGiaHanTableAdapter {
             get {
-                return this._expirationHistoryTableAdapter;
+                return this._lSuGiaHanTableAdapter;
             }
             set {
-                this._expirationHistoryTableAdapter = value;
+                this._lSuGiaHanTableAdapter = value;
             }
         }
         
@@ -1413,9 +1411,9 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._expirationHistoryTableAdapter != null) 
-                            && (this._expirationHistoryTableAdapter.Connection != null))) {
-                    return this._expirationHistoryTableAdapter.Connection;
+                if (((this._lSuGiaHanTableAdapter != null) 
+                            && (this._lSuGiaHanTableAdapter.Connection != null))) {
+                    return this._lSuGiaHanTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1430,7 +1428,7 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._expirationHistoryTableAdapter != null)) {
+                if ((this._lSuGiaHanTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1442,14 +1440,14 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(GYMDataSet_LSGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(GYMDataSet_LSuGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._expirationHistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.expirationHistory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._lSuGiaHanTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.LSuGiaHan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._expirationHistoryTableAdapter.Update(updatedRows));
+                    result = (result + this._lSuGiaHanTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1461,13 +1459,13 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(GYMDataSet_LSGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(GYMDataSet_LSuGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._expirationHistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.expirationHistory.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._lSuGiaHanTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.LSuGiaHan.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._expirationHistoryTableAdapter.Update(addedRows));
+                    result = (result + this._lSuGiaHanTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1479,13 +1477,13 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(GYMDataSet_LSGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(GYMDataSet_LSuGiaHan dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._expirationHistoryTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.expirationHistory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._lSuGiaHanTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.LSuGiaHan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._expirationHistoryTableAdapter.Update(deletedRows));
+                    result = (result + this._lSuGiaHanTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1521,15 +1519,15 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(GYMDataSet_LSGiaHan dataSet) {
+        public virtual int UpdateAll(GYMDataSet_LSuGiaHan dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._expirationHistoryTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._expirationHistoryTableAdapter.Connection) == false))) {
+            if (((this._lSuGiaHanTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._lSuGiaHanTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1565,13 +1563,13 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._expirationHistoryTableAdapter != null)) {
-                    revertConnections.Add(this._expirationHistoryTableAdapter, this._expirationHistoryTableAdapter.Connection);
-                    this._expirationHistoryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._expirationHistoryTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._expirationHistoryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._expirationHistoryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._expirationHistoryTableAdapter.Adapter);
+                if ((this._lSuGiaHanTableAdapter != null)) {
+                    revertConnections.Add(this._lSuGiaHanTableAdapter, this._lSuGiaHanTableAdapter.Connection);
+                    this._lSuGiaHanTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._lSuGiaHanTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._lSuGiaHanTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._lSuGiaHanTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._lSuGiaHanTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1632,9 +1630,9 @@ SELECT id, idCustomer, nameCustomer, registrationTime, previousExpiration, nextE
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._expirationHistoryTableAdapter != null)) {
-                    this._expirationHistoryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._expirationHistoryTableAdapter]));
-                    this._expirationHistoryTableAdapter.Transaction = null;
+                if ((this._lSuGiaHanTableAdapter != null)) {
+                    this._lSuGiaHanTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lSuGiaHanTableAdapter]));
+                    this._lSuGiaHanTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

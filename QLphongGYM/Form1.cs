@@ -92,6 +92,10 @@ namespace QLphongGYM
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            panelTongquan.Controls.Clear();
+            panelTongquan.Controls.Add(new Layout.StartPage());
+            btGoiTap.Enabled = false;
+            btPhanCong.Enabled = false;
             DoiMatKhau.Enabled = false;
             access.Enabled = false;
             logout.Enabled = false;
@@ -109,28 +113,51 @@ namespace QLphongGYM
         {
             FormLogin formlogin = new FormLogin();
             formlogin.ShowDialog();
-            login.Enabled = false;
-            logout.Enabled = true;
-            btTongQuan.Enabled = true;
-            btThu.Enabled = true;
-            btChi.Enabled = true;
-            btDungCu.Enabled = true;
-            btkhachhang.Enabled = true;
-            btKhachGoi.Enabled = true;
-            btThietBi.Enabled = true;
-            DoiMatKhau.Enabled = true;
-            btNhanVien.Enabled = true;
+            if (UserInfo.privilege == "low")
+            {
+                btGoiTap.Enabled = true;
+                btPhanCong.Enabled = true;
+                login.Enabled = false;
+                logout.Enabled = true;
+                DoiMatKhau.Enabled = true;
+                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName;
+            }
             if (UserInfo.privilege=="normal")
             {
+                btGoiTap.Enabled = true;
+                btPhanCong.Enabled = true;
+                login.Enabled = false;
+                logout.Enabled = true;
+                btTongQuan.Enabled = true;
+                btThu.Enabled = true;
+                btChi.Enabled = true;
+                btDungCu.Enabled = true;
+                btkhachhang.Enabled = true;
+                btKhachGoi.Enabled = true;
+                btThietBi.Enabled = true;
+                DoiMatKhau.Enabled = true;
                 Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName;
             }
             if (UserInfo.privilege == "high")
             {
+                btGoiTap.Enabled = true;
+                btPhanCong.Enabled = true;
+                login.Enabled = false;
+                logout.Enabled = true;
+                btTongQuan.Enabled = true;
+                btThu.Enabled = true;
+                btChi.Enabled = true;
+                btDungCu.Enabled = true;
+                btkhachhang.Enabled = true;
+                btKhachGoi.Enabled = true;
+                btThietBi.Enabled = true;
+                DoiMatKhau.Enabled = true;
+                btNhanVien.Enabled = true;
                 Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName ;
                 access.Enabled = true;
             }
             panelTongquan.Controls.Clear();
-            panelTongquan.Controls.Add(new Layout.GoiTap());
+            panelTongquan.Controls.Add(new Layout.ThongKe());
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -139,6 +166,8 @@ namespace QLphongGYM
             {
                 Status.Text = "Bạn chưa đăng nhập. Nhấp Login!!!";
                 login.Enabled = true;
+                btGoiTap.Enabled = false;
+                btPhanCong.Enabled = false;
                 access.Enabled = false;
                 logout.Enabled = false;
                 btTongQuan.Enabled = false;
@@ -155,7 +184,7 @@ namespace QLphongGYM
                 UserInfo.privilege = "";
                 UserInfo.userName = "";
                 panelTongquan.Controls.Clear();
-                panelTongquan.Controls.Add(new Layout.GoiTap());
+                panelTongquan.Controls.Add(new Layout.StartPage());
             }
         }
 

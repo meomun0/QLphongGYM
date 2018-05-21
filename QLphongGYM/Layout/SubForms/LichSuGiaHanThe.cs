@@ -19,8 +19,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void LichSuGiaHanThe_Load(object sender, EventArgs e)
         {
-            this.expirationHistoryTableAdapter.Fill(this.gYMDataSet_LSGiaHan.expirationHistory);
-
+            this.lSuGiaHanTableAdapter.Fill(this.gYMDataSet_LSuGiaHan.LSuGiaHan);
         }
 
         private void Close_Click(object sender, EventArgs e)

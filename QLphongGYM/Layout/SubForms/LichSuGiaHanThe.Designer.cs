@@ -38,23 +38,23 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.gYMDataSet_LSGiaHan = new QLphongGYM.GYMDataSet_LSGiaHan();
-            this.expirationHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.expirationHistoryTableAdapter = new QLphongGYM.GYMDataSet_LSGiaHanTableAdapters.expirationHistoryTableAdapter();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.search = new System.Windows.Forms.Panel();
             this.refresh = new System.Windows.Forms.Panel();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.previousExpirationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nextExpirationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gYMDataSet_LSuGiaHan = new QLphongGYM.DATA.GYMDataSet_LSuGiaHan();
+            this.lSuGiaHanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lSuGiaHanTableAdapter = new QLphongGYM.DATA.GYMDataSet_LSuGiaHanTableAdapters.LSuGiaHanTableAdapter();
+            this.maDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tGĐKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanTruocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanSauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSGiaHan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expirationHistoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lSuGiaHanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -131,13 +131,13 @@
             this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeight = 25;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.idCustomerDataGridViewTextBoxColumn,
-            this.nameCustomerDataGridViewTextBoxColumn,
-            this.registrationTimeDataGridViewTextBoxColumn,
-            this.previousExpirationDataGridViewTextBoxColumn,
-            this.nextExpirationDataGridViewTextBoxColumn});
-            this.bunifuCustomDataGrid1.DataSource = this.expirationHistoryBindingSource;
+            this.maDataGridViewTextBoxColumn,
+            this.maKhachDataGridViewTextBoxColumn,
+            this.tenKhachDataGridViewTextBoxColumn,
+            this.tGĐKDataGridViewTextBoxColumn,
+            this.hanTruocDataGridViewTextBoxColumn,
+            this.hanSauDataGridViewTextBoxColumn});
+            this.bunifuCustomDataGrid1.DataSource = this.lSuGiaHanBindingSource;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(34)))));
@@ -148,20 +148,6 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(676, 311);
             this.bunifuCustomDataGrid1.TabIndex = 100;
-            // 
-            // gYMDataSet_LSGiaHan
-            // 
-            this.gYMDataSet_LSGiaHan.DataSetName = "GYMDataSet_LSGiaHan";
-            this.gYMDataSet_LSGiaHan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // expirationHistoryBindingSource
-            // 
-            this.expirationHistoryBindingSource.DataMember = "expirationHistory";
-            this.expirationHistoryBindingSource.DataSource = this.gYMDataSet_LSGiaHan;
-            // 
-            // expirationHistoryTableAdapter
-            // 
-            this.expirationHistoryTableAdapter.ClearBeforeFill = true;
             // 
             // cmbFilter
             // 
@@ -208,53 +194,67 @@
             this.refresh.Size = new System.Drawing.Size(30, 30);
             this.refresh.TabIndex = 123;
             // 
-            // idDataGridViewTextBoxColumn
+            // gYMDataSet_LSuGiaHan
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 40;
+            this.gYMDataSet_LSuGiaHan.DataSetName = "GYMDataSet_LSuGiaHan";
+            this.gYMDataSet_LSuGiaHan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // idCustomerDataGridViewTextBoxColumn
+            // lSuGiaHanBindingSource
             // 
-            this.idCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCustomerDataGridViewTextBoxColumn.DataPropertyName = "idCustomer";
-            this.idCustomerDataGridViewTextBoxColumn.HeaderText = "Mã khách";
-            this.idCustomerDataGridViewTextBoxColumn.Name = "idCustomerDataGridViewTextBoxColumn";
-            this.idCustomerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lSuGiaHanBindingSource.DataMember = "LSuGiaHan";
+            this.lSuGiaHanBindingSource.DataSource = this.gYMDataSet_LSuGiaHan;
             // 
-            // nameCustomerDataGridViewTextBoxColumn
+            // lSuGiaHanTableAdapter
             // 
-            this.nameCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCustomerDataGridViewTextBoxColumn.DataPropertyName = "nameCustomer";
-            this.nameCustomerDataGridViewTextBoxColumn.HeaderText = "Tên khách";
-            this.nameCustomerDataGridViewTextBoxColumn.Name = "nameCustomerDataGridViewTextBoxColumn";
-            this.nameCustomerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lSuGiaHanTableAdapter.ClearBeforeFill = true;
             // 
-            // registrationTimeDataGridViewTextBoxColumn
+            // maDataGridViewTextBoxColumn
             // 
-            this.registrationTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.registrationTimeDataGridViewTextBoxColumn.DataPropertyName = "registrationTime";
-            this.registrationTimeDataGridViewTextBoxColumn.HeaderText = "Ngày ĐK";
-            this.registrationTimeDataGridViewTextBoxColumn.Name = "registrationTimeDataGridViewTextBoxColumn";
-            this.registrationTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maDataGridViewTextBoxColumn.DataPropertyName = "Ma";
+            this.maDataGridViewTextBoxColumn.HeaderText = "STT";
+            this.maDataGridViewTextBoxColumn.Name = "maDataGridViewTextBoxColumn";
+            this.maDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maDataGridViewTextBoxColumn.Width = 50;
             // 
-            // previousExpirationDataGridViewTextBoxColumn
+            // maKhachDataGridViewTextBoxColumn
             // 
-            this.previousExpirationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.previousExpirationDataGridViewTextBoxColumn.DataPropertyName = "previousExpiration";
-            this.previousExpirationDataGridViewTextBoxColumn.HeaderText = "Hạn trước";
-            this.previousExpirationDataGridViewTextBoxColumn.Name = "previousExpirationDataGridViewTextBoxColumn";
-            this.previousExpirationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maKhachDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maKhachDataGridViewTextBoxColumn.DataPropertyName = "MaKhach";
+            this.maKhachDataGridViewTextBoxColumn.HeaderText = "Mã Khách";
+            this.maKhachDataGridViewTextBoxColumn.Name = "maKhachDataGridViewTextBoxColumn";
+            this.maKhachDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nextExpirationDataGridViewTextBoxColumn
+            // tenKhachDataGridViewTextBoxColumn
             // 
-            this.nextExpirationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nextExpirationDataGridViewTextBoxColumn.DataPropertyName = "nextExpiration";
-            this.nextExpirationDataGridViewTextBoxColumn.HeaderText = "Hạn sau";
-            this.nextExpirationDataGridViewTextBoxColumn.Name = "nextExpirationDataGridViewTextBoxColumn";
-            this.nextExpirationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenKhachDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenKhachDataGridViewTextBoxColumn.DataPropertyName = "TenKhach";
+            this.tenKhachDataGridViewTextBoxColumn.HeaderText = "Tên Khách";
+            this.tenKhachDataGridViewTextBoxColumn.Name = "tenKhachDataGridViewTextBoxColumn";
+            this.tenKhachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tGĐKDataGridViewTextBoxColumn
+            // 
+            this.tGĐKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tGĐKDataGridViewTextBoxColumn.DataPropertyName = "TGĐK";
+            this.tGĐKDataGridViewTextBoxColumn.HeaderText = "Ngày ĐK thẻ";
+            this.tGĐKDataGridViewTextBoxColumn.Name = "tGĐKDataGridViewTextBoxColumn";
+            this.tGĐKDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hanTruocDataGridViewTextBoxColumn
+            // 
+            this.hanTruocDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hanTruocDataGridViewTextBoxColumn.DataPropertyName = "HanTruoc";
+            this.hanTruocDataGridViewTextBoxColumn.HeaderText = "Hạn Cũ";
+            this.hanTruocDataGridViewTextBoxColumn.Name = "hanTruocDataGridViewTextBoxColumn";
+            this.hanTruocDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hanSauDataGridViewTextBoxColumn
+            // 
+            this.hanSauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hanSauDataGridViewTextBoxColumn.DataPropertyName = "HanSau";
+            this.hanSauDataGridViewTextBoxColumn.HeaderText = "Hạn Mới";
+            this.hanSauDataGridViewTextBoxColumn.Name = "hanSauDataGridViewTextBoxColumn";
+            this.hanSauDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // LichSuGiaHanThe
             // 
@@ -274,8 +274,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSGiaHan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expirationHistoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lSuGiaHanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,18 +289,18 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private GYMDataSet_LSGiaHan gYMDataSet_LSGiaHan;
-        private System.Windows.Forms.BindingSource expirationHistoryBindingSource;
-        private GYMDataSet_LSGiaHanTableAdapters.expirationHistoryTableAdapter expirationHistoryTableAdapter;
         private System.Windows.Forms.ComboBox cmbFilter;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtInp;
         private System.Windows.Forms.Panel search;
         private System.Windows.Forms.Panel refresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameCustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registrationTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn previousExpirationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nextExpirationDataGridViewTextBoxColumn;
+        private DATA.GYMDataSet_LSuGiaHan gYMDataSet_LSuGiaHan;
+        private System.Windows.Forms.BindingSource lSuGiaHanBindingSource;
+        private DATA.GYMDataSet_LSuGiaHanTableAdapters.LSuGiaHanTableAdapter lSuGiaHanTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhachDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenKhachDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tGĐKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hanTruocDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hanSauDataGridViewTextBoxColumn;
     }
 }

@@ -47,9 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUserName = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtID = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cmbID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataEditAccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Users)).BeginInit();
@@ -69,8 +69,8 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnUpdate.Activecolor = System.Drawing.Color.DarkOrange;
+            this.btnUpdate.BackColor = System.Drawing.Color.DarkOrange;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.BorderRadius = 0;
             this.btnUpdate.ButtonText = "         Update";
@@ -90,8 +90,8 @@
             this.btnUpdate.IsTab = false;
             this.btnUpdate.Location = new System.Drawing.Point(910, 341);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnUpdate.Normalcolor = System.Drawing.Color.DarkOrange;
+            this.btnUpdate.OnHovercolor = System.Drawing.Color.DarkOrange;
             this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUpdate.selected = false;
             this.btnUpdate.Size = new System.Drawing.Size(107, 35);
@@ -237,14 +237,6 @@
             this.label4.TabIndex = 74;
             this.label4.Text = "ID";
             // 
-            // txtID
-            // 
-            this.txtID.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtID.Location = new System.Drawing.Point(868, 279);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(121, 20);
-            this.txtID.TabIndex = 73;
-            // 
             // btnSave
             // 
             this.btnSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -315,14 +307,26 @@
             this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmbID
+            // 
+            this.cmbID.FormattingEnabled = true;
+            this.cmbID.Items.AddRange(new object[] {
+            "low",
+            "normal",
+            "high"});
+            this.cmbID.Location = new System.Drawing.Point(868, 274);
+            this.cmbID.Name = "cmbID";
+            this.cmbID.Size = new System.Drawing.Size(121, 21);
+            this.cmbID.TabIndex = 119;
+            // 
             // EditAccess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbID);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.cmbQuyen);
@@ -360,8 +364,8 @@
         private System.Windows.Forms.Label label3;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtUserName;
         private System.Windows.Forms.Label label4;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtID;
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
+        private System.Windows.Forms.ComboBox cmbID;
     }
 }
