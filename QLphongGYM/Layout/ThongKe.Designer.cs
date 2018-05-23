@@ -46,11 +46,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -58,7 +55,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.Label();
             this.day = new System.Windows.Forms.Label();
-            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DungCu = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -95,6 +91,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.yoga = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.DDTGTK = new Bunifu.Framework.UI.BunifuDropdown();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel10.SuspendLayout();
@@ -122,7 +121,7 @@
             // 
             this.month.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.month.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.month.Location = new System.Drawing.Point(201, 17);
+            this.month.Location = new System.Drawing.Point(201, 16);
             this.month.Name = "month";
             this.month.Size = new System.Drawing.Size(35, 21);
             this.month.TabIndex = 31;
@@ -144,7 +143,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(19, 1);
+            this.pictureBox5.Location = new System.Drawing.Point(19, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(45, 45);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,7 +155,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(75, 9);
+            this.label16.Location = new System.Drawing.Point(75, 11);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(175, 25);
             this.label16.TabIndex = 0;
@@ -195,6 +194,8 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Controls.Add(this.yoga);
+            this.panel11.Controls.Add(this.label12);
             this.panel11.Controls.Add(this.VIP);
             this.panel11.Controls.Add(this.label10);
             this.panel11.Controls.Add(this.Thuong);
@@ -205,7 +206,7 @@
             this.panel11.Controls.Add(this.zumba);
             this.panel11.Controls.Add(this.Label);
             this.panel11.Controls.Add(this.label25);
-            this.panel11.Location = new System.Drawing.Point(3, 52);
+            this.panel11.Location = new System.Drawing.Point(3, 58);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(316, 211);
             this.panel11.TabIndex = 1;
@@ -213,7 +214,7 @@
             // VIP
             // 
             this.VIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VIP.Location = new System.Drawing.Point(176, 132);
+            this.VIP.Location = new System.Drawing.Point(176, 164);
             this.VIP.Name = "VIP";
             this.VIP.Size = new System.Drawing.Size(99, 24);
             this.VIP.TabIndex = 25;
@@ -224,7 +225,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 138);
+            this.label10.Location = new System.Drawing.Point(13, 169);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(25, 15);
             this.label10.TabIndex = 24;
@@ -233,7 +234,7 @@
             // Thuong
             // 
             this.Thuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Thuong.Location = new System.Drawing.Point(176, 102);
+            this.Thuong.Location = new System.Drawing.Point(176, 103);
             this.Thuong.Name = "Thuong";
             this.Thuong.Size = new System.Drawing.Size(99, 24);
             this.Thuong.TabIndex = 23;
@@ -253,7 +254,7 @@
             // Rieng
             // 
             this.Rieng.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rieng.Location = new System.Drawing.Point(176, 72);
+            this.Rieng.Location = new System.Drawing.Point(176, 133);
             this.Rieng.Name = "Rieng";
             this.Rieng.Size = new System.Drawing.Size(99, 24);
             this.Rieng.TabIndex = 21;
@@ -264,7 +265,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 78);
+            this.label11.Location = new System.Drawing.Point(13, 138);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 15);
             this.label11.TabIndex = 20;
@@ -290,16 +291,6 @@
             this.label25.TabIndex = 5;
             this.label25.Text = "Aerobic";
             // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 8;
-            this.bunifuElipse3.TargetControl = this;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 8;
-            this.bunifuElipse2.TargetControl = this.panel3;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(185)))), ((int)(((byte)(59)))));
@@ -318,11 +309,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 8;
-            this.bunifuElipse1.TargetControl = this.panel2;
             // 
             // panel2
             // 
@@ -346,6 +332,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.panel8.Controls.Add(this.DDTGTK);
             this.panel8.Controls.Add(this.pictureBox4);
             this.panel8.Controls.Add(this.label15);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -358,7 +345,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(19, 1);
+            this.pictureBox4.Location = new System.Drawing.Point(19, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(45, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,7 +357,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(75, 9);
+            this.label15.Location = new System.Drawing.Point(75, 11);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 25);
             this.label15.TabIndex = 0;
@@ -380,7 +367,7 @@
             // 
             this.year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.year.Location = new System.Drawing.Point(280, 17);
+            this.year.Location = new System.Drawing.Point(280, 16);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(48, 21);
             this.year.TabIndex = 32;
@@ -391,17 +378,12 @@
             // 
             this.day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.day.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.day.Location = new System.Drawing.Point(119, 17);
+            this.day.Location = new System.Drawing.Point(119, 16);
             this.day.Name = "day";
             this.day.Size = new System.Drawing.Size(29, 21);
             this.day.TabIndex = 30;
             this.day.Text = "0";
             this.day.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 8;
-            this.bunifuElipse4.TargetControl = this;
             // 
             // DungCu
             // 
@@ -441,7 +423,7 @@
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(19, 1);
+            this.pictureBox6.Location = new System.Drawing.Point(19, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(45, 45);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -453,7 +435,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(75, 9);
+            this.label17.Location = new System.Drawing.Point(75, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(184, 25);
             this.label17.TabIndex = 0;
@@ -549,7 +531,7 @@
             this.panel14.Controls.Add(this.label32);
             this.panel14.Controls.Add(this.label31);
             this.panel14.Controls.Add(this.label30);
-            this.panel14.Location = new System.Drawing.Point(3, 52);
+            this.panel14.Location = new System.Drawing.Point(3, 58);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(316, 211);
             this.panel14.TabIndex = 1;
@@ -663,7 +645,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(243, 17);
+            this.label3.Location = new System.Drawing.Point(243, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 17);
             this.label3.TabIndex = 18;
@@ -725,7 +707,7 @@
             this.panel9.Controls.Add(this.label34);
             this.panel9.Controls.Add(this.ThuNhap2);
             this.panel9.Controls.Add(this.label20);
-            this.panel9.Location = new System.Drawing.Point(3, 52);
+            this.panel9.Location = new System.Drawing.Point(3, 58);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(372, 211);
             this.panel9.TabIndex = 1;
@@ -788,6 +770,47 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
+            // 
+            // yoga
+            // 
+            this.yoga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yoga.Location = new System.Drawing.Point(176, 73);
+            this.yoga.Name = "yoga";
+            this.yoga.Size = new System.Drawing.Size(99, 24);
+            this.yoga.TabIndex = 27;
+            this.yoga.Text = "NULL";
+            this.yoga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(13, 78);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 15);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Yoga";
+            // 
+            // DDTGTK
+            // 
+            this.DDTGTK.BackColor = System.Drawing.Color.Transparent;
+            this.DDTGTK.BorderRadius = 3;
+            this.DDTGTK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DDTGTK.DisabledColor = System.Drawing.Color.Gray;
+            this.DDTGTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDTGTK.ForeColor = System.Drawing.Color.White;
+            this.DDTGTK.Items = new string[] {
+        "Hôm nay",
+        "Tuần này",
+        "Tháng này"};
+            this.DDTGTK.Location = new System.Drawing.Point(233, 11);
+            this.DDTGTK.Name = "DDTGTK";
+            this.DDTGTK.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.DDTGTK.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.DDTGTK.selectedIndex = 0;
+            this.DDTGTK.Size = new System.Drawing.Size(133, 35);
+            this.DDTGTK.TabIndex = 3;
+            this.DDTGTK.onItemSelected += new System.EventHandler(this.DDTGTK_onItemSelected);
             // 
             // ThongKe
             // 
@@ -858,11 +881,8 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.Label label25;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel8;
@@ -870,7 +890,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label year;
         private System.Windows.Forms.Label day;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private System.Windows.Forms.Label DungCu;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel17;
@@ -913,5 +932,8 @@
         private System.Windows.Forms.Label GoiTapChuaHD;
         private System.Windows.Forms.Label VIP;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label yoga;
+        private System.Windows.Forms.Label label12;
+        private Bunifu.Framework.UI.BunifuDropdown DDTGTK;
     }
 }

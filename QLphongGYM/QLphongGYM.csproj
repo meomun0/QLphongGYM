@@ -207,6 +207,12 @@
     <Compile Include="Layout\SubClasses\GetDataGoiTap.cs" />
     <Compile Include="Layout\SubClasses\GetDataKhach.cs" />
     <Compile Include="Layout\SubClasses\GetNVData.cs" />
+    <Compile Include="Layout\SubForms\DangKyGoiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\SubForms\DangKyGoiTap.Designer.cs">
+      <DependentUpon>DangKyGoiTap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\SubForms\LichSuGiaHanThe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\StartPage.resx">
       <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\SubForms\DangKyGoiTap.resx">
+      <DependentUpon>DangKyGoiTap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\SubForms\LichSuGiaHanThe.resx">
       <DependentUpon>LichSuGiaHanThe.cs</DependentUpon>

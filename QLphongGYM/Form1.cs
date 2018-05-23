@@ -94,19 +94,19 @@ namespace QLphongGYM
         {
             panelTongquan.Controls.Clear();
             panelTongquan.Controls.Add(new Layout.StartPage());
-            btGoiTap.Enabled = false;
-            btPhanCong.Enabled = false;
-            DoiMatKhau.Enabled = false;
-            access.Enabled = false;
-            logout.Enabled = false;
-            btTongQuan.Enabled = false;
-            btThu.Enabled = false;
-            btChi.Enabled = false;
-            btDungCu.Enabled = false;
-            btkhachhang.Enabled = false;
-            btKhachGoi.Enabled = false;
-            btThietBi.Enabled = false;
-            btNhanVien.Enabled = false;
+            //btGoiTap.Enabled = false;
+            //btPhanCong.Enabled = false;
+            //DoiMatKhau.Enabled = false;
+            //access.Enabled = false;
+            //logout.Enabled = false;
+            //btTongQuan.Enabled = false;
+            //btThu.Enabled = false;
+            //btChi.Enabled = false;
+            //btDungCu.Enabled = false;
+            //btkhachhang.Enabled = false;
+            //btKhachGoi.Enabled = false;
+            //btThietBi.Enabled = false;
+            //btNhanVien.Enabled = false;
         }
 
         private void Login_Click(object sender, EventArgs e)

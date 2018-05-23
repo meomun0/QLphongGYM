@@ -17,7 +17,8 @@ namespace QLphongGYM.Layout
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
         SqlDataAdapter adapt;
         SqlCommand cmdKG;
-        string makhach, magoi;
+        SqlDataReader dta;
+        string makhach, magoi,SLtien;
 
         public Thu()
         {
@@ -101,59 +102,103 @@ namespace QLphongGYM.Layout
             makhach = txtMaKhach.Text;
             int len = makhach.Length;
             int vt = makhach.IndexOf("(");
-            makhach = makhach.Substring(vt+1,len-vt-2);//Tách mã khách chỉ còn mã không còn tên 
+            makhach = makhach.Substring(vt + 1, len - vt - 2);//Tách mã khách chỉ còn mã không còn tên 
             txtMaGoi.ResetText();
             txtSLTien.Text = string.Empty;
         }
         //Load các gói tập của khách đã chọn vào textbox gói tập
         private void MaKhach_Leave(object sender, EventArgs e)
         {
-            txtMaGoi.Items.Clear();
-            txtMaGoi.ResetText();
-            txtSLTien.Text = string.Empty;
-            con.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("SELECT [Tên gói tập]+'('+[Mã gói tập]+')' AS ma FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] IN(" +
-                                        "SELECT[Mã gói tập] FROM dbo.KHACH_GOI WHERE[Mã khách hàng] = '" + makhach + "'AND [ThanhToan(Y/N)]=0)", con);
-            adapt.Fill(dt);
-            foreach (DataRow row in dt.Rows)
+            if (txtMaKhach.Text != "")
             {
-                txtMaGoi.Items.Add((string)row["ma"]);
+                txtMaGoi.Items.Clear();
+                txtMaGoi.ResetText();
+                txtSLTien.Text = string.Empty;
+                con.Open();
+                cmdKG = new SqlCommand("SELECT * FROM dbo.[KHÁCH] where [Mã khách]='" + makhach + "'", con);
+                SqlDataReader dtathu = cmdKG.ExecuteReader();
+                if (dtathu.Read() == true)
+                {
+                    con.Close();
+                    con.Open();
+                    DataTable dt = new DataTable();
+                    adapt = new SqlDataAdapter("SELECT [Tên gói tập]+'('+[Mã gói tập]+')' AS ma FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] IN(" +
+                                                "SELECT [Mã gói tập] FROM dbo.KHACH_GOI WHERE[Mã khách hàng] = '" + makhach + "'AND [ThanhToan(Y/N)]=0)", con);
+                    adapt.Fill(dt);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        txtMaGoi.Items.Add((string)row["ma"]);
+                    }
+                }
+                else
+                {
+                    txtMaKhach.ResetText();
+                    con.Close();
+                    MessageBox.Show("Mã khách không hợp lệ");
+                }
+                txtMaGoi.Items.Add("Gia hạn thẻ(GH_0001)");
+                con.Close();
             }
-            txtMaGoi.Items.Add("Gia hạn thẻ(GH_0001)");
-            con.Close();
+            else
+            {
+                MessageBox.Show("Nhập mã khách trước");
+            }
         }
         //HIện tiền ; tách mã gói tập; thêm mô tả
         private void MaGoi_Change(object sender, EventArgs e)
         {
-            magoi = txtMaGoi.Text;
-            int len = magoi.Length;
-            int vt = magoi.IndexOf("(");
-            magoi = magoi.Substring(vt+1,len-vt-2);
-            con.Open();
-            cmdKG = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] where [Mã gói tập]='" + magoi + "'", con);
-            SqlDataReader dtathu = cmdKG.ExecuteReader();
-            if (dtathu.Read() == true)
+            if (makhach != "")
             {
-                txtSLTien.Text = dtathu["Giá"].ToString();
-            }
-            con.Close();
-            //Thêm mô tả
-            string mg, tengoi, mk, tenkhach;
-            mg = txtMaGoi.Text;
-            tengoi = mg.Substring(0, vt);
-            mk = txtMaKhach.Text;
-            vt = mk.IndexOf("(");
-            tenkhach = mk.Substring(0, vt);
-            if (magoi == "GH_0001")
-            {
-                txtMota.Text = "Khách hàng " + tenkhach + " gia hạn thẻ ";
-                SuggestID();
+                con.Open();
+                cmdKG = new SqlCommand("SELECT * FROM dbo.[KHÁCH] where [Mã khách]='" + makhach + "'", con);
+                SqlDataReader dta = cmdKG.ExecuteReader();
+                if (dta.Read() == true)
+                {
+                    magoi = txtMaGoi.Text;
+                    int len = magoi.Length;
+                    int vt = magoi.IndexOf("(");
+                    magoi = magoi.Substring(vt + 1, len - vt - 2);
+                    con.Close();
+                    con.Open();
+                    cmdKG = new SqlCommand("SELECT [Giá] FROM dbo.[GÓI TẬP] where [Mã gói tập]='" + magoi + "'", con);
+                    SqlDataReader dtathu = cmdKG.ExecuteReader();
+                    if (dtathu.Read() == true)
+                    {
+                        int vitri = (dtathu["Giá"].ToString()).IndexOf(".");
+                        SLtien = (dtathu["Giá"].ToString()).Substring(0, vitri);
+                        txtSLTien.Text = SLtien;
+                    }
+                    con.Close();
+                    //Thêm mô tả
+                    string mg, tengoi, mk, tenkhach;
+                    mg = txtMaGoi.Text;
+                    tengoi = mg.Substring(0, vt);
+                    mk = txtMaKhach.Text;
+                    vt = mk.IndexOf("(");
+                    tenkhach = mk.Substring(0, vt);
+                    if (magoi == "GH_0001")
+                    {
+                        txtMota.Text = "Khách hàng " + tenkhach + " gia hạn thẻ ";
+                        SuggestID(magoi);
+                    }
+                    else
+                    {
+                        txtMota.Text = "Khách hàng " + tenkhach + " đóng tiền gói tập " + tengoi;
+                        SuggestID(magoi);
+                    }
+                }
+                else
+                {
+                    txtMaKhach.ResetText();
+                    con.Close();
+                    MessageBox.Show("Mã khách không hợp lệ");
+                }
             }
             else
             {
-                txtMota.Text = "Khách hàng " + tenkhach + " đóng tiền gói tập " + tengoi;
-                txtMaThu.Text = makhach + "/" + magoi;
+                txtMaKhach.ResetText();
+                con.Close();
+                MessageBox.Show("Nhập mã khách trước");
             }
         }
 
@@ -199,8 +244,9 @@ namespace QLphongGYM.Layout
                 con.Open();
                 cmdKG = new SqlCommand("SELECT * FROM dbo.[GÓI TẬP] WHERE [Mã gói tập]='" + magoi + "'", con);
                 SqlDataReader dta2 = cmdKG.ExecuteReader();
-                if ((dta2.Read() == true && dta.GetValue(0).ToString() != "") || magoi=="GH_0001")
+                if ((dta2.Read() == true && dta2.GetValue(0).ToString() != "") || magoi=="GH_0001")
                 {
+                    con.Close();
                     return true;
                 }
                 else
@@ -212,36 +258,48 @@ namespace QLphongGYM.Layout
             }
         }
 
-        private void SuggestID()
+        private void SuggestID(string type)
         {
-            int len, j, num;
-            string MaKM = string.Empty, str;
-            con.Close();
-            con.Open();
-            cmdKG = new SqlCommand("SELECT MAX([Mã khách]) as max FROM dbo.KHÁCH where [Mã khách] like 'M_18%'", con);
-            SqlDataReader dta = cmdKG.ExecuteReader();
-            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+            int num;
+            string MaThu = string.Empty, str;
+            if(type== "GH_0001")
             {
-                MaKM = dta["max"].ToString();
-                len = MaKM.Length;
-                for (j = 0; j < len; j++)
+                con.Open();
+                cmdKG = new SqlCommand("SELECT MAX([Mã thu]) as max FROM dbo.THU where [Mã thu] like 'GH_18%'", con);
+                dta = cmdKG.ExecuteReader();
+                if (dta.Read() == true && dta.GetValue(0).ToString() != "")
                 {
-                    MaKM = (dta["max"].ToString()).Substring(j);
-                    if (Regex.IsMatch(MaKM, @"^\d+$"))
-                    {
-                        break;
-                    }
+                    MaThu = (dta["max"].ToString()).Substring(3);
+                    str = (dta["max"].ToString()).Substring(0, 3);
+                    num = Convert.ToInt32(MaThu);
+                    num++;
+                    txtMaThu.Text = str + num;
                 }
-                str = (dta["max"].ToString()).Substring(0, j);
-                num = Convert.ToInt32(MaKM);
-                num++;
-                txtMaThu.Text = str + num;
+                else
+                {
+                    txtMaThu.Text = "GH_180000";
+                }
+                con.Close();
             }
             else
             {
-                txtMaThu.Text = "M_180000";
-            }
-            con.Close();
+                con.Open();
+                cmdKG = new SqlCommand("SELECT MAX([Mã thu]) as max FROM dbo.THU where [Mã thu] like 'M_18%'", con);
+                dta = cmdKG.ExecuteReader();
+                if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+                {
+                    MaThu = (dta["max"].ToString()).Substring(2);
+                    str = (dta["max"].ToString()).Substring(0, 2);
+                    num = Convert.ToInt32(MaThu);
+                    num++;
+                    txtMaThu.Text = str + num;
+                }
+                else
+                {
+                    txtMaThu.Text = "M_180000";
+                }
+                con.Close();
+            } 
         }
 
         private void dataThu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -294,9 +352,9 @@ namespace QLphongGYM.Layout
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtSLTien.Text != "" && isExist(makhach, magoi))
+            if (txtSLTien.Text != "" && isExist(makhach, magoi) && Regex.IsMatch(txtSLTien.Text, @"^\d+$"))
             {
-                if (MessageBox.Show("Xác nhận thêm thu tiền gói tập: " + magoi + "của khách: " + makhach, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Xác nhận thêm thu tiền gói tập: " + magoi + " của khách: " + makhach, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Close();
                     con.Open();
@@ -329,7 +387,9 @@ namespace QLphongGYM.Layout
                 }
             }
             else
-                MessageBox.Show("Vui lòng điền các thông tin còn trống");
+            {
+                MessageBox.Show("Vui lòng điền các thông tin còn trống hoặc nhập đúng định dang số lượng tiền (Số)");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

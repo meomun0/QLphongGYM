@@ -32,6 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataThu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.mãThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mãKháchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênGóiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sốLượngTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.môTảDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngườiDuyệtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gYMDataSet_Thu = new QLphongGYM.DATA.GYMDataSet_Thu();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtMaThu = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -55,21 +65,11 @@
             this.txtThoiGian = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnGiaHanThe = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.gYMDataSet_Thu = new QLphongGYM.DATA.GYMDataSet_Thu();
-            this.tHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tHUTableAdapter = new QLphongGYM.DATA.GYMDataSet_ThuTableAdapters.THUTableAdapter();
-            this.mãThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mãKháchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênGóiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sốLượngTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.môTảDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngườiDuyệtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataThu)).BeginInit();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).BeginInit();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataThu
@@ -112,6 +112,80 @@
             this.dataThu.Size = new System.Drawing.Size(928, 335);
             this.dataThu.TabIndex = 0;
             this.dataThu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataThu_CellClick);
+            // 
+            // mãThuDataGridViewTextBoxColumn
+            // 
+            this.mãThuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãThuDataGridViewTextBoxColumn.DataPropertyName = "Mã thu";
+            this.mãThuDataGridViewTextBoxColumn.HeaderText = "Mã thu";
+            this.mãThuDataGridViewTextBoxColumn.Name = "mãThuDataGridViewTextBoxColumn";
+            this.mãThuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mãKháchDataGridViewTextBoxColumn
+            // 
+            this.mãKháchDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãKháchDataGridViewTextBoxColumn.DataPropertyName = "Mã khách";
+            this.mãKháchDataGridViewTextBoxColumn.HeaderText = "Mã khách";
+            this.mãKháchDataGridViewTextBoxColumn.Name = "mãKháchDataGridViewTextBoxColumn";
+            this.mãKháchDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênGóiDataGridViewTextBoxColumn
+            // 
+            this.tênGóiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênGóiDataGridViewTextBoxColumn.DataPropertyName = "Tên gói";
+            this.tênGóiDataGridViewTextBoxColumn.HeaderText = "Tên gói";
+            this.tênGóiDataGridViewTextBoxColumn.Name = "tênGóiDataGridViewTextBoxColumn";
+            this.tênGóiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sốLượngTiềnDataGridViewTextBoxColumn
+            // 
+            this.sốLượngTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sốLượngTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tiền";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.HeaderText = "Số lượng tiền";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.Name = "sốLượngTiềnDataGridViewTextBoxColumn";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thờiGianDataGridViewTextBoxColumn
+            // 
+            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
+            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // môTảDataGridViewTextBoxColumn
+            // 
+            this.môTảDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.môTảDataGridViewTextBoxColumn.DataPropertyName = "Mô tả";
+            this.môTảDataGridViewTextBoxColumn.HeaderText = "Mô tả";
+            this.môTảDataGridViewTextBoxColumn.Name = "môTảDataGridViewTextBoxColumn";
+            this.môTảDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngườiDuyệtDataGridViewTextBoxColumn
+            // 
+            this.ngườiDuyệtDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngườiDuyệtDataGridViewTextBoxColumn.DataPropertyName = "Người duyệt";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.HeaderText = "Người duyệt";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.Name = "ngườiDuyệtDataGridViewTextBoxColumn";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDelDataGridViewCheckBoxColumn
+            // 
+            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
+            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isDelDataGridViewCheckBoxColumn.Width = 35;
+            // 
+            // tHUBindingSource
+            // 
+            this.tHUBindingSource.DataMember = "THU";
+            this.tHUBindingSource.DataSource = this.gYMDataSet_Thu;
+            // 
+            // gYMDataSet_Thu
+            // 
+            this.gYMDataSet_Thu.DataSetName = "GYMDataSet_Thu";
+            this.gYMDataSet_Thu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnInsert
             // 
@@ -211,6 +285,7 @@
             // 
             this.txtMota.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtMota.Location = new System.Drawing.Point(687, 20);
+            this.txtMota.MaxLength = 100;
             this.txtMota.Name = "txtMota";
             this.txtMota.Size = new System.Drawing.Size(139, 20);
             this.txtMota.TabIndex = 13;
@@ -497,83 +572,9 @@
             this.btnGiaHanThe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiaHanThe.Click += new System.EventHandler(this.btnGiaHanThe_Click);
             // 
-            // gYMDataSet_Thu
-            // 
-            this.gYMDataSet_Thu.DataSetName = "GYMDataSet_Thu";
-            this.gYMDataSet_Thu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tHUBindingSource
-            // 
-            this.tHUBindingSource.DataMember = "THU";
-            this.tHUBindingSource.DataSource = this.gYMDataSet_Thu;
-            // 
             // tHUTableAdapter
             // 
             this.tHUTableAdapter.ClearBeforeFill = true;
-            // 
-            // mãThuDataGridViewTextBoxColumn
-            // 
-            this.mãThuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãThuDataGridViewTextBoxColumn.DataPropertyName = "Mã thu";
-            this.mãThuDataGridViewTextBoxColumn.HeaderText = "Mã thu";
-            this.mãThuDataGridViewTextBoxColumn.Name = "mãThuDataGridViewTextBoxColumn";
-            this.mãThuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mãKháchDataGridViewTextBoxColumn
-            // 
-            this.mãKháchDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãKháchDataGridViewTextBoxColumn.DataPropertyName = "Mã khách";
-            this.mãKháchDataGridViewTextBoxColumn.HeaderText = "Mã khách";
-            this.mãKháchDataGridViewTextBoxColumn.Name = "mãKháchDataGridViewTextBoxColumn";
-            this.mãKháchDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênGóiDataGridViewTextBoxColumn
-            // 
-            this.tênGóiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênGóiDataGridViewTextBoxColumn.DataPropertyName = "Tên gói";
-            this.tênGóiDataGridViewTextBoxColumn.HeaderText = "Tên gói";
-            this.tênGóiDataGridViewTextBoxColumn.Name = "tênGóiDataGridViewTextBoxColumn";
-            this.tênGóiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sốLượngTiềnDataGridViewTextBoxColumn
-            // 
-            this.sốLượngTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sốLượngTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tiền";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.HeaderText = "Số lượng tiền";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.Name = "sốLượngTiềnDataGridViewTextBoxColumn";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thờiGianDataGridViewTextBoxColumn
-            // 
-            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
-            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // môTảDataGridViewTextBoxColumn
-            // 
-            this.môTảDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.môTảDataGridViewTextBoxColumn.DataPropertyName = "Mô tả";
-            this.môTảDataGridViewTextBoxColumn.HeaderText = "Mô tả";
-            this.môTảDataGridViewTextBoxColumn.Name = "môTảDataGridViewTextBoxColumn";
-            this.môTảDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngườiDuyệtDataGridViewTextBoxColumn
-            // 
-            this.ngườiDuyệtDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngườiDuyệtDataGridViewTextBoxColumn.DataPropertyName = "Người duyệt";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.HeaderText = "Người duyệt";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.Name = "ngườiDuyệtDataGridViewTextBoxColumn";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isDelDataGridViewCheckBoxColumn
-            // 
-            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
-            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isDelDataGridViewCheckBoxColumn.Width = 35;
             // 
             // Thu
             // 
@@ -593,10 +594,10 @@
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.Thu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
