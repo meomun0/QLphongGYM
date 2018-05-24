@@ -94,34 +94,25 @@ namespace QLphongGYM
         {
             panelTongquan.Controls.Clear();
             panelTongquan.Controls.Add(new Layout.StartPage());
-            //btGoiTap.Enabled = false;
-            //btPhanCong.Enabled = false;
-            //DoiMatKhau.Enabled = false;
-            //access.Enabled = false;
-            //logout.Enabled = false;
-            //btTongQuan.Enabled = false;
-            //btThu.Enabled = false;
-            //btChi.Enabled = false;
-            //btDungCu.Enabled = false;
-            //btkhachhang.Enabled = false;
-            //btKhachGoi.Enabled = false;
-            //btThietBi.Enabled = false;
-            //btNhanVien.Enabled = false;
+            btGoiTap.Enabled = false;
+            btPhanCong.Enabled = false;
+            DoiMatKhau.Enabled = false;
+            access.Enabled = false;
+            logout.Enabled = false;
+            btTongQuan.Enabled = false;
+            btThu.Enabled = false;
+            btChi.Enabled = false;
+            btDungCu.Enabled = false;
+            btkhachhang.Enabled = false;
+            btKhachGoi.Enabled = false;
+            btThietBi.Enabled = false;
+            btNhanVien.Enabled = false;
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
             FormLogin formlogin = new FormLogin();
             formlogin.ShowDialog();
-            if (UserInfo.privilege == "low")
-            {
-                btGoiTap.Enabled = true;
-                btPhanCong.Enabled = true;
-                login.Enabled = false;
-                logout.Enabled = true;
-                DoiMatKhau.Enabled = true;
-                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName;
-            }
             if (UserInfo.privilege=="normal")
             {
                 btGoiTap.Enabled = true;
@@ -158,6 +149,17 @@ namespace QLphongGYM
             }
             panelTongquan.Controls.Clear();
             panelTongquan.Controls.Add(new Layout.ThongKe());
+            if (UserInfo.privilege == "low")
+            {
+                btGoiTap.Enabled = true;
+                btPhanCong.Enabled = true;
+                login.Enabled = false;
+                logout.Enabled = true;
+                DoiMatKhau.Enabled = true;
+                Status.Text = "Xin chào: " + UserInfo.fullName + ", Username: " + UserInfo.userName;
+                panelTongquan.Controls.Clear();
+                panelTongquan.Controls.Add(new Layout.GoiTap());
+            }
         }
 
         private void Logout_Click(object sender, EventArgs e)

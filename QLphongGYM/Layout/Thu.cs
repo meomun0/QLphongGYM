@@ -225,6 +225,7 @@ namespace QLphongGYM.Layout
             txtMaKhach.ResetText();
             txtMota.Text = string.Empty;
             txtSLTien.Text = string.Empty;
+            btnPrint.Visible = false;
         }
 
         private bool isExist(string makhach, string magoi)
@@ -304,11 +305,31 @@ namespace QLphongGYM.Layout
 
         private void dataThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            con.Open();
+            string test = dataThu.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (dataThu.CurrentCell != null && dataThu.CurrentCell.Value != null)
+            {
+                Report.dataTHU.mathu = dataThu.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Report.dataTHU.makhach = dataThu.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Report.dataTHU.sotien = dataThu.Rows[e.RowIndex].Cells[3].Value.ToString();
+                Report.dataTHU.noidung = dataThu.Rows[e.RowIndex].Cells[5].Value.ToString();
+                con.Close();
+                con.Open();
+                cmdKG = new SqlCommand("SELECT [Số điện thoại],[Địa chỉ] FROM dbo.KHÁCH WHERE [Mã khách] = '" + Report.dataTHU.makhach + "'", con);
+                dta = cmdKG.ExecuteReader();
+                if (dta.Read() == true)
+                {
+                    Report.dataTHU.sdt = dta["Số điện thoại"].ToString();
+                    Report.dataTHU.diachi = dta["Địa chỉ"].ToString();
+                }
+                con.Close();
+                Report.dataTHU.longdate = DateTime.Now.ToString();
+                Report.dataTHU.shortdate= dataThu.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
             if (dataThu.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
             {
                 if (dataThu.CurrentCell != null && dataThu.CurrentCell.Value != null)
                 {
+                    con.Open();
                     string del = dataThu.Rows[e.RowIndex].Cells[0].Value.ToString();
                     if (UserInfo.userName == "admin")
                     {
@@ -326,19 +347,20 @@ namespace QLphongGYM.Layout
                             cmdKG.ExecuteNonQuery();
                         }
                     }
+                    con.Close();
+                    DisplayData();
                 }
             }
-            con.Close();
-            DisplayData();
+            
             if (dataThu.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
             {
                 if (dataThu.CurrentCell != null && dataThu.CurrentCell.Value != null)
                 {
                     if (dataThu.Rows[e.RowIndex].Cells[7].Value.ToString() == "True" && UserInfo.privilege == "high")
                     {
-                        con.Open();
                         if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
+                            con.Open();
                             string maThu = dataThu.Rows[e.RowIndex].Cells[0].Value.ToString();
                             cmdKG = new SqlCommand("UPDATE dbo.THU SET IsDel = 0 WHERE [Mã thu] ='" + maThu + "'", con);
                             cmdKG.ExecuteNonQuery();
@@ -383,6 +405,7 @@ namespace QLphongGYM.Layout
                         btnSave.Enabled = false;
                         btnInsert.Visible = true;
                         btnCancel.Visible = false;
+                        btnPrint.Visible = true;
                     }
                 }
             }
@@ -403,6 +426,13 @@ namespace QLphongGYM.Layout
             btnSave.Visible = false;
             btnInsert.Visible = true;
             btnCancel.Visible = false;
+            btnPrint.Visible = true;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Report.RptThu formRp = new Report.RptThu();
+            formRp.ShowDialog();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

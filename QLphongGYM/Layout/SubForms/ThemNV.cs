@@ -83,7 +83,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenNV.Text != "" || txtSDT.Text != "" || txtLuong.Text != "" || txtQueQuan.Text != "")
+            if (txtTenNV.Text != "" && txtSDT.Text != "" && txtLuong.Text != "" && txtQueQuan.Text != "" && Regex.IsMatch(txtLuong.Text, @"^\d+$"))
             {
                 con.Open();
                 cmdNV = new SqlCommand("EXECUTE dbo.IUD_NHANVIEN '" + txtMaNV.Text + "',N'"+txtTenNV.Text+"','"+DPNS.Value+"',N'"+cmbGT.selectedValue+
@@ -95,12 +95,12 @@ namespace QLphongGYM.Layout.SubForms
                 HideF();
             }
             else
-                MessageBox.Show("Nhập thiếu");
+                MessageBox.Show("Nhập thiếu hoặc lương không là số");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtTenNV.Text != "" || txtSDT.Text != "" || txtLuong.Text != "" || txtQueQuan.Text != "")
+            if (txtTenNV.Text != "" && txtSDT.Text != "" && txtLuong.Text != "" && txtQueQuan.Text != ""&& Regex.IsMatch(txtLuong.Text, @"^\d+$"))
             {
                 con.Open();
                 cmdNV = new SqlCommand("EXECUTE dbo.IUD_NHANVIEN '" + txtMaNV.Text + "',N'" + txtTenNV.Text + "','" + DPNS.Value + "',N'" + cmbGT.selectedValue +

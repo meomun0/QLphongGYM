@@ -121,6 +121,7 @@
             this.txtHoTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(286, 145);
+            this.txtHoTen.MaxLength = 30;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PreventEnterBeep = true;
             this.txtHoTen.Size = new System.Drawing.Size(272, 27);
@@ -196,6 +197,7 @@
             this.txtSDT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(286, 349);
+            this.txtSDT.MaxLength = 11;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PreventEnterBeep = true;
             this.txtSDT.Size = new System.Drawing.Size(272, 27);
@@ -221,6 +223,7 @@
             this.txtDiaChi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(286, 394);
+            this.txtDiaChi.MaxLength = 50;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PreventEnterBeep = true;
             this.txtDiaChi.Size = new System.Drawing.Size(272, 27);

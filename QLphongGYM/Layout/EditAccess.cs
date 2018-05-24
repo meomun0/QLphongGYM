@@ -94,16 +94,24 @@ namespace QLphongGYM.Layout
             {
                 if (dataEditAccess.CurrentCell != null && dataEditAccess.CurrentCell.Value != null)
                 {
-                    if ((MessageBox.Show("Xác nhận chỉnh sửa thông người dùng", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    string del = dataEditAccess.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    if (del == "admin")
                     {
-                        UpdateMode = true;
-                        btnUpdate.Enabled = true;
-                        btnCancel.Visible = true;
-                        btnSave.Enabled = false;
-                        txtUserName.Text= dataEditAccess.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        txtTen.Text= dataEditAccess.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        cmbQuyen.Text= dataEditAccess.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        cmbID.Text= dataEditAccess.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        MessageBox.Show("Không thể sửa Admin");
+                    }
+                    else
+                    {
+                        if ((MessageBox.Show("Xác nhận chỉnh sửa thông người dùng", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            UpdateMode = true;
+                            btnUpdate.Enabled = true;
+                            btnCancel.Visible = true;
+                            btnSave.Enabled = false;
+                            txtUserName.Text = dataEditAccess.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            txtTen.Text = dataEditAccess.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            cmbQuyen.Text = dataEditAccess.Rows[e.RowIndex].Cells[2].Value.ToString();
+                            cmbID.Text = dataEditAccess.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        }
                     }
                 }
                 con.Close();
@@ -114,43 +122,57 @@ namespace QLphongGYM.Layout
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            con.Open();
-            AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'" + txtTen.Text + "',N'" + cmbQuyen.Text + "','" + cmbID.Text + "',N'Select'", con);
-            SqlDataReader dta = AccessCmd.ExecuteReader();
-            if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+            if(txtUserName.Text!="" && txtTen.Text != "" && cmbID.Text != "")
             {
-                MessageBox.Show("Tên người dùng tồn tại");
-                con.Close();
+                con.Open();
+                AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'" + txtTen.Text + "',N'" + cmbQuyen.Text + "','" + cmbID.Text + "',N'Select'", con);
+                SqlDataReader dta = AccessCmd.ExecuteReader();
+                if (dta.Read() == true && dta.GetValue(0).ToString() != "")
+                {
+                    MessageBox.Show("Tên người dùng tồn tại");
+                    con.Close();
+                }
+                else
+                {
+                    con.Close();
+                    con.Open();
+                    AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'" + txtTen.Text + "',N'" + cmbQuyen.Text + "','" + cmbID.Text + "',N'Insert'", con);
+                    AccessCmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Thêm thành công thành công");
+                    DisplayData();
+                }
             }
             else
             {
-                con.Close();
-                con.Open();
-                AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'" + txtTen.Text + "',N'" + cmbQuyen.Text + "','" + cmbID.Text + "',N'Insert'", con);
-                AccessCmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Thêm thành công thành công");
-                DisplayData();
+                MessageBox.Show("Không được để trống");
             }
-                
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            con.Open();
-            AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'"+txtTen.Text+"',N'"+cmbQuyen.Text+"','"+cmbID.Text+"',N'Update'", con);
-            AccessCmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Sửa thành công");
-            DisplayData();
-            UpdateMode = false;
-            cmbID.ResetText();
-            txtTen.ResetText();
-            txtUserName.ResetText();
-            cmbQuyen.ResetText();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnCancel.Visible = false;
+            if (txtUserName.Text != "" && txtTen.Text != "" && cmbID.Text != "")
+            {
+                con.Open();
+                AccessCmd = new SqlCommand("EXECUTE dbo.IUD_USERS '" + txtUserName.Text + "',N'" + txtTen.Text + "',N'" + cmbQuyen.Text + "','" + cmbID.Text + "',N'Update'", con);
+                AccessCmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Sửa thành công");
+                DisplayData();
+                UpdateMode = false;
+                cmbID.ResetText();
+                txtTen.ResetText();
+                txtUserName.ResetText();
+                cmbQuyen.ResetText();
+                btnSave.Enabled = true;
+                btnUpdate.Enabled = false;
+                btnCancel.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Không được để trống");
+            }
+                
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

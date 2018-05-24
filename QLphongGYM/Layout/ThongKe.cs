@@ -65,8 +65,8 @@ namespace QLphongGYM.Layout
             string thu, chi;
             if (DDTGTK.selectedIndex == 2)
             {
-                thu= tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE[Thời gian] BETWEEN '" + firstDay + "' AND '" + lastDay + "'"); ;
-                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + firstDay + "' AND '" + lastDay + "'");
+                thu= tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE[Thời gian] BETWEEN '" + firstDay + "' AND '" + DateTime.Now + "'"); ;
+                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + firstDay + "' AND '" + DateTime.Now + "'");
                 if (thu == null) thu = "0";
                 if (chi == null) chi = "0";
                 ThuNhap2.Text = thu;
@@ -74,8 +74,8 @@ namespace QLphongGYM.Layout
             }
             else if (DDTGTK.selectedIndex == 1)
             {
-                thu = tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE [Thời gian] BETWEEN '" +convert+ "' AND '" + year1 + "-" + month1 + "-" + day1 + "'");
-                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + convert + "' AND '" + year1 + "-" + month1 + "-" + day1 + "'");
+                thu = tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE [Thời gian] BETWEEN '" +convert+ "' AND '" + DateTime.Now + "'");
+                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + convert + "' AND '" + DateTime.Now + "'");
                 if (thu == null) thu = "0";
                 if (chi == null) chi = "0";
                 ThuNhap2.Text = thu;
@@ -83,8 +83,8 @@ namespace QLphongGYM.Layout
             }
             else
             {
-                thu = tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE[Thời gian] BETWEEN '" + year1 +"-"+ month1 +"-"+ day1 + "' AND '" + year1 + "-" + month1 + "-" + day1 + "'");
-                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + year1 + "-" + month1 + "-" + day1 + "' AND '" + year1 + "-" + month1 + "-" + day1 + "'");
+                thu = tk.getDta("SELECT SUM( [Số lượng tiền]) FROM dbo.THU WHERE[Thời gian] BETWEEN '" + year1 +"-"+ month1 +"-"+ day1 + "' AND '" + DateTime.Now+ "'");
+                chi = tk.getDta("SELECT SUM( [Số tiền]) FROM dbo.CHI WHERE [Thời gian] BETWEEN '" + year1 + "-" + month1 + "-" + day1 + "' AND '" + DateTime.Now + "'");
                 if (thu == null) thu = "0";
                 if (chi == null) chi = "0";
                 ThuNhap2.Text = thu;

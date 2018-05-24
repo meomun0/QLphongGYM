@@ -109,6 +109,7 @@ namespace QLphongGYM.Layout
                 {
                     if (dataGVKh.Rows[e.RowIndex].Cells[8].Value.ToString() == "True" && UserInfo.privilege == "high")
                     {
+                        con.Close();
                         con.Open();
                         if ((MessageBox.Show("Khôi phục dữ liệu bị ẩn", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
@@ -178,6 +179,13 @@ namespace QLphongGYM.Layout
 
         private void btnReload_Click(object sender, EventArgs e)
         {
+            DisplayData();
+        }
+
+        private void btnGiaHanThe_Click(object sender, EventArgs e)
+        {
+            SubForms.LichSuGiaHanThe giaHanThe = new SubForms.LichSuGiaHanThe();
+            giaHanThe.ShowDialog();
             DisplayData();
         }
     }

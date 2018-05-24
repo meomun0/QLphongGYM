@@ -255,6 +255,7 @@
             this.txtSDT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(286, 263);
+            this.txtSDT.MaxLength = 11;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PreventEnterBeep = true;
             this.txtSDT.Size = new System.Drawing.Size(272, 27);
@@ -320,6 +321,7 @@
             this.txtTenNV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNV.Location = new System.Drawing.Point(286, 124);
+            this.txtTenNV.MaxLength = 50;
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.PreventEnterBeep = true;
             this.txtTenNV.Size = new System.Drawing.Size(272, 27);

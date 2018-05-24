@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataThu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.mãThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mãKháchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênGóiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sốLượngTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.môTảDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngườiDuyệtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gYMDataSet_Thu = new QLphongGYM.DATA.GYMDataSet_Thu();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtMaThu = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -65,127 +54,24 @@
             this.txtThoiGian = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnGiaHanThe = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPrint = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.dataThu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.mãThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mãKháchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênGóiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sốLượngTiềnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thờiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.môTảDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngườiDuyệtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gYMDataSet_Thu = new QLphongGYM.DATA.GYMDataSet_Thu();
             this.tHUTableAdapter = new QLphongGYM.DATA.GYMDataSet_ThuTableAdapters.THUTableAdapter();
+            this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).BeginInit();
-            this.panelContent.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataThu
-            // 
-            this.dataThu.AllowUserToAddRows = false;
-            this.dataThu.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataThu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataThu.AutoGenerateColumns = false;
-            this.dataThu.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataThu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataThu.ColumnHeadersHeight = 25;
-            this.dataThu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mãThuDataGridViewTextBoxColumn,
-            this.mãKháchDataGridViewTextBoxColumn,
-            this.tênGóiDataGridViewTextBoxColumn,
-            this.sốLượngTiềnDataGridViewTextBoxColumn,
-            this.thờiGianDataGridViewTextBoxColumn,
-            this.môTảDataGridViewTextBoxColumn,
-            this.ngườiDuyệtDataGridViewTextBoxColumn,
-            this.isDelDataGridViewCheckBoxColumn});
-            this.dataThu.DataSource = this.tHUBindingSource;
-            this.dataThu.DoubleBuffered = true;
-            this.dataThu.EnableHeadersVisualStyles = false;
-            this.dataThu.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dataThu.HeaderForeColor = System.Drawing.Color.Honeydew;
-            this.dataThu.Location = new System.Drawing.Point(57, 61);
-            this.dataThu.Name = "dataThu";
-            this.dataThu.ReadOnly = true;
-            this.dataThu.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataThu.Size = new System.Drawing.Size(928, 335);
-            this.dataThu.TabIndex = 0;
-            this.dataThu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataThu_CellClick);
-            // 
-            // mãThuDataGridViewTextBoxColumn
-            // 
-            this.mãThuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãThuDataGridViewTextBoxColumn.DataPropertyName = "Mã thu";
-            this.mãThuDataGridViewTextBoxColumn.HeaderText = "Mã thu";
-            this.mãThuDataGridViewTextBoxColumn.Name = "mãThuDataGridViewTextBoxColumn";
-            this.mãThuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mãKháchDataGridViewTextBoxColumn
-            // 
-            this.mãKháchDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãKháchDataGridViewTextBoxColumn.DataPropertyName = "Mã khách";
-            this.mãKháchDataGridViewTextBoxColumn.HeaderText = "Mã khách";
-            this.mãKháchDataGridViewTextBoxColumn.Name = "mãKháchDataGridViewTextBoxColumn";
-            this.mãKháchDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tênGóiDataGridViewTextBoxColumn
-            // 
-            this.tênGóiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênGóiDataGridViewTextBoxColumn.DataPropertyName = "Tên gói";
-            this.tênGóiDataGridViewTextBoxColumn.HeaderText = "Tên gói";
-            this.tênGóiDataGridViewTextBoxColumn.Name = "tênGóiDataGridViewTextBoxColumn";
-            this.tênGóiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sốLượngTiềnDataGridViewTextBoxColumn
-            // 
-            this.sốLượngTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sốLượngTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tiền";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.HeaderText = "Số lượng tiền";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.Name = "sốLượngTiềnDataGridViewTextBoxColumn";
-            this.sốLượngTiềnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thờiGianDataGridViewTextBoxColumn
-            // 
-            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
-            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // môTảDataGridViewTextBoxColumn
-            // 
-            this.môTảDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.môTảDataGridViewTextBoxColumn.DataPropertyName = "Mô tả";
-            this.môTảDataGridViewTextBoxColumn.HeaderText = "Mô tả";
-            this.môTảDataGridViewTextBoxColumn.Name = "môTảDataGridViewTextBoxColumn";
-            this.môTảDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngườiDuyệtDataGridViewTextBoxColumn
-            // 
-            this.ngườiDuyệtDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngườiDuyệtDataGridViewTextBoxColumn.DataPropertyName = "Người duyệt";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.HeaderText = "Người duyệt";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.Name = "ngườiDuyệtDataGridViewTextBoxColumn";
-            this.ngườiDuyệtDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isDelDataGridViewCheckBoxColumn
-            // 
-            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
-            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isDelDataGridViewCheckBoxColumn.Width = 35;
-            // 
-            // tHUBindingSource
-            // 
-            this.tHUBindingSource.DataMember = "THU";
-            this.tHUBindingSource.DataSource = this.gYMDataSet_Thu;
-            // 
-            // gYMDataSet_Thu
-            // 
-            this.gYMDataSet_Thu.DataSetName = "GYMDataSet_Thu";
-            this.gYMDataSet_Thu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnInsert
             // 
@@ -193,7 +79,7 @@
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.BorderRadius = 0;
-            this.btnInsert.ButtonText = "             Thêm";
+            this.btnInsert.ButtonText = "Thêm";
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsert.DisabledColor = System.Drawing.Color.Gray;
             this.btnInsert.Iconcolor = System.Drawing.Color.Transparent;
@@ -216,8 +102,8 @@
             this.btnInsert.selected = false;
             this.btnInsert.Size = new System.Drawing.Size(107, 35);
             this.btnInsert.TabIndex = 1;
-            this.btnInsert.Text = "             Thêm";
-            this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsert.Text = "Thêm";
+            this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnInsert.Textcolor = System.Drawing.Color.White;
             this.btnInsert.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
@@ -572,6 +458,156 @@
             this.btnGiaHanThe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiaHanThe.Click += new System.EventHandler(this.btnGiaHanThe_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Activecolor = System.Drawing.Color.DarkSlateGray;
+            this.btnPrint.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.BorderRadius = 0;
+            this.btnPrint.ButtonText = "In hóa đơn";
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrint.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrint.Iconimage = null;
+            this.btnPrint.Iconimage_right = null;
+            this.btnPrint.Iconimage_right_Selected = null;
+            this.btnPrint.Iconimage_Selected = null;
+            this.btnPrint.IconMarginLeft = 0;
+            this.btnPrint.IconMarginRight = 0;
+            this.btnPrint.IconRightVisible = true;
+            this.btnPrint.IconRightZoom = 0D;
+            this.btnPrint.IconVisible = true;
+            this.btnPrint.IconZoom = 90D;
+            this.btnPrint.IsTab = false;
+            this.btnPrint.Location = new System.Drawing.Point(878, 453);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Normalcolor = System.Drawing.Color.DarkSlateGray;
+            this.btnPrint.OnHovercolor = System.Drawing.Color.DarkSlateGray;
+            this.btnPrint.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrint.selected = false;
+            this.btnPrint.Size = new System.Drawing.Size(107, 35);
+            this.btnPrint.TabIndex = 121;
+            this.btnPrint.Text = "In hóa đơn";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrint.Textcolor = System.Drawing.Color.White;
+            this.btnPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // dataThu
+            // 
+            this.dataThu.AllowUserToAddRows = false;
+            this.dataThu.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataThu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataThu.AutoGenerateColumns = false;
+            this.dataThu.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataThu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataThu.ColumnHeadersHeight = 25;
+            this.dataThu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mãThuDataGridViewTextBoxColumn,
+            this.mãKháchDataGridViewTextBoxColumn,
+            this.tênGóiDataGridViewTextBoxColumn,
+            this.sốLượngTiềnDataGridViewTextBoxColumn,
+            this.thờiGianDataGridViewTextBoxColumn,
+            this.môTảDataGridViewTextBoxColumn,
+            this.ngườiDuyệtDataGridViewTextBoxColumn,
+            this.isDelDataGridViewCheckBoxColumn});
+            this.dataThu.DataSource = this.tHUBindingSource;
+            this.dataThu.DoubleBuffered = true;
+            this.dataThu.EnableHeadersVisualStyles = false;
+            this.dataThu.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dataThu.HeaderForeColor = System.Drawing.Color.White;
+            this.dataThu.Location = new System.Drawing.Point(57, 67);
+            this.dataThu.Name = "dataThu";
+            this.dataThu.ReadOnly = true;
+            this.dataThu.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataThu.Size = new System.Drawing.Size(928, 329);
+            this.dataThu.TabIndex = 122;
+            this.dataThu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataThu_CellClick);
+            // 
+            // mãThuDataGridViewTextBoxColumn
+            // 
+            this.mãThuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãThuDataGridViewTextBoxColumn.DataPropertyName = "Mã thu";
+            this.mãThuDataGridViewTextBoxColumn.HeaderText = "Mã thu";
+            this.mãThuDataGridViewTextBoxColumn.Name = "mãThuDataGridViewTextBoxColumn";
+            this.mãThuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mãKháchDataGridViewTextBoxColumn
+            // 
+            this.mãKháchDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mãKháchDataGridViewTextBoxColumn.DataPropertyName = "Mã khách";
+            this.mãKháchDataGridViewTextBoxColumn.HeaderText = "Mã khách";
+            this.mãKháchDataGridViewTextBoxColumn.Name = "mãKháchDataGridViewTextBoxColumn";
+            this.mãKháchDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênGóiDataGridViewTextBoxColumn
+            // 
+            this.tênGóiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênGóiDataGridViewTextBoxColumn.DataPropertyName = "Tên gói";
+            this.tênGóiDataGridViewTextBoxColumn.HeaderText = "Tên gói";
+            this.tênGóiDataGridViewTextBoxColumn.Name = "tênGóiDataGridViewTextBoxColumn";
+            this.tênGóiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sốLượngTiềnDataGridViewTextBoxColumn
+            // 
+            this.sốLượngTiềnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sốLượngTiềnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tiền";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.HeaderText = "Số lượng tiền";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.Name = "sốLượngTiềnDataGridViewTextBoxColumn";
+            this.sốLượngTiềnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thờiGianDataGridViewTextBoxColumn
+            // 
+            this.thờiGianDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thờiGianDataGridViewTextBoxColumn.DataPropertyName = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.thờiGianDataGridViewTextBoxColumn.Name = "thờiGianDataGridViewTextBoxColumn";
+            this.thờiGianDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // môTảDataGridViewTextBoxColumn
+            // 
+            this.môTảDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.môTảDataGridViewTextBoxColumn.DataPropertyName = "Mô tả";
+            this.môTảDataGridViewTextBoxColumn.HeaderText = "Mô tả";
+            this.môTảDataGridViewTextBoxColumn.Name = "môTảDataGridViewTextBoxColumn";
+            this.môTảDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngườiDuyệtDataGridViewTextBoxColumn
+            // 
+            this.ngườiDuyệtDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngườiDuyệtDataGridViewTextBoxColumn.DataPropertyName = "Người duyệt";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.HeaderText = "Người duyệt";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.Name = "ngườiDuyệtDataGridViewTextBoxColumn";
+            this.ngườiDuyệtDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDelDataGridViewCheckBoxColumn
+            // 
+            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
+            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isDelDataGridViewCheckBoxColumn.Width = 35;
+            // 
+            // tHUBindingSource
+            // 
+            this.tHUBindingSource.DataMember = "THU";
+            this.tHUBindingSource.DataSource = this.gYMDataSet_Thu;
+            // 
+            // gYMDataSet_Thu
+            // 
+            this.gYMDataSet_Thu.DataSetName = "GYMDataSet_Thu";
+            this.gYMDataSet_Thu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tHUTableAdapter
             // 
             this.tHUTableAdapter.ClearBeforeFill = true;
@@ -580,6 +616,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataThu);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnGiaHanThe);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panelContent);
@@ -589,23 +627,20 @@
             this.Controls.Add(this.txtInp);
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.dataThu);
             this.Name = "Thu";
             this.Size = new System.Drawing.Size(1042, 501);
             this.Load += new System.EventHandler(this.Thu_Load);
+            this.panelContent.ResumeLayout(false);
+            this.panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_Thu)).EndInit();
-            this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dataThu;
         private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMaThu;
@@ -629,6 +664,8 @@
         private System.Windows.Forms.ComboBox txtMaGoi;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private Bunifu.Framework.UI.BunifuFlatButton btnGiaHanThe;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrint;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dataThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãThuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãKháchDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tênGóiDataGridViewTextBoxColumn;

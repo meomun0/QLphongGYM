@@ -38,23 +38,23 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.search = new System.Windows.Forms.Panel();
-            this.refresh = new System.Windows.Forms.Panel();
-            this.gYMDataSet_LSuGiaHan = new QLphongGYM.DATA.GYMDataSet_LSuGiaHan();
-            this.lSuGiaHanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lSuGiaHanTableAdapter = new QLphongGYM.DATA.GYMDataSet_LSuGiaHanTableAdapters.LSuGiaHanTableAdapter();
             this.maDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tGĐKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hanTruocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hanSauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lSuGiaHanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gYMDataSet_LSuGiaHan = new QLphongGYM.DATA.GYMDataSet_LSuGiaHan();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.txtInp = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.search = new System.Windows.Forms.Panel();
+            this.refresh = new System.Windows.Forms.Panel();
+            this.lSuGiaHanTableAdapter = new QLphongGYM.DATA.GYMDataSet_LSuGiaHanTableAdapters.LSuGiaHanTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lSuGiaHanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -149,65 +149,6 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(676, 311);
             this.bunifuCustomDataGrid1.TabIndex = 100;
             // 
-            // cmbFilter
-            // 
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.ItemHeight = 13;
-            this.cmbFilter.Items.AddRange(new object[] {
-            "Mã khách",
-            "Họ tên",
-            "Số điên thoại",
-            "Địa chỉ"});
-            this.cmbFilter.Location = new System.Drawing.Point(370, 80);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(120, 21);
-            this.cmbFilter.TabIndex = 121;
-            // 
-            // txtInp
-            // 
-            this.txtInp.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtInp.Location = new System.Drawing.Point(496, 80);
-            this.txtInp.Multiline = true;
-            this.txtInp.Name = "txtInp";
-            this.txtInp.Size = new System.Drawing.Size(120, 21);
-            this.txtInp.TabIndex = 120;
-            // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.Color.White;
-            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
-            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Location = new System.Drawing.Point(622, 76);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(30, 30);
-            this.search.TabIndex = 122;
-            // 
-            // refresh
-            // 
-            this.refresh.BackColor = System.Drawing.Color.White;
-            this.refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refresh.BackgroundImage")));
-            this.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh.Location = new System.Drawing.Point(658, 76);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(30, 30);
-            this.refresh.TabIndex = 123;
-            // 
-            // gYMDataSet_LSuGiaHan
-            // 
-            this.gYMDataSet_LSuGiaHan.DataSetName = "GYMDataSet_LSuGiaHan";
-            this.gYMDataSet_LSuGiaHan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lSuGiaHanBindingSource
-            // 
-            this.lSuGiaHanBindingSource.DataMember = "LSuGiaHan";
-            this.lSuGiaHanBindingSource.DataSource = this.gYMDataSet_LSuGiaHan;
-            // 
-            // lSuGiaHanTableAdapter
-            // 
-            this.lSuGiaHanTableAdapter.ClearBeforeFill = true;
-            // 
             // maDataGridViewTextBoxColumn
             // 
             this.maDataGridViewTextBoxColumn.DataPropertyName = "Ma";
@@ -256,6 +197,65 @@
             this.hanSauDataGridViewTextBoxColumn.Name = "hanSauDataGridViewTextBoxColumn";
             this.hanSauDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // lSuGiaHanBindingSource
+            // 
+            this.lSuGiaHanBindingSource.DataMember = "LSuGiaHan";
+            this.lSuGiaHanBindingSource.DataSource = this.gYMDataSet_LSuGiaHan;
+            // 
+            // gYMDataSet_LSuGiaHan
+            // 
+            this.gYMDataSet_LSuGiaHan.DataSetName = "GYMDataSet_LSuGiaHan";
+            this.gYMDataSet_LSuGiaHan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbFilter
+            // 
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.ItemHeight = 13;
+            this.cmbFilter.Items.AddRange(new object[] {
+            "Ma",
+            "MaKhach"});
+            this.cmbFilter.Location = new System.Drawing.Point(370, 80);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(120, 21);
+            this.cmbFilter.TabIndex = 121;
+            // 
+            // txtInp
+            // 
+            this.txtInp.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtInp.Location = new System.Drawing.Point(496, 80);
+            this.txtInp.Multiline = true;
+            this.txtInp.Name = "txtInp";
+            this.txtInp.Size = new System.Drawing.Size(120, 21);
+            this.txtInp.TabIndex = 120;
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Location = new System.Drawing.Point(622, 76);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(30, 30);
+            this.search.TabIndex = 122;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.BackColor = System.Drawing.Color.White;
+            this.refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refresh.BackgroundImage")));
+            this.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh.Location = new System.Drawing.Point(658, 76);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(30, 30);
+            this.refresh.TabIndex = 123;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // lSuGiaHanTableAdapter
+            // 
+            this.lSuGiaHanTableAdapter.ClearBeforeFill = true;
+            // 
             // LichSuGiaHanThe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,8 +274,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lSuGiaHanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gYMDataSet_LSuGiaHan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

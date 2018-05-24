@@ -120,6 +120,7 @@ namespace QLphongGYM.Layout
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            con.Close();
             con.Open();
             DataTable dt = new DataTable();
             adapt = new SqlDataAdapter("select * from dbo.[CHI] where [" + cmbFilter.Text + "] like N'%" + txtInp.Text + "%'", con);
@@ -135,9 +136,6 @@ namespace QLphongGYM.Layout
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            panel1.Visible = false;
-            btnSave.Enabled = false;
             if (txtSLTien.Text != "" && txtNoiDung.Text!="")
             {
                 if(Regex.IsMatch(txtSLTien.Text, @"^\d+$"))
@@ -145,6 +143,7 @@ namespace QLphongGYM.Layout
                     if (MessageBox.Show("Xác nhận thêm bản ghi", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         txtSLTien.Text = "-" + txtSLTien.Text;
+                        con.Close();
                         con.Open();
                         cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + txtMaChi.Text + "','"+txtSLTien.Text+"',N'"+txtNoiDung.Text+"','"+UserInfo.ID+"','Insert'", con);
                         cmdChi.ExecuteNonQuery();
@@ -188,6 +187,7 @@ namespace QLphongGYM.Layout
 
         private void dataThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            con.Close();
             con.Open();
             if (dataChi.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
             {
@@ -196,7 +196,7 @@ namespace QLphongGYM.Layout
                     string del = dataChi.Rows[e.RowIndex].Cells[0].Value.ToString();
                     if (UserInfo.userName == "admin")
                     {
-                        if ((MessageBox.Show("Xác nhận XOÁ thu chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        if ((MessageBox.Show("Xác nhận XOÁ bản ghi chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
                             cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '"+del+"','','','','Delete'", con);
                             cmdChi.ExecuteNonQuery();
@@ -204,7 +204,7 @@ namespace QLphongGYM.Layout
                     }
                     else
                     {
-                        if ((MessageBox.Show("Xác nhận XOÁ thu chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        if ((MessageBox.Show("Xác nhận XOÁ bản ghi chi: " + del, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
                             cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + del + "','','','','Hide'", con);
                             cmdChi.ExecuteNonQuery();
@@ -226,9 +226,9 @@ namespace QLphongGYM.Layout
                             string maChi = dataChi.Rows[e.RowIndex].Cells[0].Value.ToString();
                             cmdChi = new SqlCommand("EXECUTE  [dbo].[ID_Chi] '" + maChi + "','','','','Show'", con);
                             cmdChi.ExecuteNonQuery();
-                            con.Close();
                             DisplayData();
                         }
+                        con.Close();
                     }
                 }
             }

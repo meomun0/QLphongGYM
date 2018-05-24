@@ -35,7 +35,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.Close = new System.Windows.Forms.Panel();
             this.minimize = new System.Windows.Forms.Panel();
-            this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSaveAndPrint = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cmbKhach = new System.Windows.Forms.ComboBox();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.Close.Location = new System.Drawing.Point(658, 10);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(30, 30);
-            this.Close.TabIndex = 4;
+            this.Close.TabIndex = 0;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // minimize
@@ -104,40 +104,40 @@
             this.minimize.TabIndex = 3;
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
-            // btnUpdate
+            // btnSaveAndPrint
             // 
-            this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(113)))), ((int)(((byte)(65)))));
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.BorderRadius = 0;
-            this.btnUpdate.ButtonText = "Lưu và In hóa đơn";
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.DisabledColor = System.Drawing.Color.Gray;
-            this.btnUpdate.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Iconimage = null;
-            this.btnUpdate.Iconimage_right = null;
-            this.btnUpdate.Iconimage_right_Selected = null;
-            this.btnUpdate.Iconimage_Selected = null;
-            this.btnUpdate.IconMarginLeft = 0;
-            this.btnUpdate.IconMarginRight = 0;
-            this.btnUpdate.IconRightVisible = true;
-            this.btnUpdate.IconRightZoom = 0D;
-            this.btnUpdate.IconVisible = true;
-            this.btnUpdate.IconZoom = 90D;
-            this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(364, 461);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
-            this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnUpdate.selected = false;
-            this.btnUpdate.Size = new System.Drawing.Size(160, 35);
-            this.btnUpdate.TabIndex = 102;
-            this.btnUpdate.Text = "Lưu và In hóa đơn";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnUpdate.Textcolor = System.Drawing.Color.White;
-            this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnSaveAndPrint.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(113)))), ((int)(((byte)(65)))));
+            this.btnSaveAndPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
+            this.btnSaveAndPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveAndPrint.BorderRadius = 0;
+            this.btnSaveAndPrint.ButtonText = "Lưu và In hóa đơn";
+            this.btnSaveAndPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveAndPrint.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSaveAndPrint.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSaveAndPrint.Iconimage = null;
+            this.btnSaveAndPrint.Iconimage_right = null;
+            this.btnSaveAndPrint.Iconimage_right_Selected = null;
+            this.btnSaveAndPrint.Iconimage_Selected = null;
+            this.btnSaveAndPrint.IconMarginLeft = 0;
+            this.btnSaveAndPrint.IconMarginRight = 0;
+            this.btnSaveAndPrint.IconRightVisible = true;
+            this.btnSaveAndPrint.IconRightZoom = 0D;
+            this.btnSaveAndPrint.IconVisible = true;
+            this.btnSaveAndPrint.IconZoom = 90D;
+            this.btnSaveAndPrint.IsTab = false;
+            this.btnSaveAndPrint.Location = new System.Drawing.Point(364, 461);
+            this.btnSaveAndPrint.Name = "btnSaveAndPrint";
+            this.btnSaveAndPrint.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(67)))));
+            this.btnSaveAndPrint.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.btnSaveAndPrint.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSaveAndPrint.selected = false;
+            this.btnSaveAndPrint.Size = new System.Drawing.Size(160, 35);
+            this.btnSaveAndPrint.TabIndex = 6;
+            this.btnSaveAndPrint.Text = "Lưu và In hóa đơn";
+            this.btnSaveAndPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSaveAndPrint.Textcolor = System.Drawing.Color.White;
+            this.btnSaveAndPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveAndPrint.Click += new System.EventHandler(this.btnSaveAndPrint_Click);
             // 
             // cmbKhach
             // 
@@ -147,7 +147,7 @@
             this.cmbKhach.Location = new System.Drawing.Point(290, 100);
             this.cmbKhach.Name = "cmbKhach";
             this.cmbKhach.Size = new System.Drawing.Size(272, 21);
-            this.cmbKhach.TabIndex = 71;
+            this.cmbKhach.TabIndex = 0;
             this.cmbKhach.SelectedValueChanged += new System.EventHandler(this.cmbKhach_SelectedValueChanged);
             this.cmbKhach.Leave += new System.EventHandler(this.cmbKhach_Leave);
             // 
@@ -179,7 +179,7 @@
             this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSave.selected = false;
             this.btnSave.Size = new System.Drawing.Size(160, 35);
-            this.btnSave.TabIndex = 85;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "LƯU";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.Textcolor = System.Drawing.Color.White;
@@ -240,7 +240,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.PreventEnterBeep = true;
             this.txtGia.Size = new System.Drawing.Size(272, 27);
-            this.txtGia.TabIndex = 75;
+            this.txtGia.TabIndex = 4;
             // 
             // cmbTenGoi
             // 
@@ -250,7 +250,7 @@
             this.cmbTenGoi.Location = new System.Drawing.Point(291, 167);
             this.cmbTenGoi.Name = "cmbTenGoi";
             this.cmbTenGoi.Size = new System.Drawing.Size(272, 21);
-            this.cmbTenGoi.TabIndex = 103;
+            this.cmbTenGoi.TabIndex = 1;
             this.cmbTenGoi.SelectedValueChanged += new System.EventHandler(this.cmbTenGoi_SelectedValueChanged);
             this.cmbTenGoi.Enter += new System.EventHandler(this.cmbTenGoi_Enter);
             // 
@@ -274,7 +274,7 @@
             this.DPngayKT.Location = new System.Drawing.Point(291, 308);
             this.DPngayKT.Name = "DPngayKT";
             this.DPngayKT.Size = new System.Drawing.Size(272, 36);
-            this.DPngayKT.TabIndex = 74;
+            this.DPngayKT.TabIndex = 3;
             this.DPngayKT.Value = new System.DateTime(2018, 5, 21, 0, 0, 0, 0);
             // 
             // DPngayBD
@@ -287,7 +287,7 @@
             this.DPngayBD.Location = new System.Drawing.Point(291, 229);
             this.DPngayBD.Name = "DPngayBD";
             this.DPngayBD.Size = new System.Drawing.Size(272, 36);
-            this.DPngayBD.TabIndex = 73;
+            this.DPngayBD.TabIndex = 2;
             this.DPngayBD.Value = new System.DateTime(2018, 5, 21, 0, 0, 0, 0);
             // 
             // DangKyGoiTap
@@ -297,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(700, 529);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbTenGoi);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSaveAndPrint);
             this.Controls.Add(this.cmbKhach);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
@@ -326,7 +326,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel Close;
         private System.Windows.Forms.Panel minimize;
-        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSaveAndPrint;
         private System.Windows.Forms.ComboBox cmbKhach;
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private System.Windows.Forms.Label label5;

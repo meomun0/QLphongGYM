@@ -72,7 +72,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void close_Click(object sender, EventArgs e)
         {
-            SubClasses.GetDataGoiTap.UpdateModeOn = false;
+            SubClasses.GetDataDC.UpdateModeOn = false;
             this.Close();
         }
 
@@ -121,7 +121,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtMaDC.Text != "" && txtTenDC.Text != "" && txtGia.Text != "")
+            if (txtMaDC.Text != "" && txtTenDC.Text != "" && txtGia.Text != ""&& Regex.IsMatch(txtGia.Text, @"^\d+$"))
             {
                 con.Open();
                 if(cmbKhuVuc.selectedValue=="Trong kho")
@@ -141,32 +141,39 @@ namespace QLphongGYM.Layout.SubForms
             }
             else
             {
-                MessageBox.Show("Nhập thiếu");
+                MessageBox.Show("Nhập thiếu hoặc gói tập không là một số.");
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            con.Open();
-            if (SubClasses.GetDataDC.ngaySD=="" && cmbKhuVuc.selectedValue=="Trong kho")
+            if (txtMaDC.Text != "" && txtTenDC.Text != "" && txtGia.Text != "" && Regex.IsMatch(txtGia.Text, @"^\d+$"))
             {
-                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
-                "',NULL,N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
-            }
-            else if(SubClasses.GetDataDC.ngaySD == "" && cmbKhuVuc.selectedValue != "Trong kho")
-            {
-                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
-                "','" + DateTime.Now.ToShortDateString() + "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+                con.Open();
+                if (SubClasses.GetDataDC.ngaySD == "" && cmbKhuVuc.selectedValue == "Trong kho")
+                {
+                    cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                    "',NULL,N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+                }
+                else if (SubClasses.GetDataDC.ngaySD == "" && cmbKhuVuc.selectedValue != "Trong kho")
+                {
+                    cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                    "','" + DateTime.Now.ToShortDateString() + "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+                }
+                else
+                {
+                    cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
+                    "','" + Convert.ToDateTime(SubClasses.GetDataDC.ngaySD) + "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+                }
+                cmdDC.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Sửa thành công");
+                HideF();
             }
             else
             {
-                cmdDC = new SqlCommand("EXECUTE dbo.IUD_DUNGCU '" + txtMaDC.Text + "',N'" + txtTenDC.Text + "','" + txtGia.Text + "',N'" + cmbTinhTrang.selectedValue +
-                "','" + Convert.ToDateTime(SubClasses.GetDataDC.ngaySD)+ "',N'" + cmbKhuVuc.selectedValue + "',N'Update'", con);
+                MessageBox.Show("Nhập sai. Vui lòng kiểm tra lại giá tiền có là số không hoặc bạn điền thiếu");
             }
-            cmdDC.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Sửa thành công");
-            HideF();
         }
     }
 }

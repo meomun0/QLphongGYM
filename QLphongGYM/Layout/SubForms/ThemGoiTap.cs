@@ -319,7 +319,7 @@ namespace QLphongGYM.Layout.SubForms
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(txtMaGoi.Text!="" && txtGia.Text != "")
+            if(txtMaGoi.Text!="" && txtGia.Text != "" && Regex.IsMatch(txtGia.Text, @"^\d+$"))
             {
                 string buoitap = string.Empty;
                 if (CK2.Checked == true) buoitap = buoitap + "T2 ";
@@ -342,7 +342,7 @@ namespace QLphongGYM.Layout.SubForms
                 HideF();
             }
             else
-                MessageBox.Show("Nhập thiếu");
+                MessageBox.Show("Nhập thiếu hoặc gói tập không là 1 số");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

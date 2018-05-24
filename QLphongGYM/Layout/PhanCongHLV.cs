@@ -23,7 +23,7 @@ namespace QLphongGYM.Layout
         }
         SqlConnection con = new SqlConnection(@"Data Source=MY-PC\SQLEXPRESS;Initial Catalog=GYM;Integrated Security=True");
         SqlDataAdapter adapt;
-        SqlCommand cmdKG;
+        SqlCommand cmdPC;
         string maHLV, magoi;
 
         private void PhanCongHLV_Load(object sender, EventArgs e)
@@ -69,8 +69,8 @@ namespace QLphongGYM.Layout
         private void AutoFill()
         {
             con.Open();
-            cmdKG = new SqlCommand("EXECUTE dbo.insertTENofPhanCong", con);
-            cmdKG.ExecuteNonQuery();
+            cmdPC = new SqlCommand("EXECUTE dbo.insertTENofPhanCong", con);
+            cmdPC.ExecuteNonQuery();
             con.Close();
 
         }
@@ -120,23 +120,42 @@ namespace QLphongGYM.Layout
 
         private void cmbMaHLV_Leave(object sender, EventArgs e)
         {
-            maHLV = cmbMaHLV.Text;
-            int len = maHLV.Length;
-            int vt = maHLV.IndexOf("(");
-            maHLV = maHLV.Substring(vt + 1, len - vt - 2);
-
-            cmbMaGoi.Items.Clear();
-            cmbMaGoi.ResetText();
-            con.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("SELECT [Tên gói tập]+'('+[Mã gói tập]+')' AS ma FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] NOT IN(" +
-                                        "SELECT [Mã gói tập] FROM dbo.[PHÂN CÔNG] WHERE [Mã HLV]= '" + maHLV + "')", con);
-            adapt.Fill(dt);
-            foreach (DataRow row in dt.Rows)
+            if (cmbMaHLV.Text != "")
             {
-                cmbMaGoi.Items.Add((string)row["ma"]);
+                con.Close();
+                con.Open();
+                cmdPC = new SqlCommand("SELECT * FROM dbo.[KHÁCH] where [Mã khách]='" + cmbMaHLV.Text + "'", con);
+                SqlDataReader dtathu = cmdPC.ExecuteReader();
+                if (dtathu.Read() == true)
+                {
+                    maHLV = cmbMaHLV.Text;
+                    int len = maHLV.Length;
+                    int vt = maHLV.IndexOf("(");
+                    maHLV = maHLV.Substring(vt + 1, len - vt - 2);
+
+                    cmbMaGoi.Items.Clear();
+                    cmbMaGoi.ResetText();
+                    con.Open();
+                    DataTable dt = new DataTable();
+                    adapt = new SqlDataAdapter("SELECT [Tên gói tập]+'('+[Mã gói tập]+')' AS ma FROM dbo.[GÓI TẬP] WHERE [Mã gói tập] NOT IN(" +
+                                                "SELECT [Mã gói tập] FROM dbo.[PHÂN CÔNG] WHERE [Mã HLV]= '" + maHLV + "')", con);
+                    adapt.Fill(dt);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        cmbMaGoi.Items.Add((string)row["ma"]);
+                    }
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("HLV không tồn tại");
+                }
+                    
             }
-            con.Close();
+            else
+            {
+                MessageBox.Show("Chọn HLV trước");
+            }
         }
 
         private bool isExist()
@@ -152,14 +171,14 @@ namespace QLphongGYM.Layout
             magoi = magoi.Substring(vt2 + 1, len2 - vt2 - 2);
 
             con.Open();
-            cmdKG = new SqlCommand("SELECT * FROM dbo.[NHANVIEN] WHERE [Mã NV]='" + maHLV + "'", con);
-            SqlDataReader dta = cmdKG.ExecuteReader();
+            cmdPC = new SqlCommand("SELECT * FROM dbo.[NHANVIEN] WHERE [Mã NV]='" + maHLV + "'", con);
+            SqlDataReader dta = cmdPC.ExecuteReader();
             if (dta.Read() == true && dta.GetValue(0).ToString() != "")
             {
                 con.Close();
                 con.Open();
-                cmdKG = new SqlCommand("SELECT * FROM dbo.[GÓI TẬP] WHERE [Mã gói tập]='" + magoi + "'", con);
-                SqlDataReader dta2 = cmdKG.ExecuteReader();
+                cmdPC = new SqlCommand("SELECT * FROM dbo.[GÓI TẬP] WHERE [Mã gói tập]='" + magoi + "'", con);
+                SqlDataReader dta2 = cmdPC.ExecuteReader();
                 if (dta2.Read() == false)
                 {
                     MessageBox.Show("Gói tập " + magoi + " không tồn tại.");
@@ -184,8 +203,8 @@ namespace QLphongGYM.Layout
             if (isExist())
             {
                 con.Open();
-                cmdKG = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + maHLV + "','" + magoi + "','Select'", con);
-                SqlDataReader KGdta = cmdKG.ExecuteReader();
+                cmdPC = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + maHLV + "','" + magoi + "','Select'", con);
+                SqlDataReader KGdta = cmdPC.ExecuteReader();
                 if (KGdta.Read() == true && KGdta.GetValue(0).ToString() != "")
                 {
                     con.Close();
@@ -195,8 +214,8 @@ namespace QLphongGYM.Layout
                 {
                     con.Close();
                     con.Open();
-                    cmdKG = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + maHLV + "','" + magoi + "','Insert'", con);
-                    cmdKG.ExecuteNonQuery();
+                    cmdPC = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + maHLV + "','" + magoi + "','Insert'", con);
+                    cmdPC.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Thêm thành công");
                     AutoFill();
@@ -216,8 +235,8 @@ namespace QLphongGYM.Layout
                     if ((MessageBox.Show("Xác nhận XOÁ gói tập " + mag + " của khách " + mak, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                     {
                         con.Open();
-                        cmdKG = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + mak + "','" + mag + "','Delete'", con);
-                        cmdKG.ExecuteNonQuery();
+                        cmdPC = new SqlCommand("EXECUTE [dbo].[ID_PhanCong] '" + mak + "','" + mag + "','Delete'", con);
+                        cmdPC.ExecuteNonQuery();
                         con.Close();
                         DisplayData();
                     }

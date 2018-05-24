@@ -462,6 +462,7 @@
             "Aerobic",
             "Yoga"});
             this.cmbTenGoi.Location = new System.Drawing.Point(290, 73);
+            this.cmbTenGoi.MaxLength = 50;
             this.cmbTenGoi.Name = "cmbTenGoi";
             this.cmbTenGoi.Size = new System.Drawing.Size(272, 21);
             this.cmbTenGoi.TabIndex = 0;

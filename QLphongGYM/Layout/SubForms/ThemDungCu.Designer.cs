@@ -272,6 +272,7 @@
             this.txtGia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(290, 231);
+            this.txtGia.MaxLength = 10;
             this.txtGia.Name = "txtGia";
             this.txtGia.PreventEnterBeep = true;
             this.txtGia.Size = new System.Drawing.Size(272, 27);
@@ -286,6 +287,7 @@
             this.txtTenDC.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTenDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDC.Location = new System.Drawing.Point(290, 163);
+            this.txtTenDC.MaxLength = 50;
             this.txtTenDC.Name = "txtTenDC";
             this.txtTenDC.PreventEnterBeep = true;
             this.txtTenDC.Size = new System.Drawing.Size(272, 27);

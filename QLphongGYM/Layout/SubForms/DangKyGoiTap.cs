@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -130,6 +131,7 @@ namespace QLphongGYM.Layout.SubForms
                 cmbTenGoi.Items.Clear();
                 cmbTenGoi.ResetText();
                 txtGia.Text = string.Empty;
+                con.Close();
                 con.Open();
                 cmdDKG = new SqlCommand("SELECT * FROM dbo.[KHÁCH] where [Mã khách]='" + makhach + "'", con);
                 SqlDataReader dtathu = cmdDKG.ExecuteReader();
@@ -184,7 +186,6 @@ namespace QLphongGYM.Layout.SubForms
                         string SLTien = (dta["Giá"].ToString()).Substring(0, vitri);
                         txtGia.Text = SLTien;
                     }
-                    con.Close();
                     //Thêm mô tả
                     string mg, tengoi, mk, tenkhach;
                     mg = cmbTenGoi.Text;
@@ -194,6 +195,7 @@ namespace QLphongGYM.Layout.SubForms
                     tenkhach = mk.Substring(0, vt);
                     mota = "Khách hàng " + tenkhach + " đóng tiền gói tập " + tengoi;
                     //Thêm thời gian
+                    con.Close();
                     con.Open();
                     cmdDKG = new SqlCommand("SELECT [Ngày bắt đầu],[Ngày kết thúc] FROM dbo.[GÓI TẬP] where [Mã gói tập]='" + magoi + "'", con);
                     dta = cmdDKG.ExecuteReader();
@@ -206,15 +208,14 @@ namespace QLphongGYM.Layout.SubForms
                 }
                 else
                 {
-                    cmbKhach.ResetText();
                     con.Close();
+                    cmbKhach.ResetText();
                     MessageBox.Show("Mã khách không hợp lệ");
                 }
             }
             else
             {
                 cmbKhach.ResetText();
-                con.Close();
                 MessageBox.Show("Nhập mã khách trước");
             }
         }
@@ -247,29 +248,49 @@ namespace QLphongGYM.Layout.SubForms
             {
                 SuggestID();
                 con.Open();
-                cmdDKG = new SqlCommand("EXECUTE dbo.ThanhToan_GoiTap '"+mathu+"','"+makhach+"','"+magoi+"','"+txtGia.Text+"','"+mota+"','"+UserInfo.ID+"'", con);
+                cmdDKG = new SqlCommand("EXECUTE dbo.ThanhToan_GoiTap '"+mathu+"','"+makhach+"','"+magoi+"','"+txtGia.Text+"',N'"+mota+"','"+UserInfo.ID+"'", con);
                 cmdDKG.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Thành công");
                 cmbKhach.ResetText();
                 cmbTenGoi.ResetText();
                 txtGia.ResetText();
+                makhach = string.Empty;
+                magoi = string.Empty;
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnSaveAndPrint_Click(object sender, EventArgs e)
         {
-            if (isExist(makhach, magoi))
+            SqlDataReader dta;
+            if (isExist(makhach, magoi) && Regex.IsMatch(txtGia.Text, @"^\d+$"))
             {
                 SuggestID();
                 con.Open();
-                cmdDKG = new SqlCommand("EXECUTE dbo.ThanhToan_GoiTap '" + mathu + "','" + makhach + "','" + magoi + "','" + txtGia.Text + "','" + mota + "','" + UserInfo.ID + "'", con);
+                cmdDKG = new SqlCommand("EXECUTE dbo.ThanhToan_GoiTap '" + mathu + "','" + makhach + "','" + magoi + "','" + txtGia.Text + "',N'" + mota + "','" + UserInfo.ID + "'", con);
                 cmdDKG.ExecuteNonQuery();
+                
+                Report.dataTHU.mathu = mathu;
+                Report.dataTHU.makhach = makhach;
+                Report.dataTHU.sotien = txtGia.Text;
+                Report.dataTHU.noidung = mota;
+                cmdDKG = new SqlCommand("SELECT [Số điện thoại],[Địa chỉ] FROM dbo.KHÁCH WHERE [Mã khách] = '"+makhach+"'", con);
+                dta = cmdDKG.ExecuteReader();
+                if (dta.Read() == true)
+                {
+                    Report.dataTHU.sdt = dta["Số điện thoại"].ToString();
+                    Report.dataTHU.diachi = dta["Địa chỉ"].ToString();
+                }
+                Report.dataTHU.longdate = DateTime.Now.ToShortTimeString() + ":" + DateTime.Now.ToShortDateString();
+                Report.dataTHU.shortdate = DateTime.Now.ToShortDateString();
                 con.Close();
-                MessageBox.Show("Thành công");
                 cmbKhach.ResetText();
                 cmbTenGoi.ResetText();
                 txtGia.ResetText();
+                makhach = string.Empty;
+                magoi = string.Empty;
+                Report.RptThu formRp = new Report.RptThu();
+                formRp.ShowDialog();
             }
         }
     }
