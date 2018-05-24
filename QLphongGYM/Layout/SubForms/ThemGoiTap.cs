@@ -85,6 +85,10 @@ namespace QLphongGYM.Layout.SubForms
                 }
             }
         }
+        //kiều anh 8
+        //thu giang 7.5
+        //hồng 
+        //hải 8
         #region
         private void cmbPhanLoai_Leave(object sender, EventArgs e)
         {
