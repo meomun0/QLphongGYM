@@ -89,7 +89,7 @@ namespace QLphongGYM.Layout.SubForms
 
         private void SuggestID()
         {
-            int len, j, num;
+            int num;
             string MaDC = string.Empty, str;
             con.Close();
             con.Open();
@@ -98,16 +98,8 @@ namespace QLphongGYM.Layout.SubForms
             if (dta.Read() == true && dta.GetValue(0).ToString() != "" && dta.GetValue(0).ToString()!="")
             {
                 MaDC = dta["max"].ToString();
-                len = MaDC.Length;
-                for (j = 0; j < len; j++)
-                {
-                    MaDC = (dta["max"].ToString()).Substring(j);
-                    if (Regex.IsMatch(MaDC, @"^\d+$"))
-                    {
-                        break;
-                    }
-                }
-                str = (dta["max"].ToString()).Substring(0, j);
+                MaDC = (dta["max"].ToString()).Substring(3);
+                str = (dta["max"].ToString()).Substring(0, 3);
                 num = Convert.ToInt32(MaDC);
                 num++;
                 SugID = str + num;
